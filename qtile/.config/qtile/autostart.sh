@@ -7,7 +7,7 @@ picom --config $HOME/.config/picom/picom.conf --experimental-backends --vsync & 
 ~/.config/qtile/scripts/check_battery.sh & disown
 
 # Screen Locker
-# ~/.config/qtile/scripts/locker.sh & disown
+~/.config/qtile/scripts/locker.sh & disown
 
 # Start welcome
 # eos-welcome & disown
