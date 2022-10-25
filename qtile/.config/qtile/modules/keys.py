@@ -1,11 +1,12 @@
 from libqtile.lazy import lazy
-from libqtile.config import Key
+from libqtile.config import Key, KeyChord
 
 mod = "mod4"
 terminal = "alacritty"
 browser = "firefox-nightly"
 
 # Fixing floating window
+
 
 @lazy.function
 def float_to_front(qtile):
@@ -15,6 +16,7 @@ def float_to_front(qtile):
             if window.floating:
                 window.cmd_bring_to_front()
 
+
 keys = [
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
@@ -23,7 +25,12 @@ keys = [
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     Key([mod], "r", lazy.spawn("rofi -show combi"), desc="spawn rofi"),
-    Key([mod, "shift"], "d", lazy.spawn("rofi -show drun"), desc="spawn rofi app menu"),
+    Key(
+        [mod, "shift"],
+        "w",
+        lazy.spawn("rofi -show window"),
+        desc="spawn rofi window menu",
+    ),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key(
@@ -37,26 +44,37 @@ keys = [
     ),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
-    # Make window full screen.
-    Key(
-        [mod],
-        "f",
-        lazy.window.toggle_fullscreen(),
-        desc="Toggle floating",
-    ),
-
+    # Make window full screen and floating.
+    # Key(
+    #     [mod],
+    #     "f",
+    #     lazy.window.toggle_fullscreen(),
+    #     desc="Toggle window fullscreen",
+    # ),
     Key(
         [mod, "shift"],
         "f",
         lazy.window.toggle_floating(),
+        desc="Toggle window floating",
     ),
-
     Key(
-        [mod, "control"],
-        "f",
+        [mod, "shift"],
+        "t",
         # lazy.window.toggle_floating(),
         float_to_front,
-        desc="Toggle fullscreen",
+        desc="Bring floating window to top",
+    ),
+    Key(
+        [mod],
+        "m",
+        lazy.window.toggle_minimize(),
+        desc="minimize window",
+    ),
+    Key(
+        [mod],
+        "f",
+        lazy.window.toggle_maximize(),
+        desc="minimize window",
     ),
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
@@ -81,7 +99,7 @@ keys = [
     Key([mod], "w", lazy.spawn(browser), desc="Launch Browser"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "x", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift", "control"], "h", lazy.layout.swap_column_left()),
     Key([mod, "shift", "control"], "l", lazy.layout.swap_column_right()),
     Key([mod, "shift"], "space", lazy.layout.flip()),
@@ -93,17 +111,30 @@ keys = [
         lazy.spawncmd(),
         desc="Spawn a command using a prompt widget",
     ),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer set Master 3%+")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer set Master 3%-")),
-    Key([], "XF86AudioMute", lazy.spawn("amixer set Master toggle")),
-
+    # Volume control using keyboard
+    # Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer set Master 3%+")),
+    # Key([], "XF86AudioLowerVolume", lazy.spawn("amixer set Master 3%-")),
+    # Key([], "XF86AudioMute", lazy.spawn("amixer set Master toggle")),
+    Key(
+        [],
+        "XF86AudioRaiseVolume",
+        lazy.spawn("bash /home/stoney/.local/bin/volumeControl.sh up"),
+    ),
+    Key(
+        [],
+        "XF86AudioLowerVolume",
+        lazy.spawn("bash /home/stoney/.local/bin/volumeControl.sh down"),
+    ),
+    Key(
+        [],
+        "XF86AudioMute",
+        lazy.spawn("bash /home/stoney/.local/bin/volumeControl.sh mute"),
+    ),
     # Toggle bars
     Key([mod], "b", lazy.hide_show_bar(position="all"), desc="Toggle bars"),
-
     # Brightness control using keyboard
     # Key([],"XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 10")),
     # Key([],"XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 10")),
-    
     Key(
         [],
         "XF86MonBrightnessUp",
@@ -114,7 +145,6 @@ keys = [
         "XF86MonBrightnessDown",
         lazy.spawn("bash /home/stoney/.local/bin/brightnessControl.sh down"),
     ),
-
     # Screenshot
     # Key([], "Print", lazy.spawn("scrot '%Y-%m-%d-%H-%M-%S-screenshot.png' -e 'mv $f ~/Pictures/screenshots/'"), desc="Take Screenshot"),
     Key(
@@ -129,7 +159,9 @@ keys = [
         lazy.spawn("bash /home/stoney/.local/bin/screenshot.sh region"),
         desc="Take region Screenshot",
     ),
-
     # Lockscreen
-    Key([mod], "s", lazy.spawn("betterlockscreen -l dim"), desc="Lockscreen"),
+    Key([mod], "s", lazy.spawn("systemctl suspend"), desc="Lockscreen"),
+
+    # Play youtube video
+    Key([mod], "y", lazy.spawn("bash /home/stoney/.local/bin/ytw video"))
 ]

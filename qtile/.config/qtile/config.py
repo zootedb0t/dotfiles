@@ -21,6 +21,6 @@ widget_defaults = dict(
         # font='Source Code',
         # font='JetBrainsMono Nerd Font',
         font='VictorMono Nerd Font',
-        fontsize=15,
+        fontsize=14,
         padding=2,
 )

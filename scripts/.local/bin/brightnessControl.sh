@@ -13,13 +13,14 @@ function get_brightness {
 }
 
 function send_notification {
-  icon="preferences-system-brightness-lock"
+  icon="/usr/share/icons/Adwaita/96x96/status/display-brightness-symbolic.symbolic.png"
   brightness=$(get_brightness)
   # Make the bar with the special character ─ (it's not dash -)
   # https://en.wikipedia.org/wiki/Box-drawing_character
   bar=$(seq -s "─" 0 $((brightness / 5)) | sed 's/[0-9]//g')
   # Send the notification
-  dunstify -i "$icon" -r 5555 -u normal "    $bar"
+  # dunstify -i "$icon" -r 5555 -u normal "    $bar"
+  dunstify -i "$icon" "$brightness" -r 5555 -u normal "    $bar"
 }
 
 case $1 in

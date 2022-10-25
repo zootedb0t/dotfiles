@@ -184,6 +184,13 @@ if packer_ok then
 			end,
 		})
 
+		-- Live Server
+		use({
+		  "turbio/bracey.vim",
+		  cmd="Bracey",
+		  run = "npm install --prefix server",
+		})
+
 		-- Modules
 		use({ "nvim-lua/plenary.nvim", module = "plenary" })
 		use({ "nvim-lua/popup.nvim", module = "popup" })

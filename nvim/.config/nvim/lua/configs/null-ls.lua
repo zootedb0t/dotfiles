@@ -6,6 +6,7 @@ function M.config()
   if status_ok then
     local formatting = null_ls.builtins.formatting
     -- local diagnostics = null_ls.builtins.diagnostics
+    local code_action = null_ls.builtins.code_actions
     null_ls.setup({
       debug = false,
       diagnostics_format = "(#{s}) #{m}",
@@ -16,8 +17,8 @@ function M.config()
         -- diagnostics.pylint,
         -- formatting.clang_format,
         -- diagnostics.cppcheck,
-        -- formatting.prettierd,
-        -- formatting.eslint_d,
+        formatting.prettierd,
+        code_action.eslint_d,
         -- diagnostics.shellcheck,
       },
     })

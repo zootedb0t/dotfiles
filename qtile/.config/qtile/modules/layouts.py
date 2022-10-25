@@ -5,8 +5,6 @@ from libqtile.config import Match
 layout_theme = {
     "border_width": 3,
     "margin": 14,
-    # "border_focus": '#5294e2',
-    # "border_normal": '#2c5380',
     "border_focus": "#6272a4",
     "border_normal": "#282a36",
 }
@@ -35,13 +33,12 @@ layouts = [
 ]
 
 floating_layout = layout.Floating(
-        border_focus="#51afef",
-        border_normal="#1c1f24",
+        border_focus="#6272a4",
+        border_normal="#282a36",
         border_width=3,
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         # *layout.Floating.default_float_rules,
-        *layout.Floating.default_float_rules,
         Match(wm_class="confirmreset"),  # gitk
         Match(wm_class="makebranch"),  # gitk
         Match(wm_class="maketag"),  # gitk

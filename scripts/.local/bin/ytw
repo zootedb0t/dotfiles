@@ -1,0 +1,13 @@
+#!/bin/bash
+
+case $1 in
+  audio)
+    notify-send -t 3000 "Playing Audio" "$(xclip -o)";
+    mpv --no-video "$(xclip -o)"
+    ;;
+  video)
+    notify-send -t 3000 "Playing Video" "$(xclip -o)";
+    mpv --ytdl-format=bestvideo+bestaudio/best "$(xclip -o)"
+    ;;
+esac
+

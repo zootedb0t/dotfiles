@@ -19,8 +19,8 @@ screens = [
                     active="#ffffff",
                     inactive="#848e96",
                     background="282a36",
-                    urgent_alert_method='border',
-                    urgent_border='#ff5555',
+                    urgent_alert_method="border",
+                    urgent_border="#ff5555",
                 ),
                 widget.TextBox(text="", padding=0, fontsize=28, foreground="#282a36"),
                 widget.Prompt(
@@ -35,12 +35,12 @@ screens = [
                     # fmt="{}"
                     fontsize=14,
                 ),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
+                # widget.Chord(
+                #     chords_colors={
+                #         "launch": ("#ff0000", "#ffffff"),
+                #     },
+                #     name_transform=lambda name: name.upper(),
+                # ),
                 widget.CurrentLayoutIcon(scale=0.75),
                 widget.TextBox(
                     text="",
@@ -53,7 +53,7 @@ screens = [
                     background="#2f343f",
                 ),
                 widget.Net(
-                    format=" {down}  {up}",
+                    format=" {down}  {up}",
                     background="#2f343f",
                 ),
                 widget.Spacer(
@@ -66,10 +66,10 @@ screens = [
                 #     # format='CPU {freq_current}GHz',
                 #     background="#2f343f",
                 # ),
-                widget.Spacer(
-                    length=5,
-                    background="#2f343f",
-                ),
+                # widget.Spacer(
+                #     length=5,
+                #     background="#2f343f",
+                # ),
                 widget.CPU(
                     format="CPU {freq_current}GHz {load_percent}% ",
                     background="#2f343f",
@@ -99,6 +99,17 @@ screens = [
                     foreground_alert="ff6000",
                     format="GPU  {temp}°C",
                     background="#2f343f",
+                ),
+                widget.Spacer(
+                    length=5,
+                    background="#2f343f",
+                ),
+                widget.Backlight(
+                    # change_command='xbacklight -get',
+                    background="#2f343f",
+                    backlight_name="nvidia_0",
+                    brightness_file="actual_brightness",
+                    format="  {percent:2.0%}",
                 ),
                 widget.Spacer(
                     length=5,

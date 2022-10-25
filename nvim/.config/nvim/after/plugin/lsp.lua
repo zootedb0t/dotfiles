@@ -75,6 +75,9 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 -- }
 
 local servers = {
+  html = {},
+  cssls = {},
+  tsserver = {},
 	clangd = {},
 	pyright = {},
 	sumneko_lua = {

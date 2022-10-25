@@ -1,6 +1,7 @@
 from libqtile import widget
 from libqtile import qtile
 from libqtile.widget.battery import Battery, BatteryState
+import subprocess
 
 colors = [
     ["#2f343f", "#2f343f"],  # panel background
