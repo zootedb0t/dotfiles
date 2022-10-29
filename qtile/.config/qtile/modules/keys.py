@@ -1,13 +1,11 @@
 from libqtile.lazy import lazy
-from libqtile.config import Key, KeyChord
+from libqtile.config import Key
 
 mod = "mod4"
-terminal = "alacritty"
+terminal = "st"
 browser = "firefox-nightly"
 
 # Fixing floating window
-
-
 @lazy.function
 def float_to_front(qtile):
     # logging.info("bring floating windows to front")
@@ -15,7 +13,6 @@ def float_to_front(qtile):
         for window in group.windows:
             if window.floating:
                 window.cmd_bring_to_front()
-
 
 keys = [
     # Switch between windows
@@ -74,7 +71,7 @@ keys = [
         [mod],
         "f",
         lazy.window.toggle_maximize(),
-        desc="minimize window",
+        desc="maximize window",
     ),
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
@@ -96,6 +93,7 @@ keys = [
         desc="Toggle between split and unsplit sides of stack",
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod, "control"], "Return", lazy.spawn('tabbed -c -r 2 st -w ""'), desc="Launch st in tabbed"),
     Key([mod], "w", lazy.spawn(browser), desc="Launch Browser"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
@@ -161,7 +159,12 @@ keys = [
     ),
     # Lockscreen
     Key([mod], "s", lazy.spawn("systemctl suspend"), desc="Lockscreen"),
-
     # Play youtube video
-    Key([mod], "y", lazy.spawn("bash /home/stoney/.local/bin/ytw video"))
+    Key([mod], "y", lazy.spawn("bash /home/stoney/.local/bin/ytw video")),
+    # Change power profile
+    Key(
+        [mod, "control"],
+        "p",
+        lazy.spawn("bash /home/stoney/.config/rofi/powerprofile.sh"),
+    ),
 ]

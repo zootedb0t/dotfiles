@@ -14,8 +14,8 @@ screens = [
                 # widget.Sep(padding=4, linewidth=0, background="#2f343f"),
                 widget.GroupBox(
                     highlight_method="line",
-                    this_screen_border="#69ff94",
-                    this_current_screen_border="#69ff94",
+                    this_screen_border="#6272a4",
+                    this_current_screen_border="#6272a4",
                     active="#ffffff",
                     inactive="#848e96",
                     background="282a36",
@@ -32,8 +32,9 @@ screens = [
                 widget.WindowName(
                     foreground="#99c0de",
                     format="{state}{name}",
+                    max_chars=40,
                     # fmt="{}"
-                    fontsize=14,
+                    # fontsize=14,
                 ),
                 # widget.Chord(
                 #     chords_colors={
@@ -42,11 +43,22 @@ screens = [
                 #     name_transform=lambda name: name.upper(),
                 # ),
                 widget.CurrentLayoutIcon(scale=0.75),
+                widget.CurrentLayout(
+                    # background="282a36",
+                ),
                 widget.TextBox(
                     text="",
                     padding=0,
                     fontsize=28,
                     foreground="#2f343f",
+                ),
+                widget.Mpris2(
+                    scroll_chars=45,
+                    playing_text="{track}",
+                    max_chars=20,
+                    background="#2f343f",
+                    interval=0.1,
+                    width=150,
                 ),
                 widget.Spacer(
                     length=10,
@@ -94,12 +106,12 @@ screens = [
                     length=5,
                     background="#2f343f",
                 ),
-                widget.NvidiaSensors(
-                    threshold=55,
-                    foreground_alert="ff6000",
-                    format="GPU  {temp}°C",
-                    background="#2f343f",
-                ),
+                # widget.NvidiaSensors(
+                #     threshold=55,
+                #     foreground_alert="ff6000",
+                #     format="GPU  {temp}°C",
+                #     background="#2f343f",
+                # ),
                 widget.Spacer(
                     length=5,
                     background="#2f343f",
@@ -117,7 +129,7 @@ screens = [
                 ),
                 volume,
                 widget.Volume(
-                    get_volume_command="amixer -D pulse get Master".split(),
+                    # get_volume_command="amixer -D pulse get Capture".split(),
                     background="#2f343f",
                 ),
                 widget.Spacer(
@@ -151,7 +163,8 @@ screens = [
                     background="#2f343f",
                 ),
                 widget.Clock(
-                    format="  %d-%m-%Y %a   %I:%M %p",
+                    # format="  %d-%m-%Y %a   %I:%M %p",
+                    format="  %a %d  %I:%M %p",
                     background="#2f343f",
                     foreground="#9bd689",
                     mouse_callbacks={
@@ -207,6 +220,15 @@ screens = [
                     },
                     foreground="#e39378",
                 ),
+                # widget.TextBox(
+                #     text="  ",
+                #     mouse_callbacks={
+                #         "Button1": lambda: qtile.cmd_spawn(
+                #             os.path.expanduser("~/.config/rofi/powerprofile.sh")
+                #         )
+                #     },
+                #     foreground="#e39378",
+                # ),
                 widget.Spacer(
                     length=5,
                     background="#2f343f",

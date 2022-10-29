@@ -3,8 +3,8 @@ from libqtile.config import Match
 
 # DEFAULT THEME SETTINGS FOR LAYOUTS #
 layout_theme = {
-    "border_width": 3,
-    "margin": 14,
+    "border_width": 2,
+    "margin": 12,
     "border_focus": "#6272a4",
     "border_normal": "#282a36",
 }
@@ -12,8 +12,8 @@ layout_theme = {
 layouts = [
     # layout.Max(),
     # Try more layouts by unleashing below layouts.
-    # layout.Matrix(margin=8, border_focus='#5294e2'),
-    # layout.MonadWide(),
+    layout.Matrix(**layout_theme),
+    layout.MonadWide(**layout_theme),
     # layout.RatioTile(margin=8, border_focus='#5294e2'),
     # layout.Tile(),
     # layout.TreeTab(),
@@ -25,11 +25,6 @@ layouts = [
     # Try more layouts by unleashing below layouts.
     layout.Bsp(**layout_theme),
     layout.Columns(**layout_theme),
-    # layout.Floating(
-        # border_focus="#51afef",
-        # border_normal="#1c1f24",
-        # border_width=2,
-    # ),
 ]
 
 floating_layout = layout.Floating(

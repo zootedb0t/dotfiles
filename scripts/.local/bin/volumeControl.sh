@@ -26,26 +26,19 @@ function send_notification {
     # Send the notification
     if [[ $volume == 0 ]]
     then
-    dunstify -i  $iconMuted "$volume" -r 2593 -u normal "   $bar"
+    dunstify -i  $iconMuted "$volume" -r 2593 -u normal "$bar"
   else
-    dunstify -i  $iconSound "$volume" -r 2593 -u normal "   $bar"
+    dunstify -i  $iconSound "$volume" -r 2593 -u normal "$bar"
     fi
   fi
 }
 
 case $1 in
   up)
-    # set the volume on (if it was muted)
-    # amixer -D pulse set Master on > /dev/null
-    # up the volume (+ 5%)
-    # amixer -D pulse sset Master 3%+ > /dev/null
-    # amixer -D pulse set Master 3%+ > /dev/null
     amixer -D pulse set Master 3%+
     send_notification
     ;;
   down)
-    # amixer -D pulse set Master on > /dev/null
-    # amixer -D pulse sset Master 3%- > /dev/null
     amixer -D pulse set Master 3%-
     send_notification
     ;;

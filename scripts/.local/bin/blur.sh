@@ -1,8 +1,9 @@
 #!/bin/sh
 
 # set the icon and a temporary location for the screenshot to be stored
+# How to make icon random
 icon="$HOME/Pictures/Wallpapers/lock.png"
-tmpbg='/tmp/screen.png'
+tmpbg='/tmp/lock.png'
 
 # take a screenshot
 scrot "$tmpbg"
@@ -14,4 +15,5 @@ convert "$tmpbg" -filter Gaussian -thumbnail 20% -sample 500% "$tmpbg"
 convert "$tmpbg" "$icon" -gravity center -composite "$tmpbg"
 
 # lock the screen with the blurred screenshot
-i3lock -i "$tmpbg" &
+# i3lock -i "$tmpbg" &
+slock &
