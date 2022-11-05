@@ -28,7 +28,7 @@ screens = [
                     fontsize=15,
                     prompt=" : ",
                 ),
-                widget.Spacer(length=5),
+                widget.Spacer(length=3),
                 widget.WindowName(
                     foreground="#99c0de",
                     format="{state}{name}",
@@ -53,15 +53,15 @@ screens = [
                     foreground="#2f343f",
                 ),
                 widget.Mpris2(
-                    scroll_chars=45,
+                    # scroll_chars=45,
                     playing_text="{track}",
-                    max_chars=20,
+                    # max_chars=20,
                     background="#2f343f",
                     interval=0.1,
                     width=150,
                 ),
                 widget.Spacer(
-                    length=10,
+                    length=3,
                     background="#2f343f",
                 ),
                 widget.Net(
@@ -69,7 +69,7 @@ screens = [
                     background="#2f343f",
                 ),
                 widget.Spacer(
-                    length=5,
+                    length=3,
                     background="#2f343f",
                 ),
                 # widget.CPUGraph(
@@ -92,7 +92,7 @@ screens = [
                     background="#2f343f",
                 ),
                 widget.Spacer(
-                    length=5,
+                    length=3,
                     background="#2f343f",
                 ),
                 widget.Memory(
@@ -103,7 +103,7 @@ screens = [
                     background="#2f343f",
                 ),
                 widget.Spacer(
-                    length=5,
+                    length=3,
                     background="#2f343f",
                 ),
                 # widget.NvidiaSensors(
@@ -113,7 +113,7 @@ screens = [
                 #     background="#2f343f",
                 # ),
                 widget.Spacer(
-                    length=5,
+                    length=3,
                     background="#2f343f",
                 ),
                 widget.Backlight(
@@ -121,10 +121,10 @@ screens = [
                     background="#2f343f",
                     backlight_name="nvidia_0",
                     brightness_file="actual_brightness",
-                    format="  {percent:2.0%}",
+                    format=" {percent:2.0%}",
                 ),
                 widget.Spacer(
-                    length=5,
+                    length=3,
                     background="#2f343f",
                 ),
                 volume,
@@ -133,7 +133,7 @@ screens = [
                     background="#2f343f",
                 ),
                 widget.Spacer(
-                    length=5,
+                    length=3,
                     background="#2f343f",
                 ),
                 widget.CheckUpdates(
@@ -159,21 +159,19 @@ screens = [
                 # ),
                 # widget.TextBox(text="", padding=0, fontsize=28, foreground="#2f343f"),
                 widget.Spacer(
-                    length=5,
+                    length=3,
                     background="#2f343f",
                 ),
                 widget.Clock(
-                    # format="  %d-%m-%Y %a   %I:%M %p",
-                    format="  %a %d  %I:%M %p",
+                    format=" %d %a %I:%M %p",
                     background="#2f343f",
                     foreground="#9bd689",
                     mouse_callbacks={
-                        "Button1": lambda: qtile.cmd_spawn("gnome-clocks"),
-                        "Button3": lambda: qtile.cmd_spawn("gnome-calendar"),
+                        "Button1": lambda: qtile.cmd_spawn("gnome-calendar"),
                     },
                 ),
                 widget.Spacer(
-                    length=5,
+                    length=3,
                     background="#2f343f",
                 ),
                 widget.WidgetBox(
@@ -185,7 +183,7 @@ screens = [
                         widget.Wttr(
                             # TODO Can it switch location automatically
                             location={"Patna": "Home"},
-                            format="%l: %c %t(%f) %C\n",
+                            format="%l: %c %t %C\n",
                             background="#2f343f",
                             foreground="#ffffff",
                         ),
@@ -207,8 +205,8 @@ screens = [
                 # ),
                 battery,
                 widget.Systray(
-                    icon_size=25,
-                    padding=3,
+                    # icon_size=25,
+                    # padding=3,
                     # background="#737373",
                 ),
                 widget.TextBox(
@@ -230,11 +228,11 @@ screens = [
                 #     foreground="#e39378",
                 # ),
                 widget.Spacer(
-                    length=5,
+                    length=3,
                     background="#2f343f",
                 ),
             ],
-            30,  # height in px
+            25,  # height in px
             background="#404552",  # background color
         ),
     ),

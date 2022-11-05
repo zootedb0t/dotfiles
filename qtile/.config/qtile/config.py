@@ -19,8 +19,7 @@ wmname = "Qtile"
 widget_defaults = dict(
         # font='Cascadia Code',
         # font='Source Code',
-        # font='JetBrainsMono Nerd Font',
-        font='VictorMono Nerd Font',
-        fontsize=13,
+        font='JetBrainsMono Nerd Font',
+        fontsize=14,
         padding=2,
 )

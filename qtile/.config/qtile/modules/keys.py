@@ -1,9 +1,11 @@
+import os
 from libqtile.lazy import lazy
 from libqtile.config import Key
 
 mod = "mod4"
 terminal = "st"
 browser = "firefox-nightly"
+home = os.path.expanduser('~')
 
 # Fixing floating window
 @lazy.function
@@ -14,6 +16,7 @@ def float_to_front(qtile):
             if window.floating:
                 window.cmd_bring_to_front()
 
+
 keys = [
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
@@ -21,7 +24,7 @@ keys = [
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
-    Key([mod], "r", lazy.spawn("rofi -show combi"), desc="spawn rofi"),
+    Key([mod], "r", lazy.spawn("rofi -show"), desc="spawn rofi"),
     Key(
         [mod, "shift"],
         "w",
@@ -93,7 +96,12 @@ keys = [
         desc="Toggle between split and unsplit sides of stack",
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod, "control"], "Return", lazy.spawn('tabbed -c -r 2 st -w ""'), desc="Launch st in tabbed"),
+    Key(
+        [mod, "control"],
+        "Return",
+        lazy.spawn('tabbed -c -r 2 st -w ""'),
+        desc="Launch st in tabbed",
+    ),
     Key([mod], "w", lazy.spawn(browser), desc="Launch Browser"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),

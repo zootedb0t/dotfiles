@@ -4,7 +4,7 @@ from libqtile.config import Match
 # DEFAULT THEME SETTINGS FOR LAYOUTS #
 layout_theme = {
     "border_width": 2,
-    "margin": 12,
+    "margin": 10,
     "border_focus": "#6272a4",
     "border_normal": "#282a36",
 }
@@ -18,7 +18,7 @@ layouts = [
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
-    # layout.Zoomy(),
+    layout.Zoomy(**layout_theme),
     layout.MonadTall(**layout_theme, single_border_width=0),
     layout.Stack(num_stacks=2, **layout_theme),
     # layout.Max(),
