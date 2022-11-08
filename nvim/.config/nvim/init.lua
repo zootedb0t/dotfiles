@@ -14,15 +14,8 @@ require("core.options")
 require("core.keymappings")
 require("core.autocmd")
 
--- vim.cmd({ cmd = "colorscheme", args = {"kanagawa"}})
 vim.cmd({ cmd = "colorscheme", args = {"dracula"}})
 
-vim.cmd[[
-" enable cursor blinking
-set guicursor+=a:blinkon100
-]]
-
 vim.defer_fn(function()
-  require("core.pluginList")
+	require("core.pluginList")
 end, 0)
-

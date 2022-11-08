@@ -166,7 +166,7 @@ keys = [
         desc="Take region Screenshot",
     ),
     # Lockscreen
-    Key([mod], "s", lazy.spawn("systemctl suspend"), desc="Lockscreen"),
+    Key([mod], "s", lazy.spawn("systemctl suspend"), desc="Lockscreen and suspend"),
     # Play youtube video
     Key([mod], "y", lazy.spawn("bash /home/stoney/.local/bin/ytw video")),
     # Change power profile

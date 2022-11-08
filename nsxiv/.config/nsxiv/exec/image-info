@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# The script that is called by nsxiv whenever an image gets loaded is located at $XDG_CONFIG_HOME/nsxiv/exec/image-info and the arguments given to it are:
+# You can read example doc at /usr/share/doc/nsxiv/examples/
+
+# $1 path to image file (as provided by the user)
+# $2 image width
+# $3 image height
+# $4 fully resolved path to the image file
+
+s=" " #field separator
+exec 2>/dev/null
+
+filename=$(basename -- "$1")
+filesize=$(du -Hh -- "$1" | cut -f 1)
+
+echo "${filename}${s}${filesize}"

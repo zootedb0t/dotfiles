@@ -21,6 +21,7 @@ local options = {
 		showmode = false, -- Disable showing modes in command line
 		sidescrolloff = 4, -- Number of columns to keep at the sides of the cursor
 		signcolumn = "yes:1", -- Always show the sign column
+		guicursor = vim.opt.guicursor + {"a:blinkon100"},
 		smartcase = true, -- Case sensitivie searching
 		grepprg = "rg --hidden --vimgrep --smart-case --", -- Replace Vimgrep with Ripgrep   hlsearch = true,
 		--    list = true,

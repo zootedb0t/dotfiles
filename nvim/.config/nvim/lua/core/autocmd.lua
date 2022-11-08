@@ -6,6 +6,14 @@ cmd("TextYankPost", {
   pattern = "*",
 })
 
+cmd("ColorScheme",{
+pattern = "*",
+callback = function ()
+  vim.api.nvim_set_hl(0,"LineNr",{ cterm = bold, bold = true})
+end,
+}
+)
+
 -- vim.cmd
 -- [[
 --     augroup change_cursor
