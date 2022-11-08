@@ -5,46 +5,66 @@
 # $ ./volumeControl.sh down
 # $ ./volumeControl.sh mute
 
+DIR="$HOME/.config/dunst"
+
 function get_volume {
-  amixer get Master | grep '%' | head -n 1 | cut -d '[' -f 2 | cut -d '%' -f 1
+      amixer -D pulse get Master | grep '%' | head -n 1 | awk -F'[' '{print $2}' | awk -F'%' '{print $1}'
 }
 
 function is_mute {
-  amixer get Master | grep '%' | grep -oE '[^ ]+$' | grep off > /dev/null
+      amixer -D pulse get Master | grep '%' | grep -oE '[^ ]+$' | grep off
 }
 
 function send_notification {
-  iconSound="/usr/share/icons/Adwaita/96x96/status/audio-volume-high-symbolic.symbolic.png"
-  iconMuted="/usr/share/icons/Adwaita/96x96/status/audio-volume-muted-symbolic.symbolic.png"
-  if is_mute ; then
-    dunstify -i "$iconMuted" -r 2593 -u normal "mute"
+  volume=`get_volume`
+  bar=$(seq -s "─" 0 $(($volume / 5)) | sed 's/[0-9]//g')
+  if [ "$volume" = "0" ]; then
+    icon_name="$DIR/icons/volume-muted.svg"
+    bar=""
   else
-    volume=$(get_volume)
-    # Make the bar with the special character ─ (it's not dash -)
-    # https://en.wikipedia.org/wiki/Box-drawing_character
-    bar=$(seq --separator="─" 0 "$((volume / 5))" | sed 's/[0-9]//g')
-    # Send the notification
-    if [[ $volume == 0 ]]
-    then
-    dunstify -i  $iconMuted "$volume" -r 2593 -u normal "$bar"
-  else
-    dunstify -i  $iconSound "$volume" -r 2593 -u normal "$bar"
+    if [  "$volume" -lt "10" ]; then
+      icon_name="$DIR/icons/volume-low.svg"
+    else
+      if [ "$volume" -lt "30" ]; then
+        icon_name="$DIR/icons/volume-low.svg"
+      else
+        if [ "$volume" -lt "70" ]; then
+          icon_name="$DIR/icons/volume-medium.svg"
+        else
+          icon_name="$DIR/icons/volume-high.svg"
+        fi
+      fi
     fi
-  fi
+  fi 
+  # Send the notification
+  # dunstify " Volume " "$bar" -i $icon_name -r 5555 -u normal
+  dunstify "Volume $volume% " -i $icon_name -r 5555 -u normal -h int:value:$(($volume)) 
+  # notify-send.sh "Volume : $volume" -i "$icon_name" -t 2000 --replace=555
 }
 
 case $1 in
   up)
-    amixer -D pulse set Master 3%+
+    # Unmute
+	  amixer -D pulse set Master on > /dev/null
+	  # +5%
+	  amixer -D pulse set Master 3%+ > /dev/null
     send_notification
     ;;
   down)
-    amixer -D pulse set Master 3%-
+    # Unmute
+	  amixer -D pulse set Master on > /dev/null
+    # -5%
+	  amixer -D pulse set Master 3%- > /dev/null
     send_notification
     ;;
   mute)
-    # toggle mute
-    amixer -D pulse set Master 1+ toggle
-    send_notification
+    # Toggle mute
+	  amixer -D pulse set Master 1+ toggle > /dev/null
+    if is_mute ; then
+      icon_name="$DIR/icons/volume-muted.svg"
+      dunstify "Mute" -i $icon_name -r 5555 -u normal -h int:value:0
+    else
+      send_notification
+    fi
     ;;
 esac
