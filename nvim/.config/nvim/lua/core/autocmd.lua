@@ -16,6 +16,14 @@ cmd("ColorScheme", {
 	end,
 })
 
+-- Fixing cursor
+cmd("VimLeave",{
+  pattern = "*",
+  callback = function ()
+    vim.opt.guicursor = vim.opt.guicursor + {"a:ver25-blink100"}
+  end
+})
+
 -- Reload sxhkd after edit
 cmd("BufWritePost", {
 pattern = "sxhkdrc",

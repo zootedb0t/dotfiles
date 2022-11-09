@@ -18,7 +18,7 @@ mod4 + Return
   st
 
 # Launch Apps
-mod4 + shift + {f,w}
+mod4 + shift + {t,w}
 	{thunar,firefox}
 
 # Lockscreen
