@@ -15,3 +15,11 @@ cmd("ColorScheme", {
 		vim.api.nvim_set_hl(0, "LineNr", { fg = "#f8f8f2" })
 	end,
 })
+
+-- Reload sxhkd after edit
+cmd("BufWritePost", {
+pattern = "sxhkdrc",
+callback = function ()
+  vim.cmd([[!killall sxhkd; setsid sxhkd &]])
+end
+})
