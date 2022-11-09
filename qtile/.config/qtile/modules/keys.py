@@ -3,8 +3,8 @@ from libqtile.lazy import lazy
 from libqtile.config import Key
 
 mod = "mod4"
-terminal = "st"
-browser = "firefox-nightly"
+# terminal = "st"
+# browser = "firefox-nightly"
 home = os.path.expanduser('~')
 
 # Fixing floating window
@@ -95,14 +95,14 @@ keys = [
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
     ),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    # Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key(
         [mod, "control"],
         "Return",
         lazy.spawn('tabbed -c -r 2 st -w ""'),
         desc="Launch st in tabbed",
     ),
-    Key([mod], "w", lazy.spawn(browser), desc="Launch Browser"),
+    # Key([mod], "w", lazy.spawn(browser), desc="Launch Browser"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "x", lazy.window.kill(), desc="Kill focused window"),
@@ -117,62 +117,63 @@ keys = [
         lazy.spawncmd(),
         desc="Spawn a command using a prompt widget",
     ),
+
+    # Toggle bars
+    Key([mod], "b", lazy.hide_show_bar(position="all"), desc="Toggle bars"),
     # Volume control using keyboard
     # Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer set Master 3%+")),
     # Key([], "XF86AudioLowerVolume", lazy.spawn("amixer set Master 3%-")),
     # Key([], "XF86AudioMute", lazy.spawn("amixer set Master toggle")),
-    Key(
-        [],
-        "XF86AudioRaiseVolume",
-        lazy.spawn("bash /home/stoney/.local/bin/volumeControl.sh up"),
-    ),
-    Key(
-        [],
-        "XF86AudioLowerVolume",
-        lazy.spawn("bash /home/stoney/.local/bin/volumeControl.sh down"),
-    ),
-    Key(
-        [],
-        "XF86AudioMute",
-        lazy.spawn("bash /home/stoney/.local/bin/volumeControl.sh mute"),
-    ),
-    # Toggle bars
-    Key([mod], "b", lazy.hide_show_bar(position="all"), desc="Toggle bars"),
+    # Key(
+    #     [],
+    #     "XF86AudioRaiseVolume",
+    #     lazy.spawn("bash /home/stoney/.local/bin/volumeControl.sh up"),
+    # ),
+    # Key(
+    #     [],
+    #     "XF86AudioLowerVolume",
+    #     lazy.spawn("bash /home/stoney/.local/bin/volumeControl.sh down"),
+    # ),
+    # Key(
+    #     [],
+    #     "XF86AudioMute",
+    #     lazy.spawn("bash /home/stoney/.local/bin/volumeControl.sh mute"),
+    # ),
     # Brightness control using keyboard
     # Key([],"XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 10")),
     # Key([],"XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 10")),
-    Key(
-        [],
-        "XF86MonBrightnessUp",
-        lazy.spawn("bash /home/stoney/.local/bin/brightnessControl.sh up"),
-    ),
-    Key(
-        [],
-        "XF86MonBrightnessDown",
-        lazy.spawn("bash /home/stoney/.local/bin/brightnessControl.sh down"),
-    ),
+    # Key(
+    #     [],
+    #     "XF86MonBrightnessUp",
+    #     lazy.spawn("bash /home/stoney/.local/bin/brightnessControl.sh up"),
+    # ),
+    # Key(
+    #     [],
+    #     "XF86MonBrightnessDown",
+    #     lazy.spawn("bash /home/stoney/.local/bin/brightnessControl.sh down"),
+    # ),
     # Screenshot
     # Key([], "Print", lazy.spawn("scrot '%Y-%m-%d-%H-%M-%S-screenshot.png' -e 'mv $f ~/Pictures/screenshots/'"), desc="Take Screenshot"),
-    Key(
-        [],
-        "Print",
-        lazy.spawn("bash /home/stoney/.local/bin/screenshot.sh normal"),
-        desc="Take Screenshot",
-    ),
-    Key(
-        ["shift"],
-        "Print",
-        lazy.spawn("bash /home/stoney/.local/bin/screenshot.sh region"),
-        desc="Take region Screenshot",
-    ),
+    # Key(
+    #     [],
+    #     "Print",
+    #     lazy.spawn("bash /home/stoney/.local/bin/screenshot.sh normal"),
+    #     desc="Take Screenshot",
+    # ),
+    # Key(
+    #     ["shift"],
+    #     "Print",
+    #     lazy.spawn("bash /home/stoney/.local/bin/screenshot.sh region"),
+    #     desc="Take region Screenshot",
+    # ),
     # Lockscreen
-    Key([mod], "s", lazy.spawn("systemctl suspend"), desc="Lockscreen and suspend"),
+    # Key([mod], "s", lazy.spawn("systemctl suspend"), desc="Lockscreen and suspend"),
     # Play youtube video
-    Key([mod], "y", lazy.spawn("bash /home/stoney/.local/bin/ytw video")),
+    # Key([mod], "y", lazy.spawn("bash /home/stoney/.local/bin/ytw video")),
     # Change power profile
-    Key(
-        [mod, "control"],
-        "p",
-        lazy.spawn("bash /home/stoney/.config/rofi/powerprofile.sh"),
-    ),
+    # Key(
+    #     [mod, "control"],
+    #     "p",
+    #     lazy.spawn("bash /home/stoney/.config/rofi/powerprofile.sh"),
+    # ),
 ]

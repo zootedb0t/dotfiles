@@ -8,7 +8,8 @@ picom --config $HOME/.config/picom/picom.conf --experimental-backends --vsync & 
 ~/.config/qtile/scripts/check_battery.sh & disown
 
 # Screen Locker
-# ~/.config/qtile/scripts/locker.sh & disown
 ~/.local/bin/locker.sh & disown
+
+sxhkd & # For keybindings
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & disown # start polkit agent from GNOME

@@ -1,0 +1,64 @@
+#################################################
+#	███████╗██╗  ██╗██╗  ██╗██╗  ██╗██████╗		    #
+#	██╔════╝╚██╗██╔╝██║  ██║██║ ██╔╝██╔══██╗	    #
+#	███████╗ ╚███╔╝ ███████║█████╔╝ ██║  ██║	    #
+#	╚════██║ ██╔██╗ ██╔══██║██╔═██╗ ██║  ██║	    #
+#	███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝	    #
+#	╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝		    #
+#################################################
+
+#----------WM Independent keys--------# 
+
+# Launch browser
+mod4 + w
+  firefox-nightly
+
+# Launch terminal
+mod4 + return
+  st
+
+# Launch Apps
+mod4 + shift + {f,w}
+	{thunar,firefox}
+
+# Lockscreen
+ctrl + alt + l
+  slock
+
+# Show app launcher
+mod4 + r
+  rofi -show
+
+# dmenu run
+mod4 + p
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# Open yt video with mpv
+mod4 + shift + {a,v}
+  sh $HOME/.local/bin/ytw {audio,video}
+
+# Take a screenshot
+Print
+  sh /home/stoney/.local/bin/screenshot.sh
+
+# shift + Print
+#   sh /home/stoney/.local/bin/screenshot.sh --area
+
+# Manage brightness
+XF86MonBrightness{Up,Down}
+    sh $HOME/.local/bin/brightnessControl.sh {up,down}
+
+# Manage Volume
+Manage volume
+XF86Audio{Raise,Lower}Volume
+    sh $HOME/.local/bin/volumeControl.sh {up,down}
+
+XF86AudioMute
+    sh $HOME/.local/bin/volumeControl.sh mute
+
+# Manage power profile
+mod4 + ctrl + p
+  sh /home/stoney/.config/rofi/powerprofile.sh

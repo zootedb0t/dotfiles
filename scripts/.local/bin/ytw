@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 case $1 in
   audio)
     notify-send -t 3000 "Playing Audio" "$(xclip -o)";
-    mpv --no-video "$(xclip -o)"
+    st -e mpv --no-video "$(xclip -o)"
     ;;
   video)
     notify-send -t 3000 "Playing Video" "$(xclip -o)";

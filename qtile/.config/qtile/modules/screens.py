@@ -218,15 +218,6 @@ screens = [
                     },
                     foreground="#e39378",
                 ),
-                # widget.TextBox(
-                #     text="  ",
-                #     mouse_callbacks={
-                #         "Button1": lambda: qtile.cmd_spawn(
-                #             os.path.expanduser("~/.config/rofi/powerprofile.sh")
-                #         )
-                #     },
-                #     foreground="#e39378",
-                # ),
                 widget.Spacer(
                     length=3,
                     background="#2f343f",
