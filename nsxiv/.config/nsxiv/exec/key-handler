@@ -29,7 +29,7 @@ do
         #     notify-send "\`$(readlink -f "$file")\` copied to clipboard" &
         #     ;;
         "i")
-            notify-send "File information" "$(file "$file")"
+            notify-send "File information" "$(identify "$file")"
             ;;
     esac
 done

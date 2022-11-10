@@ -23,11 +23,11 @@ screens = [
                     urgent_border="#ff5555",
                 ),
                 widget.TextBox(text="", padding=0, fontsize=28, foreground="#282a36"),
-                widget.Prompt(
-                    foreground="#69ff94",
-                    fontsize=15,
-                    prompt=" : ",
-                ),
+                # widget.Prompt(
+                #     foreground="#69ff94",
+                #     fontsize=15,
+                #     prompt=" : ",
+                # ),
                 widget.Spacer(length=3),
                 widget.WindowName(
                     foreground="#99c0de",
@@ -129,7 +129,7 @@ screens = [
                 ),
                 volume,
                 widget.Volume(
-                    # get_volume_command="amixer -D pulse get Capture".split(),
+                    get_volume_command="amixer -D pulse get Master".split(),
                     background="#2f343f",
                 ),
                 widget.Spacer(

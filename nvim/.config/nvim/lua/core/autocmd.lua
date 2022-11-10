@@ -25,9 +25,9 @@ cmd("VimLeave",{
 })
 
 -- Reload sxhkd after edit
-cmd("BufWritePost", {
-pattern = "sxhkdrc",
-callback = function ()
-  vim.cmd([[!killall sxhkd; setsid sxhkd &]])
-end
-})
+-- cmd("BufWritePost", {
+-- pattern = "*sxhkdrc",
+-- callback = function ()
+-- vim.cmd([[!killall sxhkd; setsid sxhkd &]])
+-- end
+-- })

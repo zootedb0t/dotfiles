@@ -3,8 +3,8 @@ from libqtile.lazy import lazy
 from libqtile.config import Key
 
 mod = "mod4"
-# terminal = "st"
-# browser = "firefox-nightly"
+terminal = "st"
+browser = "firefox-nightly"
 home = os.path.expanduser('~')
 
 # Fixing floating window
@@ -24,13 +24,13 @@ keys = [
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
-    Key([mod], "r", lazy.spawn("rofi -show"), desc="spawn rofi"),
-    Key(
-        [mod, "shift"],
-        "w",
-        lazy.spawn("rofi -show window"),
-        desc="spawn rofi window menu",
-    ),
+    # Key([mod], "r", lazy.spawn("rofi -show"), desc="spawn rofi"),
+    # Key(
+    #     [mod, "shift"],
+    #     "w",
+    #     lazy.spawn("rofi -show window"),
+    #     desc="spawn rofi window menu",
+    # ),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key(
@@ -111,12 +111,12 @@ keys = [
     Key([mod, "shift"], "space", lazy.layout.flip()),
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key(
-        [mod, "shift"],
-        "r",
-        lazy.spawncmd(),
-        desc="Spawn a command using a prompt widget",
-    ),
+    # Key(
+    #     [mod, "shift"],
+    #     "r",
+    #     lazy.spawncmd(),
+    #     desc="Spawn a command using a prompt widget",
+    # ),
 
     # Toggle bars
     Key([mod], "b", lazy.hide_show_bar(position="all"), desc="Toggle bars"),

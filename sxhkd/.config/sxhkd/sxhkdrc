@@ -12,10 +12,15 @@
 # Launch browser
 mod4 + w
   firefox-nightly
+  # chromium
 
 # Launch terminal
 mod4 + Return
   st
+
+# Reload sxhkd
+mod1 + shift + q
+  pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
 
 # Launch Apps
 mod4 + shift + {t,w}
@@ -25,17 +30,20 @@ mod4 + shift + {t,w}
 ctrl + alt + l
   slock
 
-# Show app launcher
+# dmenu run launcher
 mod4 + r
-  rofi -show
-
-# dmenu run
-mod4 + p
   dmenu_run -p Run 
+
+# rofi app launcher
+mod4 + shift + r
+  rofi -show
 
 # Open yt video with mpv
 mod4 + shift + {a,v}
   sh $HOME/.local/bin/ytw {audio,video}
+
+mod4 + shift + s
+  sh $HOME/.local/bin/websearch
 
 # Take a screenshot
 Print
@@ -57,4 +65,4 @@ XF86AudioMute
 
 # Manage power profile
 mod4 + ctrl + p
-  sh /home/stoney/.config/rofi/powerprofile.sh
+  sh /home/stoney/.local/bin/powerprofile.sh
