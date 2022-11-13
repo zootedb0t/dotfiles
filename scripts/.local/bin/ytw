@@ -1,13 +1,22 @@
 #!/usr/bin/env bash
 
-case $1 in
-  audio)
-    notify-send -t 3000 "Playing Audio" "$(xclip -o)";
-    st -e mpv --no-video "$(xclip -o)"
+icon_audio="$HOME/.config/dunst/icons/mp3.svg"
+icon_video="$HOME/.config/dunst/icons/video.svg"
+icon_complete="$HOME/.config/dunst/icons/complete.svg"
+
+# TODO: Change downloaded video name and direcctory
+
+case "$(printf " Play Audio\\n Play Video\\n Download Video" | dmenu -i -p "What to do?")" in
+  " Play Audio") 
+    notify-send -i "$icon_audio" -t 3000 "Playing Audio" "$(xclip -o)";
+    st -e mpv --no-video "$(xclip -o)" >/dev/null 2>&1;
     ;;
-  video)
-    notify-send -t 3000 "Playing Video" "$(xclip -o)";
-    mpv --ytdl-format=bestvideo+bestaudio/best "$(xclip -o)"
+  " Play Video")
+    notify-send -i "$icon_video" -t 3000 "Playing Video" "$(xclip -o)";
+    mpv --ytdl-format=bestvideo+bestaudio/best "$(xclip -o)" >/dev/null 2>&1;
+    ;;
+  " Download Video")
+    notify-send -i "$icon_video" -t 3000 "Downloading Video" "$(xclip -o)"
+    st -e yt-dlp -f 'bv[ext=mp4]+ba' "$(xclip -o)" && notify-send -i "$icon_complete" -t 3000 "Download Completed" >/dev/null 2>&1;
     ;;
 esac
-
