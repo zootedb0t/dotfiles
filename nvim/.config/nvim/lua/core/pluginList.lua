@@ -77,6 +77,13 @@ if packer_ok then
 		use({ "hrsh7th/cmp-nvim-lsp", requires = "hrsh7th/nvim-cmp" })
 		use({ "dcampos/cmp-snippy", require = "hrsh7th/nvim-cmp" })
 
+		use({
+			"lewis6991/gitsigns.nvim",
+			config = function()
+				require("gitsigns").setup()
+			end,
+		})
+
 		-- Handy auto-pairs
 		use({
 			"windwp/nvim-autopairs",
@@ -156,10 +163,10 @@ if packer_ok then
 		use({
 			"nvim-tree/nvim-tree.lua",
 			tag = "nightly", -- optional, updated every week. (see issue #1193)
-			cmd =  "NvimTreeFindFileToggle",
-			config = function ()
-			  require("configs.nvim-tree").config()
-			end
+			cmd = "NvimTreeFindFileToggle",
+			config = function()
+				require("configs.nvim-tree").config()
+			end,
 		})
 
 		-- Fancy notification
@@ -186,9 +193,9 @@ if packer_ok then
 
 		-- Live Server
 		use({
-		  "turbio/bracey.vim",
-		  cmd="Bracey",
-		  run = "npm install --prefix server",
+			"turbio/bracey.vim",
+			cmd = "Bracey",
+			run = "npm install --prefix server",
 		})
 
 		-- Modules

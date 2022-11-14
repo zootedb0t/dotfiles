@@ -26,9 +26,6 @@ mod1 + shift + q
 # mod4 + shift + {t,w}
 # 	{thunar,firefox}
 
-# mod4 + @F1
-#   firefox
-
 mod4 + @backslash
   sh $HOME/.local/bin/websearch
 
@@ -38,7 +35,7 @@ ctrl + alt + l
 
 # dmenu run launcher
 mod4 + r
-  dmenu_run -p Run 
+  dmenu_run 
 
 # rofi app launcher
 mod4 + shift + r
