@@ -52,13 +52,31 @@ local vcs = function()
 		removed = ""
 	end
 	return table.concat({
-		 " " .. git_info.head,
+		" " .. git_info.head,
 		" ",
 		added,
 		changed,
 		removed,
 		" ",
 	})
+end
+
+-- local function server()
+-- 	local clients = vim.lsp.get_active_clients()
+-- 	if next(clients) == nil then
+-- 		return ""
+-- 	end
+-- 	for _, client in ipairs(clients) do
+-- 			return "  " .. client.name .. " "
+-- 		end
+-- 	end
+
+local function LSPActive()
+	local names = {}
+	for _, server in pairs(vim.lsp.buf_get_clients(0)) do
+		table.insert(names, server.name)
+	end
+	return " [" .. table.concat(names, " ") .. "]"
 end
 
 local function lsp()
@@ -111,15 +129,14 @@ Statusline = {}
 Statusline.active = function()
 	return table.concat({
 		"%#Statusline#",
-		-- "%#Normal#",
-		-- update_mode_colors(),
 		mode(),
 		"%#Normal# ",
 		filename(),
 		"%#Normal#",
 		lsp(),
 		"%#Normal#",
-		-- "%=%#StatusLineExtra#",
+		"%=",
+		LSPActive(),
 		"%=",
 		vcs(),
 		filetype(),
