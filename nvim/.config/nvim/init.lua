@@ -12,20 +12,10 @@ https://github.com/zootedb0t/dotfiles   ¯\_(ツ)_/¯
 require("impatient")
 require("core.options")
 require("core.keymappings")
-require("core.autocmd")
 require("core.statusline")
+require("core.autocmd")
 
 vim.cmd({ cmd = "colorscheme", args = {"dracula"}})
-
--- Statusline
-vim.api.nvim_exec([[
-  augroup Statusline
-  au!
-  au WinEnter,BufEnter * setlocal statusline=%!v:lua.Statusline.active()
-  au WinLeave,BufLeave * setlocal statusline=%!v:lua.Statusline.inactive()
-  au WinEnter,BufEnter,FileType NvimTree_1 setlocal statusline=%!v:lua.Statusline.short()
-  augroup END
-]], false)
 
 vim.defer_fn(function()
 	require("core.pluginList")

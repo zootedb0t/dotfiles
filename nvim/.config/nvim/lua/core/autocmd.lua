@@ -17,17 +17,31 @@ cmd("ColorScheme", {
 })
 
 -- Fixing cursor
-cmd("VimLeave",{
-  pattern = "*",
-  callback = function ()
-    vim.opt.guicursor = vim.opt.guicursor + {"a:ver25-blink100"}
-  end
+cmd("VimLeave", {
+	pattern = "*",
+	callback = function()
+		vim.opt.guicursor = vim.opt.guicursor + { "a:ver25-blink100" }
+	end,
 })
 
--- Reload sxhkd after edit
--- cmd("BufWritePost", {
--- pattern = "*sxhkdrc",
--- callback = function ()
--- vim.cmd([[!killall sxhkd; setsid sxhkd &]])
--- end
--- })
+-- Statusline
+cmd({ "WinEnter", "BufEnter" }, {
+	pattern = "*",
+	callback = function()
+		vim.o.statusline = "%!luaeval('Statusline.active()')"
+	end,
+})
+
+cmd({ "WinLeave", "BufLeave" }, {
+	pattern = "*",
+	callback = function()
+		vim.o.statusline = "%!luaeval('Statusline.inactive()')"
+	end,
+})
+
+cmd({ "WinEnter", "BufEnter", "FileType" }, {
+	pattern = "NvimTree_1",
+	callback = function()
+		vim.o.statusline = "%!luaeval('Statusline.short()')"
+	end,
+})

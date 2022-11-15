@@ -126,7 +126,7 @@ end
 
 Statusline = {}
 
-Statusline.active = function()
+function Statusline.active()
 	return table.concat({
 		"%#Statusline#",
 		mode(),
@@ -151,3 +151,5 @@ end
 function Statusline.short()
 	return "%#Normal#"
 end
+
+return Statusline
