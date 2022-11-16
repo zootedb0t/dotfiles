@@ -16,8 +16,8 @@ function is_mute {
 }
 
 function send_notification {
-  volume=`get_volume`
-  bar=$(seq -s "─" 0 $(($volume / 5)) | sed 's/[0-9]//g')
+  volume=$(get_volume)
+  bar=$(seq -s "─" 0 $((volume / 5)) | sed 's/[0-9]//g')
   if [ "$volume" = "0" ]; then
     icon_name="$DIR/icons/volume-muted.svg"
     bar=""
@@ -38,7 +38,7 @@ function send_notification {
   fi 
   # Send the notification
   # dunstify " Volume " "$bar" -i $icon_name -r 5555 -u normal
-  dunstify "Volume $volume% " -i $icon_name -r 5555 -u normal -h int:value:$(($volume)) 
+  dunstify "Volume $volume% " -i "$icon_name" -r 5555 -u normal -h int:value:$((volume)) 
   # notify-send.sh "Volume : $volume" -i "$icon_name" -t 2000 --replace=555
 }
 
@@ -62,7 +62,7 @@ case $1 in
 	  amixer -D pulse set Master 1+ toggle > /dev/null
     if is_mute ; then
       icon_name="$DIR/icons/volume-muted.svg"
-      dunstify "Mute" -i $icon_name -r 5555 -u normal -h int:value:0
+      dunstify "Mute" -i "$icon_name" -r 5555 -u normal -h int:value:0
     else
       send_notification
     fi

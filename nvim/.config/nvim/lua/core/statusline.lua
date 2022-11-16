@@ -76,7 +76,12 @@ local function LSPActive()
 	for _, server in pairs(vim.lsp.buf_get_clients(0)) do
 		table.insert(names, server.name)
 	end
+	if #names == 0 then
+	  return ""
+	end
+	if #names > 0 then
 	return " [" .. table.concat(names, " ") .. "]"
+	end
 end
 
 local function lsp()

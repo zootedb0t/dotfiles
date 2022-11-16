@@ -19,7 +19,7 @@ function send_notification {
   bar=$(seq -s "─" 0 $((brightness / 5)) | sed 's/[0-9]//g')
   # Send the notification
   # dunstify -i "$icon" -r 5555 -u normal "    $bar"
-  dunstify "Brightness $brightness%" -i $icon -r 5555 -u normal -h int:value:$(($brightness))
+  dunstify "Brightness $brightness%" -i "$icon" -r 5555 -u normal -h int:value:$((brightness))
 }
 
 case $1 in

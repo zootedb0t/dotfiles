@@ -5,7 +5,7 @@ performance="  Performance"
 balanced="盛  Balanced"
 saver="  Saver"
 
-active=`powerprofilesctl get`
+active=$(powerprofilesctl get)
 
 selected_option=$(echo "$performance
 $balanced
@@ -26,7 +26,7 @@ fi
 
 
 function send_notification() {
-new_active=`powerprofilesctl get`
+  new_active=$(powerprofilesctl get)
 if [ "$new_active" = 'power-saver' ]; then
 icon_name="$HOME/.config/dunst/icons/saver.svg"
 elif [ "$new_active" = 'balanced' ]; then
@@ -35,7 +35,7 @@ elif [ "$new_active" = 'performance' ]; then
 icon_name="$HOME/.config/dunst/icons/performance.svg"
 fi
 
-  dunstify "Power profile changed to $new_active " -i $icon_name -r 5555 -u normal
+  dunstify "Power profile changed to $new_active " -i "$icon_name" -r 5555 -u normal
 }
 
 send_notification
