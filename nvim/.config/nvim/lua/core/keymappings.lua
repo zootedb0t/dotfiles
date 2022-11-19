@@ -72,18 +72,8 @@ vim.api.nvim_create_user_command("SourceFile", function()
 	require("notify")("File Reloaded 勒勒")
 end, { desc = "Source Current Buffer" })
 
-map("n", "<Leader>rl", "<CMD>SourceFile<CR>", { desc = "Source current file" }, opt)
-
 -- Change directory
 vim.api.nvim_create_user_command("ChangeDirectory", function()
 	vim.cmd([[lcd%:p:h]])
 	require("notify")("Directory changed  ﱮ ")
 end, { desc = "Command to change directory" })
-
-map("n", "<Leader>cd", "<CMD>ChangeDirectory<CR>", { desc = "Change directory" }, opt)
-
--- For Nvim-tree
-map("n", "<Leader>t", "<CMD>NvimTreeFindFileToggle<CR>", { desc = "Focus on current file" }, opt)
-
--- Attach colorizer
-map("n", "<Leader>ct", "<CMD>ColorizerToggle<CR>", { desc = "Attach colorizer to buffer" })

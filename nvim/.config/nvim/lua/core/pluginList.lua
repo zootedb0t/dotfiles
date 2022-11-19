@@ -138,19 +138,19 @@ if packer_ok then
 		})
 		-- 	as = "dracula",
 
-    use({
-      "catppuccin/nvim",
-      as = "catppuccin",
-    })
+		use({
+			"catppuccin/nvim",
+			as = "catppuccin",
+		})
 
 		use({
 			"NvChad/nvim-colorizer.lua",
 			cmd = "ColorizerToggle",
 			config = function()
 				require("colorizer").setup({
-				  user_default_options = {
-				    names = false,
-				  }
+					user_default_options = {
+						names = false,
+					},
 				})
 			end,
 		})
@@ -190,12 +190,20 @@ if packer_ok then
 			"phaazon/hop.nvim",
 			branch = "v2", -- optional but strongly recommended
 			setup = function()
-				vim.keymap.set("n", ",w", "<CMD>HopWord<CR>")
+				vim.keymap.set("n", ";w", "<CMD>HopWord<CR>")
 			end,
 			cmd = "HopWord",
 			config = function()
 				require("configs.others").hop()
 			end,
+		})
+
+		-- For better keymapping
+		use({
+			"folke/which-key.nvim",
+			config = function ()
+			  require("configs.whichkey").config()
+			end
 		})
 
 		-- Live Server
