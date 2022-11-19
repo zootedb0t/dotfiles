@@ -131,20 +131,27 @@ if packer_ok then
 		--   end,
 		-- })
 
-		-- use({ "catppuccin/nvim", as = "catppuccin" })
-
 		-- use("rebelot/kanagawa.nvim")
 
 		use({
 			"dracula/vim",
-			as = "dracula",
 		})
+		-- 	as = "dracula",
+
+    use({
+      "catppuccin/nvim",
+      as = "catppuccin",
+    })
 
 		use({
 			"NvChad/nvim-colorizer.lua",
-			cmd = "ColorizerAttachToBuffer",
+			cmd = "ColorizerToggle",
 			config = function()
-				require("colorizer").setup()
+				require("colorizer").setup({
+				  user_default_options = {
+				    names = false,
+				  }
+				})
 			end,
 		})
 

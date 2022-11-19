@@ -29,7 +29,7 @@ shotnow () {
 	cd "${dir}" && maim -u -f png "$file"
 	notify_user
 # TODO clipboard not working
-# xclip -selection clipboard -target 'image/png' -in "$dir/$file"
+# xclip -selection clipboard -t image/png "$dir/$file"
 }
 
 shot5 () {

@@ -2,7 +2,6 @@ local lsp = require("lspconfig")
 -- local navic = require("nvim-navic")
 
 -- Overide handlers
-
 local signs = { Error = "✘", Warn = "▲", Info = "", Hint = "" }
 for sign, icon in pairs(signs) do
 	vim.fn.sign_define("DiagnosticSign" .. sign, {
@@ -56,23 +55,6 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-
--- capabilities.textDocument.completion.completionItem.snippetSupport = true
--- capabilities.textDocument.completion.completionItem.preselectSupport = true
--- capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
--- capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
--- capabilities.textDocument.completion.completionItem.deprecatedSupport = true
--- capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
--- capabilities.textDocument.completion.completionItem.tagSupport = {
--- 	valueSet = { 1 },
--- }
--- capabilities.textDocument.completion.completionItem.resolveSupport = {
--- 	properties = {
--- 		"documentation",
--- 		"detail",
--- 		"additionalTextEdits",
--- 	},
--- }
 
 local servers = {
   html = {},
@@ -131,4 +113,3 @@ for name, opts in pairs(servers) do
 		}, opts))
 	end
 end
--- end

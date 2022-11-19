@@ -1,5 +1,5 @@
 #!/bin/sh
-while read file
+while read -r file
 do
     case "$1" in
         "w")
@@ -13,6 +13,9 @@ do
             ;;
         "d")
             rm "$file"
+            ;;
+        "v")
+          nsxiv "$file" # For thumbnail mode
             ;;
         # "f")
         #     convert -flop "$file" "$file"

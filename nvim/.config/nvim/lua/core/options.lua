@@ -5,10 +5,19 @@ local options = {
 		clipboard = { "unnamedplus" }, -- Connection to the system clipboard
 		completeopt = { "menu", "menuone", "noselect" }, -- Options for insert mode completion
 		copyindent = true, -- Copy the previous indentation on autoindenting
-		-- cursorline = true, -- Highlight the text line of the cursor
+		cursorline = true, -- Highlight the text line of the cursor
 		cursorlineopt = "number", -- This looks better
 		expandtab = true, -- Enable the use of space in tab
-		fillchars = { eob = " " }, -- Disable `~` on nonexistent lines
+		fillchars = {
+			eob = " ",
+			horiz = "━", -- '▃',--'═', --'─',
+			horizup = "┻", -- '╩',-- '┴',
+			horizdown = "┳", -- '╦', --'┬',
+			vert = "┃", -- '▐', --'║', --'┃',
+			vertleft = "┨", -- '╣', --'┤',
+			vertright = "┣", -- '╠', --'├',
+			verthoriz = "╋", -- '╬',--'┼','
+		}, -- Disable `~` on nonexistent lines
 		history = 100, -- Number of commands to remember in a history table
 		ignorecase = true, -- Case insensitive searching
 		mouse = "nv", -- Enable mouse support
@@ -21,7 +30,7 @@ local options = {
 		showmode = false, -- Disable showing modes in command line
 		sidescrolloff = 4, -- Number of columns to keep at the sides of the cursor
 		signcolumn = "yes:1", -- Always show the sign column
-		guicursor = vim.opt.guicursor + {"a:blinkon100"},
+		guicursor = vim.opt.guicursor + { "a:blinkon100" },
 		smartcase = true, -- Case sensitivie searching
 		grepprg = "rg --hidden --vimgrep --smart-case --", -- Replace Vimgrep with Ripgrep   hlsearch = true,
 		--    list = true,

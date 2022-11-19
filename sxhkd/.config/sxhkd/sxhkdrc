@@ -26,7 +26,7 @@ mod1 + shift + q
 # mod4 + shift + {t,w}
 # 	{thunar,firefox}
 
-mod4 + @backslash
+mod4 + shift + @backslash
   sh $HOME/.local/bin/websearch
 
 # Lockscreen
@@ -34,15 +34,15 @@ ctrl + alt + l
   slock
 
 # dmenu run launcher
-mod4 + r
+mod4 + p
   dmenu_run 
 
 # rofi app launcher
-mod4 + shift + r
+mod4 + r
   rofi -show
 
 # Open yt video with mpv
-mod4 + @F1
+mod4 + shift + @F1
   sh $HOME/.local/bin/ytw
 
 # Take a screenshot

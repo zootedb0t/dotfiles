@@ -15,7 +15,8 @@ require("core.keymappings")
 require("core.statusline")
 require("core.autocmd")
 
-vim.cmd({ cmd = "colorscheme", args = {"dracula"}})
+-- vim.cmd({ cmd = "colorscheme", args = { "catppuccin-mocha" } })
+vim.cmd({ cmd = "colorscheme", args = { "dracula" } })
 
 vim.defer_fn(function()
 	require("core.pluginList")
