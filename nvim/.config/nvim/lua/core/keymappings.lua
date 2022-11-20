@@ -23,13 +23,10 @@ map("n", "H", "^", { desc = "Goto Beginning of line" }, opt)
 map("n", "L", "$", { desc = "Goto End of line" }, opt)
 
 -- resizing splits
---map("n", "<C-Up>", function() require("smart-splits").resize_up() end, { desc = "Resize split Up" })
-
---map("n", "<C-Down>", function() require("smart-splits").resize_down() end, { desc = "Resize split Down" })
-
---map("n", "<C-Left>", function() require("smart-splits").resize_left() end, { desc = "Resize split Left" })
-
---map("n", "<C-Right>", function() require("smart-splits").resize_right() end, { desc = "Resize split Right" })
+map("n", "<C-Up>", "<cmd>resize -2<cr>", opt)
+map("n", "<C-Down>", "<cmd>resize +2<cr>", opt)
+map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", opt)
+map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", opt)
 
 -- Better Window Navigation
 map("n", "<C-j>", "<C-w>j", opt)

@@ -31,7 +31,8 @@ mod4 + shift + @backslash
 
 # Lockscreen
 ctrl + alt + l
-  slock
+  sh $HOME/.local/bin/blur.sh
+  # slock
 
 # dmenu run launcher
 mod4 + p

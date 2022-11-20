@@ -61,16 +61,6 @@ local vcs = function()
 	})
 end
 
--- local function server()
--- 	local clients = vim.lsp.get_active_clients()
--- 	if next(clients) == nil then
--- 		return ""
--- 	end
--- 	for _, client in ipairs(clients) do
--- 			return "  " .. client.name .. " "
--- 		end
--- 	end
-
 local function LSPActive()
 	local names = {}
 	for _, server in pairs(vim.lsp.buf_get_clients(0)) do

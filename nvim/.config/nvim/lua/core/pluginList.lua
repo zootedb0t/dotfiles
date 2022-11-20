@@ -50,15 +50,10 @@ if packer_ok then
 
 		-- Snippet collection
 		use({
-			"honza/vim-snippets",
-			after = "nvim-cmp",
-		})
-
-		use({
-			"dcampos/nvim-snippy",
-			after = "vim-snippets",
+			"L3MON4D3/LuaSnip",
+			requires = "rafamadriz/friendly-snippets",
 			config = function()
-				require("configs.snippy").config()
+				require("configs.luasnip").config()
 			end,
 		})
 
@@ -75,7 +70,8 @@ if packer_ok then
 		use({ "hrsh7th/cmp-path", requires = "hrsh7th/nvim-cmp" })
 		use({ "hrsh7th/cmp-buffer", requires = "hrsh7th/nvim-cmp" })
 		use({ "hrsh7th/cmp-nvim-lsp", requires = "hrsh7th/nvim-cmp" })
-		use({ "dcampos/cmp-snippy", require = "hrsh7th/nvim-cmp" })
+		-- use({ "dcampos/cmp-snippy", require = "hrsh7th/nvim-cmp" })
+		use({ "saadparwaiz1/cmp_luasnip" })
 
 		use({
 			"lewis6991/gitsigns.nvim",
@@ -136,12 +132,14 @@ if packer_ok then
 		use({
 			"dracula/vim",
 		})
-		-- 	as = "dracula",
 
 		use({
-			"catppuccin/nvim",
-			as = "catppuccin",
+			"rebelot/kanagawa.nvim",
 		})
+
+		-- use({
+		-- 	"catppuccin/nvim",
+		-- })
 
 		use({
 			"NvChad/nvim-colorizer.lua",
@@ -201,9 +199,9 @@ if packer_ok then
 		-- For better keymapping
 		use({
 			"folke/which-key.nvim",
-			config = function ()
-			  require("configs.whichkey").config()
-			end
+			config = function()
+				require("configs.whichkey").config()
+			end,
 		})
 
 		-- Live Server
