@@ -188,7 +188,7 @@ if packer_ok then
 			"phaazon/hop.nvim",
 			branch = "v2", -- optional but strongly recommended
 			setup = function()
-				vim.keymap.set("n", ";w", "<CMD>HopWord<CR>")
+				vim.keymap.set("n", ",w", "<CMD>HopWord<CR>")
 			end,
 			cmd = "HopWord",
 			config = function()

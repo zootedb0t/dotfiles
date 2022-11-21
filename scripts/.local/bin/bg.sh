@@ -8,12 +8,13 @@ _screen() {
     xwinwrap -ov -ni -g "$1" -- mpv --fullscreen\
         --no-stop-screensaver \
         --vo=gpu --hwdec=vdpau \
+        --keepaspect=no \
         --loop-file --no-audio --no-osc --no-osd-bar -wid WID --no-input-default-bindings \
         "$2" &
     PIDs+=($!)
 }
 
-while read p; do
+while read -r p; do
   [[ $(ps -p "$p" -o comm=) == "xwinwrap" ]] && kill -9 "$p";
 done < $PIDFILE
 
