@@ -9,6 +9,10 @@
 
 #----------WM Independent keys--------# 
 
+# Show keybindings
+mod4 + @F1
+  sh $HOME/.local/bin/cheatsheet
+
 # Launch browser
 mod4 + w
   firefox-nightly
@@ -26,7 +30,7 @@ mod1 + shift + q
 # mod4 + shift + {t,w}
 # 	{thunar,firefox}
 
-mod4 + shift + @backslash
+mod4 + shift + w
   sh $HOME/.local/bin/websearch
 
 # Lockscreen
@@ -63,6 +67,10 @@ XF86Audio{Raise,Lower}Volume
 
 XF86AudioMute
     sh $HOME/.local/bin/volumeControl.sh mute
+
+# Manage media players
+mod4 + {@F9,@F10,@F11}
+  playerctl {play-pause,previous,next}
 
 # Manage power profile
 mod4 + ctrl + p
