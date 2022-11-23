@@ -12,7 +12,7 @@ do
             convert -rotate -90 "$file" "$file"
             ;;
         "d")
-            rm "$file"
+         [ "$(printf "No\\nYes" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "$file deleted."
             ;;
         "v")
           nsxiv "$file" # For thumbnail mode

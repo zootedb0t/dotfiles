@@ -52,7 +52,7 @@ function M.config()
 			l = {
 				name = "lsp",
 				i = { "<cmd>LspInfo<cr>", "LSP status" },
-        d = {"<cmd>Telescope diagnostic<cr>", "Show diagnostic"},
+        d = {"<cmd>Telescope diagnostics<cr>", "Show diagnostic"},
 				s = { "<cmd>Telescope lsp_document_symbols<cr>", "Show document symbol" },
 			},
 			t = {

@@ -12,32 +12,32 @@ function M.config()
 	local autopair_ok, autopair = pcall(require, "nvim-autopairs.completion.cmp")
 	if cmp_status_ok and snip_status_ok then
 		local kind_icons = {
-		-- These icons work in patched font
-		Text = "",
-		Method = "",
-		Function = "",
-		Constructor = "",
-		Field = "",
-		Variable = "",
-		Class = "",
-		Interface = "",
-		Module = "",
-		Property = "",
-		Unit = "",
-		Value = "",
-		Enum = "",
-		Keyword = "",
-		Snippet = "",
-		Color = "",
-		File = "",
-		Reference = "",
-		Folder = "",
-		EnumMember = "",
-		Constant = "",
-		Struct = "",
-		Event = "",
-		Operator = "",
-		TypeParameter = "",
+			-- These icons work in patched font
+			Text = "",
+			Method = "",
+			Function = "",
+			Constructor = "",
+			Field = "",
+			Variable = "",
+			Class = "",
+			Interface = "",
+			Module = "",
+			Property = "",
+			Unit = "",
+			Value = "",
+			Enum = "",
+			Keyword = "",
+			Snippet = "",
+			Color = "",
+			File = "",
+			Reference = "",
+			Folder = "",
+			EnumMember = "",
+			Constant = "",
+			Struct = "",
+			Event = "",
+			Operator = "",
+			TypeParameter = "",
 		}
 
 		cmp.setup({
@@ -57,16 +57,16 @@ function M.config()
 			-- },
 
 			formatting = {
-        format = function (entry, vim_item)
-          vim_item.kind = string.format('%s %s',kind_icons[vim_item.kind], vim_item.kind)
-          vim_item.menu = ({
-            buffer = "[BUF]",
-            nvim_lsp = "[LSP]",
-            luasnip = "[SNIP]",
-            path = "[PATH]"
-          })[entry.source.name]
-          return vim_item
-        end
+				format = function(entry, vim_item)
+					vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
+					vim_item.menu = ({
+						buffer = "[BUF]",
+						nvim_lsp = "[LSP]",
+						luasnip = "[SNIP]",
+						path = "[PATH]",
+					})[entry.source.name]
+					return vim_item
+				end,
 			},
 
 			snippet = {
