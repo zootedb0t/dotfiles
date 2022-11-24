@@ -206,9 +206,11 @@ if packer_ok then
 
 		-- Live Server
 		use({
-			"turbio/bracey.vim",
-			cmd = "Bracey",
-			run = "npm install --prefix server",
+			"ray-x/web-tools.nvim",
+			opt = true,
+			config = function ()
+			 require("configs.others").web_tools()
+			end
 		})
 
 		-- Modules

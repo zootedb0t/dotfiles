@@ -22,4 +22,11 @@ M.hop = function()
 	end
 end
 
+M.web_tools = function ()
+  local status_ok, web_tools = pcall(require, "web-tools")
+  if status_ok then
+    web_tools.setup()
+  end
+end
+
 return M

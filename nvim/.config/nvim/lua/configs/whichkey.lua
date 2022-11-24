@@ -50,28 +50,58 @@ function M.config()
 				h = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap = false }, -- additional options for creating the keymap
 			},
 			l = {
-				name = "lsp",
+				name = "+LSP",
 				i = { "<cmd>LspInfo<cr>", "LSP status" },
-        d = {"<cmd>Telescope diagnostics<cr>", "Show diagnostic"},
-				s = { "<cmd>Telescope lsp_document_symbols<cr>", "Show document symbol" },
+				d = { vim.lsp.buf.definition, "Jump to definition" },
+				D = { vim.lsp.buf.declaration, "Jump to declaration" },
+				t = { vim.lsp.buf.type_definition, "Jump to type definition" },
+				l = {
+					name = "+Lists",
+					d = { "<cmd>Telescope diagnostics<cr>", "Show diagnostic" },
+					r = { "<Cmd>Telescope lsp_references<CR>", "References" },
+					s = { "<cmd>Telescope lsp_document_symbols<cr>", "Show document symbol" },
+				},
 			},
-			t = {
-				name = "funzzy finder",
+			s = {
+				name = "+Search",
 				c = {
 					function()
 						require("configs.telescope.custom").search_config()
 					end,
 					"Neovim configs",
 				},
-				g = { "<cmd>Telescope live_grep<cr>", "Livegrep buffer" },
 				h = { "<cmd>Telescope help_tags<cr>", "Help tags" },
+				f = { "<Cmd>Telescope find_files_workspace<CR>", "Files in workspace" },
+				F = { "<Cmd>Telescope find_files<CR>", "Files in cwd" },
+				g = { "<Cmd>Telescope live_grep_workspace<CR>", "Grep in workspace" },
+				G = { "<Cmd>Telescope live_grep<CR>", "Grep in cwd" },
+				l = { "<Cmd>Telescope current_buffer_fuzzy_find<CR>", "Buffer lines" },
+				o = { "<Cmd>Telescope oldfiles<CR>", "Old files" },
+				t = { "<Cmd>Telescope builtin<CR>", "Telescope lists" },
+				w = { "<Cmd>Telescope grep_string_workspace<CR>", "Grep word in workspace" },
+				W = { "<Cmd>Telescope grep_string<CR>", "Grep word in cwd" },
 			},
 			p = {
 				name = "packer",
-				i = { "<cmd>PackerInstall<cr>", "Install plugins" },
 				c = { "<cmd>PackerCompile<cr>", "Compile packer" },
-				u = { "<cmd>PackerUpdate<cr>", "Update plugins" },
+				i = { "<cmd>PackerInstall<cr>", "Install plugins" },
 				s = { "<cmd>PackerSync<cr>", "Sync Packer" },
+				u = { "<cmd>PackerUpdate<cr>", "Update plugins" },
+			},
+			w = {
+				name = "+Windows",
+				-- Split creation
+				s = { "<Cmd>split<CR>", "Split below" },
+				v = { "<Cmd>vsplit<CR>", "Split right" },
+				q = { "<Cmd>q<CR>", "Close" },
+				o = { "<Cmd>only<CR>", "Close all other" },
+				-- Resize
+				["="] = { "<Cmd>wincmd =<CR>", "All equal size" },
+				["-"] = { "<Cmd>resize -5<CR>", "Decrease height" },
+				["+"] = { "<Cmd>resize +5<CR>", "Increase height" },
+				["<"] = { "<Cmd><C-w>5<<CR>", "Decrease width" },
+				[">"] = { "<Cmd><C-w>5><CR>", "Increase width" },
+				["|"] = { "<Cmd>vertical resize 106<CR>", "Full line-length" },
 			},
 		}, { prefix = "<leader>" })
 	end
