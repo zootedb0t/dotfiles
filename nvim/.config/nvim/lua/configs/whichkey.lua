@@ -34,6 +34,7 @@ function M.config()
 		})
 		key.register({
 			e = { "<cmd>NvimTreeFindFileToggle<cr>", "Toggle file explore" },
+			d = { "<cmd>ChangeDirectory<cr>", "Change working directory" },
 			b = {
 				name = "buffer",
 				b = { "<cmd>Telescope buffers<cr>", "Buffers" },
@@ -42,12 +43,6 @@ function M.config()
 				f = { vim.lsp.buf.format, "Format current buffer", silent = true },
 				n = { "<cmd>enew<cr>", "Create new buffer" },
 				r = { "<cmd>SourceFile<cr>", "Source current buffer" },
-			},
-			f = {
-				name = "file",
-				d = { "<cmd>ChangeDirectory<cr>", "Change working directory" },
-				f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
-				h = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap = false }, -- additional options for creating the keymap
 			},
 			l = {
 				name = "+LSP",
@@ -71,8 +66,8 @@ function M.config()
 					"Neovim configs",
 				},
 				h = { "<cmd>Telescope help_tags<cr>", "Help tags" },
-				f = { "<Cmd>Telescope find_files_workspace<CR>", "Files in workspace" },
-				F = { "<Cmd>Telescope find_files<CR>", "Files in cwd" },
+				f = { "<Cmd>Telescope find_files<CR>", "Files in cwd" },
+				F = { "<Cmd>Telescope find_files_workspace<CR>", "Files in workspace" },
 				g = { "<Cmd>Telescope live_grep_workspace<CR>", "Grep in workspace" },
 				G = { "<Cmd>Telescope live_grep<CR>", "Grep in cwd" },
 				l = { "<Cmd>Telescope current_buffer_fuzzy_find<CR>", "Buffer lines" },
@@ -95,13 +90,6 @@ function M.config()
 				v = { "<Cmd>vsplit<CR>", "Split right" },
 				q = { "<Cmd>q<CR>", "Close" },
 				o = { "<Cmd>only<CR>", "Close all other" },
-				-- Resize
-				["="] = { "<Cmd>wincmd =<CR>", "All equal size" },
-				["-"] = { "<Cmd>resize -5<CR>", "Decrease height" },
-				["+"] = { "<Cmd>resize +5<CR>", "Increase height" },
-				["<"] = { "<Cmd><C-w>5<<CR>", "Decrease width" },
-				[">"] = { "<Cmd><C-w>5><CR>", "Increase width" },
-				["|"] = { "<Cmd>vertical resize 106<CR>", "Full line-length" },
 			},
 		}, { prefix = "<leader>" })
 	end

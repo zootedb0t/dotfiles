@@ -34,7 +34,7 @@ icon_name="$HOME/.config/dunst/icons/balanced.svg"
 elif [ "$new_active" = 'performance' ]; then
 icon_name="$HOME/.config/dunst/icons/performance.svg"
 fi
-dunstify "Power profile changed to $new_active " -i "$icon_name" -r 5555 -u normal
+dunstify "Power profile changed to" "$new_active " -i "$icon_name" -r 5555 -u normal
 }
 
 send_notification

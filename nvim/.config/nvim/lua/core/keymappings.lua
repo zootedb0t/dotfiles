@@ -34,6 +34,12 @@ map("n", "<C-k>", "<C-w>k", opt)
 map("n", "<C-l>", "<C-w>l", opt)
 map("n", "<C-h>", "<C-w>h", opt)
 
+-- Resizing Window
+map("n", "<C-S-Left>", "<cmd>vertical resize +5<cr>", opt)
+map("n", "<C-S-Right>", "<cmd>vertical resize -5<cr>", opt)
+map("n", "<C-S-Up>", "<cmd>resize +5<cr>", opt)
+map("n", "<C-S-Down>", "<cmd>resize -5<cr>", opt)
+
 --map("n", "<leader>pl", ":PackerLoad ", { desc = "Load Plugin" }, { silent = false }) -- For Packer
 
 -- better indenting
