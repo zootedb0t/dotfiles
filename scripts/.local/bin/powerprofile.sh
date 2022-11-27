@@ -25,7 +25,7 @@ else
 fi
 
 
-function send_notification() {
+send_notification() {
 new_active=$(powerprofilesctl get)
 if [ "$new_active" = 'power-saver' ]; then
 icon_name="$HOME/.config/dunst/icons/saver.svg"

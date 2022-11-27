@@ -127,19 +127,18 @@ if packer_ok then
 		--   end,
 		-- })
 
-		-- use("rebelot/kanagawa.nvim")
-
-		use({
-			"dracula/vim",
-		})
-
-		use({
-			"rebelot/kanagawa.nvim",
-		})
+		-- use({
+		-- 	"dracula/vim",
+		-- })
 
 		-- use({
-		-- 	"catppuccin/nvim",
+		-- 	"rebelot/kanagawa.nvim",
 		-- })
+
+		use({
+		  "catppuccin/nvim",
+		  as = "catppuccin"
+		})
 
 		use({
 			"NvChad/nvim-colorizer.lua",

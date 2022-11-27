@@ -3,7 +3,8 @@ while read -r file
 do
     case "$1" in
         "w")
-            feh --bg-fill "${file}" &
+            # feh --bg-fill "${file}" &
+            wal -i "$file" &
             ;;
         "r")
             convert -rotate 90 "$file" "$file"
