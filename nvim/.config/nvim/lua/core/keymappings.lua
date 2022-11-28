@@ -48,6 +48,7 @@ map("v", ">", ">gv", { desc = "Indent Right" }, opt)
 
 -- Replace selected text without yanking it
 map("v", "p", '"_dP', { desc = "Paste without yanking" }, opt)
+map("v", "P", '"_dp', { desc = "Paste without yanking" }, opt)
 
 -- Move line(s) up and down
 map("n", "<M-j>", ":m .+1<CR>==", { desc = "Move current line down" }, opt)
@@ -56,6 +57,12 @@ map("n", "<M-k>", ":m .-2<CR>==", { desc = "Move current line below" }, opt)
 -- Move selected line / block of text in visual mode
 map("x", "K", ":move '<-2<CR>gv-gv", opt)
 map("x", "J", ":move '>+1<CR>gv-gv", opt)
+
+-- navigate within insert mode
+map("i", "<C-h>", "<Left>") -- "   move left"
+map("i", "<C-l>", "<Right>") -- " move right"
+map("i", "<C-j>", "<Down>") -- " move down"
+map("i", "<C-k>", "<Up>") -- " move up" },
 
 -- Prevent typo when pressing `wq` or `q`
 vim.cmd([[

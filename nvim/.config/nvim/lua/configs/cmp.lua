@@ -94,7 +94,17 @@ function M.config()
 				-- ["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(),
 
-				["<CR>"] = cmp.mapping.confirm({ select = false }),
+				-- ["<CR>"] = cmp.mapping.confirm({ select = false }),
+        ['<CR>'] = cmp.mapping(function(fallback)
+            if cmp.visible() and cmp.get_selected_entry() then
+                cmp.confirm()
+            elseif cmp.visible() then
+                cmp.close()
+            else
+                fallback()
+            end
+        end),
+        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), {'i', 'c'}),
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
@@ -129,6 +139,19 @@ function M.config()
 			-- view = {
 			--   entries = "native",
 			-- },
+
+    -- don't sort double underscore things first
+    sorting = {
+        comparators = {
+            cmp.config.compare.offset,
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+            cmp.config.compare.kind,
+            cmp.config.compare.sort_text,
+            cmp.config.compare.length,
+            cmp.config.compare.order,
+        },
+    },
 
 			window = {
 				completion = cmp.config.window.bordered({

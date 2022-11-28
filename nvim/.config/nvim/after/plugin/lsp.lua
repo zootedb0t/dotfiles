@@ -27,8 +27,9 @@ vim.diagnostic.config({
 		focusable = false,
 		style = "minimal",
 		border = "rounded",
-		-- source = "always",
-		header = "Diagnostic",
+		source = "always",
+		-- header = "Diagnostic",
+		header = '',
 	},
 })
 
