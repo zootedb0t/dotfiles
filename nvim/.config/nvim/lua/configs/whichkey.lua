@@ -65,6 +65,7 @@ function M.config()
 					end,
 					"Neovim configs",
 				},
+				b = { "<cmd>Telescope file_browser<cr>", "Browse files" },
 				h = { "<cmd>Telescope help_tags<cr>", "Help tags" },
 				f = { "<Cmd>Telescope find_files<CR>", "Files in cwd" },
 				F = { "<Cmd>Telescope find_files_workspace<CR>", "Files in workspace" },

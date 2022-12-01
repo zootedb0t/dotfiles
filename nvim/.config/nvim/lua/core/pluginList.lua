@@ -212,6 +212,14 @@ if packer_ok then
 			end
 		})
 
+		-- Better tabs
+		use({
+		  "nanozuki/tabby.nvim",
+		  config = function ()
+		    require("configs.tabby").config()
+		  end
+		})
+
 		-- Modules
 		use({ "nvim-lua/plenary.nvim", module = "plenary" })
 		use({ "nvim-lua/popup.nvim", module = "popup" })

@@ -25,5 +25,5 @@ require("core.autocmd")
 vim.cmd({ cmd = "colorscheme", args = { "catppuccin" } })
 
 vim.defer_fn(function()
-	require("core.pluginList")
+  require("core.pluginList")
 end, 0)
