@@ -121,6 +121,9 @@ end
 
 Statusline = {}
 
+--TODO: Make statusline space depend on window size
+-- local width = vim.api.nvim_win_get_width(0)
+
 function Statusline.active()
 	return table.concat({
 		"%#Statusline#",
@@ -138,6 +141,7 @@ function Statusline.active()
 		lineinfo(),
 	})
 end
+
 
 function Statusline.inactive()
 	return " %F"

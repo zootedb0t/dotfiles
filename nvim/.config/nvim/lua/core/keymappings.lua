@@ -87,3 +87,6 @@ vim.api.nvim_create_user_command("ChangeDirectory", function()
 	vim.cmd([[lcd%:p:h]])
 	require("notify")("Directory changed  ﱮ ")
 end, { desc = "Command to change directory" })
+
+vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
+vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})

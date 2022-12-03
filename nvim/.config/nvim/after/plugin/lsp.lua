@@ -112,7 +112,7 @@ local on_attach = function(client, bufnr)
 	end
 
 	-- Use null-ls for formatting
-	client.server_capabilities.documentFormattingProvider = false
+	client.server_capabilities.documentFormattingProvider = true
 	lsp_keymap(bufnr)
 	-- navic.attach(client, bufnr)
 end
