@@ -54,9 +54,6 @@ mod4 + @F2
 Print
   sh /home/stoney/.local/bin/screenshot.sh
 
-# shift + Print
-#   sh /home/stoney/.local/bin/screenshot.sh --area
-
 # Manage brightness
 XF86MonBrightness{Up,Down}
     sh $HOME/.local/bin/brightnessControl.sh {up,down}
@@ -69,7 +66,7 @@ XF86AudioMute
     sh $HOME/.local/bin/volumeControl.sh mute
 
 # Manage media players
-mod4 + {@F9,@F10,@F11}
+mod4 + {@F10,@F11,@F12}
   playerctl {play-pause,previous,next}
 
 # Manage power profile
