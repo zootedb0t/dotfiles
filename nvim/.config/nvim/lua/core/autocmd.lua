@@ -25,11 +25,13 @@ cmd("VimLeave", {
 })
 
 -- Statusline
-cmd({ "WinEnter", "BufEnter" }, {
+cmd({ "WinEnter", "BufEnter", "WinResized" }, {
 	pattern = "*",
-	callback = function()
-		vim.o.statusline = "%!luaeval('Statusline.active()')"
-	end,
+	-- callback = function()
+		-- vim.o.statusline = "%!luaeval('Statusline.active()')"
+		-- vim.o.statusline = "%{%v:lua.require'Statusline.active()'%}"
+	-- end,
+	command = "setlocal statusline=%!v:lua.Statusline.active()",
 })
 
 cmd({ "WinLeave", "BufLeave" }, {
