@@ -15,6 +15,7 @@ require("core.options")
 require("core.keymappings")
 require("core.statusline")
 require("core.autocmd")
+require("core.util")
 
 -- require('kanagawa').setup({
 --     undercurl = true,           -- enable undercurls

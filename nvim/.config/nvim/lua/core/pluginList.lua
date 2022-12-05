@@ -216,7 +216,7 @@ if packer_ok then
     use({
       "toppair/peek.nvim",
       run = "deno task --quiet build:fast",
-      ft = 'markdown',
+      ft = "markdown",
       config = function()
         require("configs.others").peek()
       end,
