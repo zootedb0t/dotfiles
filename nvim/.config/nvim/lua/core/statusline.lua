@@ -1,3 +1,32 @@
+-- Statusline highlight
+local macchiato = require("catppuccin.palettes").get_palette("macchiato")
+
+vim.cmd("hi StatusLineAccent guifg=" .. macchiato.surface0 .. " guibg=" .. macchiato.mauve)
+vim.cmd("hi StatuslineInsertAccent guifg=" .. macchiato.surface0 .. " guibg=" .. macchiato.green)
+vim.cmd("hi StatuslineVisualAccent guifg=" .. macchiato.surface0 .. " guibg=" .. macchiato.red)
+vim.cmd("hi StatuslineReplaceAccent guifg=" .. macchiato.surface0 .. " guibg=" .. macchiato.blue)
+vim.cmd("hi StatuslineTerminalAccent guifg=" .. macchiato.surface0 .. " guibg=" .. macchiato.yellow)
+vim.cmd("hi StatuslineCmdLineAccent guifg=" .. macchiato.surface0 .. " guibg=" .. macchiato.peach)
+
+local function update_mode_colors()
+  local current_mode = vim.api.nvim_get_mode().mode
+  local mode_color = "%#StatusLineAccent#"
+  if current_mode == "n" then
+    mode_color = "%#StatuslineAccent#"
+  elseif current_mode == "i" or current_mode == "ic" then
+    mode_color = "%#StatuslineInsertAccent#"
+  elseif current_mode == "v" or current_mode == "V" or current_mode == "" then
+    mode_color = "%#StatuslineVisualAccent#"
+  elseif current_mode == "R" then
+    mode_color = "%#StatuslineReplaceAccent#"
+  elseif current_mode == "c" then
+    mode_color = "%#StatuslineCmdLineAccent#"
+  elseif current_mode == "t" then
+    mode_color = "%#StatuslineTerminalAccent#"
+  end
+  return mode_color
+end
+
 local modes = {
   ["n"] = "NORMAL",
   ["no"] = "NORMAL",
@@ -122,46 +151,39 @@ end
 Statusline = {}
 
 function Statusline.active()
-local winwidth
-if vim.o.laststatus == 3 then
-  winwidth = vim.o.columns
-else
-  winwidth = vim.api.nvim_win_get_width(0)
-end
-if winwidth >= 85 then
-
-  return table.concat({
-    "%#Statusline#",
-    mode(),
-    "%#Normal# ",
-    filename(),
-    "%#Normal#",
-    lsp(),
-    "%#Normal#",
-    "%=",
-    LSPActive(),
-    "%=",
-    vcs(),
-    filetype(),
-    lineinfo(),
-  })
+  local winwidth
+  if vim.o.laststatus == 3 then
+    winwidth = vim.o.columns
   else
-  return table.concat({
-    "%#Statusline#",
-    mode(),
-    -- "%#Normal# ",
-    -- filename(),
-    -- "%#Normal#",
-    lsp(),
-    -- "%#Normal#",
-    -- -- "%=",
-    -- LSPActive(),
-    "%=",
-    vcs(),
-    -- filetype(),
-    lineinfo(),
-  })
-end
+    winwidth = vim.api.nvim_win_get_width(0)
+  end
+  if winwidth >= 85 then
+    return table.concat({
+      update_mode_colors(),
+      mode(),
+      "%#Normal# ",
+      filename(),
+      "%#Normal#",
+      lsp(),
+      "%#Normal#",
+      "%=",
+      LSPActive(),
+      "%=",
+      vcs(),
+      filetype(),
+      lineinfo(),
+    })
+  else
+    return table.concat({
+      update_mode_colors(),
+      mode(),
+      "%#Normal#",
+      lsp(),
+      "%=",
+      -- vcs(),
+      lineinfo(),
+    })
+  end
 end
 
 function Statusline.inactive()
