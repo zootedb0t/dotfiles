@@ -1,12 +1,14 @@
+local highlight = vim.api.nvim_set_hl
+
 -- Statusline highlight
 local macchiato = require("catppuccin.palettes").get_palette("macchiato")
 
-vim.cmd("hi StatusLineAccent guifg=" .. macchiato.surface0 .. " guibg=" .. macchiato.mauve)
-vim.cmd("hi StatuslineInsertAccent guifg=" .. macchiato.surface0 .. " guibg=" .. macchiato.green)
-vim.cmd("hi StatuslineVisualAccent guifg=" .. macchiato.surface0 .. " guibg=" .. macchiato.red)
-vim.cmd("hi StatuslineReplaceAccent guifg=" .. macchiato.surface0 .. " guibg=" .. macchiato.blue)
-vim.cmd("hi StatuslineTerminalAccent guifg=" .. macchiato.surface0 .. " guibg=" .. macchiato.yellow)
-vim.cmd("hi StatuslineCmdLineAccent guifg=" .. macchiato.surface0 .. " guibg=" .. macchiato.peach)
+highlight(0, "StatusLineAccent", { fg = macchiato.surface0, bg = macchiato.mauve })
+highlight(0, "StatuslineInsertAccent", { fg = macchiato.surface0, bg = macchiato.green })
+highlight(0, "StatuslineVisualAccent", { fg = macchiato.surface0, bg = macchiato.red })
+highlight(0, "StatuslineReplaceAccent", { fg = macchiato.surface0, bg = macchiato.blue })
+highlight(0, "StatuslineTerminalAccent", { fg = macchiato.surface0, bg = macchiato.yellow })
+highlight(0, "StatuslineCmdLineAccent", { fg = macchiato.surface0, bg = macchiato.peach })
 
 local function update_mode_colors()
   local current_mode = vim.api.nvim_get_mode().mode
