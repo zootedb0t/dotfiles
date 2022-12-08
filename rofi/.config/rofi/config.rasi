@@ -1,0 +1,14 @@
+configuration {
+    font: "JetBrainsMono Nerd Font 14";
+    modes: "drun,window";
+    combi-modes: [window,drun];
+    show-icons:	true;
+    icon-theme:	"Papirus";
+    display-drun: "Apps";
+    /* drun-display-format: "{name}"; */
+    disable-history: false;
+    sidebar-mode:	true;
+}
+
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+/* @import "~/.config/rofi/colors/catppuccin.rasi" */
