@@ -6,6 +6,7 @@ logout="    Logout"
 shutdown="    Shutdown"
 reboot="    Reboot"
 sleep="    Sleep"
+nolock="    Turnoff DPMS"
 
 uptime="$(uptime -p | sed -e 's/up //g')"
 user="$(whoami)"
@@ -15,10 +16,11 @@ selected_option=$(echo "$lock
 $logout
 $sleep
 $reboot
-$shutdown" | rofi -dmenu \
+$shutdown
+$nolock" | rofi -dmenu \
 		-p "$user" \
 		-mesg "Uptime: $uptime" \
-    -theme "$HOME/.config/rofi/powermenu.rasi"\
+    -theme "$HOME/.config/rofi/menu.rasi"\
 )
 
 # Do something based on selected option
@@ -37,6 +39,9 @@ then
 elif [ "$selected_option" == "$sleep" ]
 then
     systemctl suspend
+elif [[ "$selected_option" == "$nolock" ]]
+then
+    xset -dpms
 else
     echo "No match"
 fi

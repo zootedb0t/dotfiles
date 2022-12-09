@@ -11,9 +11,10 @@ url=$(xclip -o)
 
 selected_option=$(echo "$audio
 $video
-$download" | dmenu \
+$download" | rofi -dmenu \
   -i \
   -p "What do you want to do?"\
+  -theme "$HOME/.config/rofi/yt.rasi"
 )
 
 title="$(yt-dlp --skip-download --print-json --no-warnings "$url"|jq .title)"

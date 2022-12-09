@@ -42,6 +42,9 @@ ctrl + alt + l
 mod4 + p
   dmenu_run 
 
+mod4 + Tab
+  rofi -show window
+
 # rofi app launcher
 mod4 + r
   rofi -show

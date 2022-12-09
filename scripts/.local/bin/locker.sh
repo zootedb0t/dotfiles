@@ -6,7 +6,7 @@
 
 # Dim screen not working
 
-exec xset dpms 0 0 120 &
+exec xset dpms 0 60 180 &
 # exec xset s 60 120 &
 # exec xss-lock -- i3lock -e -k -i /home/stoney/Pictures/Wallpapers/samurai.png &
 exec xss-lock -- ~/.local/bin/blur.sh &
