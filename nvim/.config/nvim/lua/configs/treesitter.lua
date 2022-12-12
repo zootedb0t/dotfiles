@@ -24,8 +24,21 @@ if status_ok then
       "typescript",
       "yaml",
     },
+    autotag = {
+      enable = true,
+      filetypes = {
+        "html",
+        "javascript",
+        "typescript",
+        "markdown",
+      },
+    },
     highlight = {
       enable = true, -- false will disable the whole extension
+    },
+    rainbow = {
+      enable = true,
+      extended_mode = true,
     },
   })
 end

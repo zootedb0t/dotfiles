@@ -3,7 +3,6 @@ local opt = { silent = true }
 
 -- Alternate way to save and exit
 map("n", "<C-s>", "<CMD>w<CR>", { desc = "Save File" }, opt)
-map("n", "<C-x>", "<CMD>wq!<CR>", { desc = "Save and Quit" }, opt)
 
 map("n", "<ESC>", "<CMD>noh<CR>", opt) -- Remove highlights from search result
 
@@ -51,8 +50,10 @@ map("v", "p", '"_dP', { desc = "Paste without yanking" }, opt)
 map("v", "P", '"_dp', { desc = "Paste without yanking" }, opt)
 
 -- Move line(s) up and down
-map("n", "<M-j>", ":m .+1<CR>==", { desc = "Move current line down" }, opt)
-map("n", "<M-k>", ":m .-2<CR>==", { desc = "Move current line below" }, opt)
+map("n", "<c-j>", ":m .+1<CR>==", { silent = true, desc = "Bubble line down" }, opt)
+map("n", "<c-k>", ":m .-2<CR>==", { silent = true, desc = "Bubble line up" }, opt)
+map("v", "<c-j>", ":m '>+1<CR>==gv=gv", { silent = true, desc = "Bubble line down" }, opt)
+map("v", "<c-k>", ":m '<-2<CR>==gv=gv", { silent = true, desc = "Bubble line up" }, opt)
 
 -- Move selected line / block of text in visual mode
 map("x", "K", ":move '<-2<CR>gv-gv", opt)

@@ -17,12 +17,6 @@ require("core.statusline")
 require("core.autocmd")
 require("core.util")
 
--- require('kanagawa').setup({
---     undercurl = true,           -- enable undercurls
---     globalStatus = true,       -- adjust window separators highlight for laststatus=3
--- })
--- vim.cmd({ cmd = "colorscheme", args = { "kanagawa" } })
--- vim.cmd({ cmd = "colorscheme", args = { "dracula" } })
 vim.cmd({ cmd = "colorscheme", args = { "catppuccin" } })
 
 vim.defer_fn(function()

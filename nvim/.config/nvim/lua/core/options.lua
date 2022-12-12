@@ -53,6 +53,8 @@ local options = {
     -- Cool floating window popup menu for completion on command line
     pumblend = 10,
     wildoptions = "pum",
+    list = true, -- Show some invisible characters
+    listchars = { tab = " ", trail = "·" },
   },
 
   g = {

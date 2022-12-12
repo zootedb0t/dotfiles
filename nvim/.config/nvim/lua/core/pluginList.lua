@@ -99,6 +99,16 @@ if packer_ok then
       end,
     })
 
+    -- Treesitter add-ons
+    use({
+      "p00f/nvim-ts-rainbow",
+    })
+
+    use({
+
+      "windwp/nvim-ts-autotag",
+    })
+
     -- Telescope for funzzy finding
     use({
       "nvim-telescope/telescope.nvim",
