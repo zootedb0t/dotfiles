@@ -70,11 +70,30 @@ local vcs = function()
   if not git_info or git_info.head == "" then
     return ""
   end
-  local added = git_info.added
-  local changed = git_info.changed
-  local removed = git_info.removed
+  local added, changed, removed
+  if git_info.added == 0 then
+    added = ""
+  else
+    added = "  " .. tostring(git_info.added)
+  end
+
+  if git_info.changed == 0 then
+    changed = ""
+  else
+    changed = "   " .. tostring(git_info.changed)
+  end
+
+  if git_info.removed == 0 then
+    removed = ""
+  else
+    removed = "  " .. tostring(git_info.removed)
+  end
+
   return table.concat({
-    string.format(" %s  %s  %s  %s", git_info.head:upper(), added, changed, removed),
+    " " .. git_info.head:upper(),
+    added,
+    changed,
+    removed,
   })
 end
 
