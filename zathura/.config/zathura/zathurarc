@@ -10,9 +10,20 @@ map g goto top
 map b recolor
 
 # Startup options
-set adjust-open width
+set adjust-open "best-fit"
+
+#stop at page boundries
+set scroll-page-aware "true"
+set smooth-scroll "true"
+set scroll-full-overlap 0.01
+set scroll-step 100
+
 set recolor true
+set recolor-reverse-video "true"
+set recolor-keephue "true"
+
+set font "Monofur Nerd Font 16"
 
 # Set colorscheme
-# include catppuccin/catppuccin-mocha
-include dracula/dracula
+include catppuccin/catppuccin-mocha
+# include dracula/dracula
