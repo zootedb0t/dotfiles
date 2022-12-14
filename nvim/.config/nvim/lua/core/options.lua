@@ -44,17 +44,17 @@ local options = {
     wrap = false, -- Disable wrapping of lines longer than the width of window
     writebackup = false, -- Disable making a backup before overwriting a file
     cmdheight = 1, -- Hide cmdheight after issue #16251
-    winbar = "%=%f %m",
+    wbr = "%=%f %m", -- Winbar
     ls = 3, -- Global statusline
     shell = "/usr/bin/bash",
     inccommand = "split", -- incrementally show result of command
     -- Ignore compiled files
     wildignore = vim.opt.wildignore + { "*.o", "*~", "*.pyc", "*pycache*" },
     -- Cool floating window popup menu for completion on command line
-    pumblend = 10,
+    pumblend = 15,
     wildoptions = "pum",
     list = true, -- Show some invisible characters
-    listchars = { tab = " ", trail = "·" },
+    listchars = { tab = "▸ ", trail = "·" },
   },
 
   g = {

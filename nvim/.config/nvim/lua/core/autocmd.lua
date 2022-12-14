@@ -9,11 +9,11 @@ cmd("TextYankPost", {
 })
 
 -- cmd("ColorScheme", {
--- 	pattern = "*",
--- 	callback = function()
--- 		-- vim.api.nvim_set_hl(0,"LineNr",{ cterm = bold, bold = true})
--- 		vim.api.nvim_set_hl(0, "LineNr", { fg = "#f8f8f2" })
--- 	end,
+--   pattern = "*",
+--   callback = function()
+--     -- vim.api.nvim_set_hl(0,"LineNr",{ cterm = bold, bold = true})
+--     vim.api.nvim_set_hl(0, "LineNr", { fg = "#f8f8f2" })
+--   end,
 -- })
 
 -- Fixing cursor

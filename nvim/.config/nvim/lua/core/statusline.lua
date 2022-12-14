@@ -66,33 +66,19 @@ local function filename()
 end
 
 local vcs = function()
-  local git_info = vim.b.gitsigns_status_dict
+  local git_info = vim.b.gitsigns_status_dict or { head = "", added = 0, changed = 0, removed = 0 }
   if not git_info or git_info.head == "" then
     return ""
   end
-  local added = git_info.added and (" " .. git_info.added .. " ") or ""
-  local changed = git_info.changed and (" " .. git_info.changed .. " ") or ""
-  local removed = git_info.removed and (" " .. git_info.removed .. " ") or ""
-  if git_info.added == 0 then
-    added = ""
-  end
-  if git_info.changed == 0 then
-    changed = ""
-  end
-  if git_info.removed == 0 then
-    removed = ""
-  end
+  local added = git_info.added
+  local changed = git_info.changed
+  local removed = git_info.removed
   return table.concat({
-    " " .. git_info.head,
-    " ",
-    added,
-    changed,
-    removed,
-    " ",
+    string.format(" %s  %s  %s  %s", git_info.head:upper(), added, changed, removed),
   })
 end
 
-local function LSPActive()
+local function lsp()
   local names = {}
   for _, server in pairs(vim.lsp.buf_get_clients(0)) do
     table.insert(names, server.name)
@@ -105,7 +91,7 @@ local function LSPActive()
   end
 end
 
-local function lsp()
+local function diagnostics()
   local count = {}
   local levels = {
     errors = "Error",
@@ -136,7 +122,14 @@ local function lsp()
     info = "  " .. count["info"]
   end
 
-  return errors .. warnings .. hints .. info
+  return "%#DiagnosticError#"
+      .. errors
+      .. "%#DiagnosticWarn#"
+      .. warnings
+      .. "%#DiagnosticInfo#"
+      .. hints
+      .. "%#DiagnosticWarn#"
+      .. info
 end
 
 local function filetype()
@@ -166,10 +159,10 @@ function Statusline.active()
       "%#Normal# ",
       filename(),
       "%#Normal#",
-      lsp(),
+      diagnostics(),
       "%#Normal#",
       "%=",
-      LSPActive(),
+      lsp(),
       "%=",
       vcs(),
       filetype(),
@@ -180,7 +173,7 @@ function Statusline.active()
       update_mode_colors(),
       mode(),
       "%#Normal#",
-      lsp(),
+      diagnostics(),
       "%=",
       -- vcs(),
       lineinfo(),
