@@ -1,15 +1,3 @@
-local highlight = vim.api.nvim_set_hl
-
--- Statusline highlight
-local macchiato = require("catppuccin.palettes").get_palette("macchiato")
-
-highlight(0, "StatusLineAccent", { fg = macchiato.surface0, bg = macchiato.mauve })
-highlight(0, "StatuslineInsertAccent", { fg = macchiato.surface0, bg = macchiato.green })
-highlight(0, "StatuslineVisualAccent", { fg = macchiato.surface0, bg = macchiato.red })
-highlight(0, "StatuslineReplaceAccent", { fg = macchiato.surface0, bg = macchiato.blue })
-highlight(0, "StatuslineTerminalAccent", { fg = macchiato.surface0, bg = macchiato.yellow })
-highlight(0, "StatuslineCmdLineAccent", { fg = macchiato.surface0, bg = macchiato.peach })
-
 local function update_mode_colors()
   local current_mode = vim.api.nvim_get_mode().mode
   local mode_color = "%#StatusLineAccent#"
@@ -152,7 +140,10 @@ local function diagnostics()
 end
 
 local function filetype()
-  return string.format(" %s ", vim.bo.filetype):upper()
+  local fname = vim.fn.expand("%:t")
+  local extension = vim.bo.filetype
+  local icon = require("nvim-web-devicons").get_icon(fname, extension, { default = true })
+  return string.format(" %s %s ", icon, extension)
 end
 
 local function lineinfo()
