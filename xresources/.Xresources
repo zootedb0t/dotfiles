@@ -1,0 +1,102 @@
+Xft.hinting: 1
+Xft.hintstyle: hintslight
+Xft.antialias: 1
+Xft.rgba: rgb 
+
+! ===   st colors ===
+
+! st.font: VictorMono NF:style:Regular:size=10
+st.font: Monofur Nerd Font:style:Regular:size=12
+
+! window padding
+st.borderpx: 14
+
+! Catppuccin
+! st.foreground: #CDD6F4
+! st.background: #1E1E2E
+
+! st.color0: #45475A
+! st.color8: #585B70
+
+! st.color1: #F38BA8
+! st.color9: #F38BA8
+
+! st.color2: #A6E3A1
+! st.color10: #A6E3A1
+
+! st.color3:#F9E2AF
+! st.color11: #F9E2AF
+
+! st.color4: #89B4FA
+! st.color12: #89B4FA
+
+! st.color5: #F5C2E7
+! st.color13: #F5C2E7
+
+! st.color6: #94E2D5
+! st.color14: #94E2D5
+
+! st.color7: #BAC2DE
+! st.color15: #A6ADC8
+
+! Rose pine
+st.background: #191724 
+st.foreground: #e0def4
+st.cursorColor: white
+
+! overlay + muted
+st.color0: #191724
+st.color8: #6e6a86
+
+! love
+st.color1: #eb6f92
+st.color9: #eb6f92
+
+! foam
+st.color2: #9ccfd8
+st.color10: #9ccfd8
+
+! gold
+st.color3: #f6c177
+st.color11: #f6c177
+
+! pine
+st.color4: #31748f
+st.color12: #31748f
+
+! iris
+st.color5: #c4a7e7
+st.color13: #c4a7e7
+
+! rose
+st.color6: #ebbcba
+st.color14: #ebbcba
+
+! text
+st.color7: #e0def4
+st.color15: #e0def4
+
+! === dmenu foreground colors ===
+dmenu.norm.fg.color: #CDD6F4
+dmenu.sel.fg.color: #1E1E2E
+dmenu.out.fg.color: #BAC2DE
+dmenu.border.fg.color: #000000
+dmenu.prompt.fg.color: #1E1E2E
+dmenu.adjacent.fg.color: #1E1E2E
+dmenu.selhl.fg.color: #BAC2DE
+dmenu.normhl.fg.color: #222222
+dmenu.hp.fg.color: #BAC2DE
+
+! ===   dmenu background colors ===
+dmenu.norm.bg.color: #1E1E2E
+dmenu.sel.bg.color: #F38BA8
+dmenu.out.bg.color: #F9E2AF
+dmenu.border.bg.color: #F38BA8
+dmenu.prompt.bg.color: #BAC2DE
+dmenu.adjacent.bg.color: #F38BA8
+dmenu.selhl.bg.color: #F9E2AF
+dmenu.normhl.bg.color: #F9E2AF
+dmenu.hp.bg.color: #A6E3A1
+
+! === dwm pywal colors ===
+#include "/home/stoney/.cache/wal/colors.Xresources"
