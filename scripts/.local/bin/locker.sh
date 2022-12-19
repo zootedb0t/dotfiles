@@ -4,10 +4,6 @@
 #   -notify 30 \
 #   -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'";
 
-# Dim screen not working
-
-exec xset dpms 0 60 180 &
-# exec xset s 60 120 &
-# exec xss-lock -- i3lock -e -k -i /home/stoney/Pictures/Wallpapers/samurai.png &
-exec xss-lock -- ~/.local/bin/blur.sh &
-# exec xss-lock -- slock &
+xset dpms 180 &
+# xss-lock -- i3lock -e -k -i /home/stoney/Pictures/Wallpapers/samurai.png &
+xss-lock -- ~/.local/bin/blur.sh
