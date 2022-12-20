@@ -15,7 +15,6 @@ home = str(Path.home())
 args = " ".join(sys.argv[1:])
 system("wal -i {}".format(args))
 
-
 def pgrep(process):
     return (
         WEXITSTATUS(system("pgrep -c {} > /dev/null 2> /dev/null".format(process))) == 0

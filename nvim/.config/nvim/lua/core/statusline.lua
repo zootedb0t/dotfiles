@@ -141,9 +141,14 @@ end
 
 local function filetype()
   local fname = vim.fn.expand("%:t")
-  local extension = vim.bo.filetype
-  local icon = require("nvim-web-devicons").get_icon(fname, extension, { default = true })
-  return string.format(" %s %s ", icon, extension)
+  local extension = vim.fn.expand("%:e")
+  local ftype = vim.bo.filetype
+  if ftype == "" then
+    return ""
+  else
+    local icon = require("nvim-web-devicons").get_icon(fname, extension, { default = true })
+    return string.format(" %s %s ", icon, ftype)
+  end
 end
 
 local function lineinfo()
@@ -186,6 +191,7 @@ function Statusline.active()
       diagnostics(),
       "%=",
       -- vcs(),
+      "%#Normal#",
       lineinfo(),
     })
   end

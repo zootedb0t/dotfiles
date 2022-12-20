@@ -11,7 +11,7 @@ st.font: Monofur Nerd Font:style:Regular:size=12
 ! window padding
 st.borderpx: 14
 
-! Catppuccin
+! === st Rose pine colors ===
 ! st.foreground: #CDD6F4
 ! st.background: #1E1E2E
 
@@ -39,7 +39,7 @@ st.borderpx: 14
 ! st.color7: #BAC2DE
 ! st.color15: #A6ADC8
 
-! Rose pine
+! ===   st Rose pine colors ===
 st.background: #191724 
 st.foreground: #e0def4
 st.cursorColor: white
@@ -53,8 +53,8 @@ st.color1: #eb6f92
 st.color9: #eb6f92
 
 ! foam
-st.color2: #9ccfd8
 st.color10: #9ccfd8
+st.color2: #9ccfd8
 
 ! gold
 st.color3: #f6c177

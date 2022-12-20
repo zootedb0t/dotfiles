@@ -60,18 +60,12 @@ if packer_ok then
     -- Completion Engine
     use({
       "hrsh7th/nvim-cmp",
-      -- event = "InsertEnter",
+      event = "InsertEnter",
       config = function()
         require("configs.cmp").config()
       end,
+      requires = { "hrsh7th/cmp-path", "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", "saadparwaiz1/cmp_luasnip" },
     })
-
-    -- Sources for Auto-completion
-    use({ "hrsh7th/cmp-path", requires = "hrsh7th/nvim-cmp" })
-    use({ "hrsh7th/cmp-buffer", requires = "hrsh7th/nvim-cmp" })
-    use({ "hrsh7th/cmp-nvim-lsp", requires = "hrsh7th/nvim-cmp" })
-    -- use({ "dcampos/cmp-snippy", require = "hrsh7th/nvim-cmp" })
-    use({ "saadparwaiz1/cmp_luasnip" })
 
     use({
       "lewis6991/gitsigns.nvim",
@@ -138,17 +132,22 @@ if packer_ok then
     -- })
 
     -- use({
-    -- 	"dracula/vim",
+    --  "dracula/vim",
     -- })
 
     -- use({
-    -- 	"rebelot/kanagawa.nvim",
+    --  "rebelot/kanagawa.nvim",
     -- })
 
-    use({
-      "catppuccin/nvim",
-      as = "catppuccin",
-    })
+    use {
+      "rose-pine/neovim",
+      as = "rose-pine",
+      config = function()
+        vim.cmd "colorscheme rose-pine"
+      end,
+    }
+
+    -- use({ "catppuccin/nvim", as = "catppuccin" })
 
     use({
       "NvChad/nvim-colorizer.lua",
