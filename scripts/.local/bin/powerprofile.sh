@@ -2,16 +2,17 @@
 
 # Options for power profile
 performance="  Performance"
-balanced="盛  Balanced"
-saver="  Saver"
+balanced="盛 Balanced"
+saver="    Saver"
 
 active=$(powerprofilesctl get)
 
 selected_option=$(echo "$performance
 $balanced
-$saver" | dmenu \
+$saver" | rofi -dmenu \
   -i \
   -p "Current profile - $active"\
+  -theme "/home/stoney/.config/rofi/profile.rasi"
 )
 
 if [ "$selected_option" == "$performance" ]; then
