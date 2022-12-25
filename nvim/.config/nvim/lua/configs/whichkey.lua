@@ -74,11 +74,10 @@ function M.config()
         o = { "<Cmd>Telescope oldfiles<CR>", "Old files" },
       },
       p = {
-        name = "packer",
-        c = { "<cmd>PackerCompile<cr>", "Compile packer" },
-        i = { "<cmd>PackerInstall<cr>", "Install plugins" },
-        s = { "<cmd>PackerSync<cr>", "Sync Packer" },
-        u = { "<cmd>PackerUpdate<cr>", "Update plugins" },
+        name = "lazy",
+        i = { "<cmd>Lazy install<cr>", "Install plugins" },
+        s = { "<cmd>Lazy sync<cr>", "Sync Lazy" },
+        u = { "<cmd>Lazy update<cr>", "Update plugins" },
       },
       w = {
         name = "+Windows",

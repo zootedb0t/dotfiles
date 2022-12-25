@@ -51,10 +51,9 @@ local options = {
     -- Ignore compiled files
     wildignore = vim.opt.wildignore + { "*.o", "*~", "*.pyc", "*pycache*" },
     -- Cool floating window popup menu for completion on command line
-    pumblend = 15,
     wildoptions = "pum",
-    list = true, -- Show some invisible characters
-    listchars = { tab = "▸ ", trail = "·" },
+    --list = true, -- Show some invisible characters
+    --listchars = { tab = " ", trail = "·" },
   },
 
   g = {
