@@ -13,6 +13,8 @@ init(autoreset=True)
 home = str(Path.home())
 # TODO Fix for filename that has spaces
 args = " ".join(sys.argv[1:])
+if args.startswith("./"):
+    args = args.replace("./","")
 system("wal -i {}".format(args))
 
 def pgrep(process):
@@ -22,7 +24,9 @@ def pgrep(process):
 
 
 if which("feh") is not None:
-    system("feh --bg-fill new_args")
+    f = open("/home/stoney/.cache/wal/wal", "r")
+    wal_location = f.readline()
+    system("feh --bg-center wal_location")
 
 if which("xrdb") is not None:
     system("xrdb -merge ~/.Xresources")

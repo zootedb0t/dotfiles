@@ -37,9 +37,8 @@ function send_notification {
     fi
   fi 
   # Send the notification
-  # dunstify " Volume " "$bar" -i $icon_name -r 5555 -u normal
   dunstify "Volume $volume% " -i "$icon_name" -r 5555 -u normal -h int:value:$((volume)) 
-  # notify-send.sh "Volume : $volume" -i "$icon_name" -t 2000 --replace=555
+  # dunstify "Volume $volume% " -r 5555 -u normal -h int:value:$((volume)) 
 }
 
 case $1 in
