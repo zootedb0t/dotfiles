@@ -118,14 +118,14 @@ local on_attach = function(client, bufnr)
 end
 
 for name, opts in pairs(servers) do
-  if type(opts) == "function" then
-    opts()
-  else
-    local client = lsp[name]
-    client.setup(vim.tbl_extend("force", {
-      flags = { debounce_text_changes = 150 },
-      on_attach = on_attach,
-      capabilities = capabilities,
-    }, opts))
-  end
+ if type(opts) == "function" then
+   opts()
+ else
+   local client = lsp[name]
+   client.setup(vim.tbl_extend("force", {
+     flags = { debounce_text_changes = 150 },
+     on_attach = on_attach,
+     capabilities = capabilities,
+   }, opts))
+ end
 end

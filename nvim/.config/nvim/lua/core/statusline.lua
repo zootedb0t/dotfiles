@@ -120,7 +120,7 @@ local function diagnostics()
     errors = "  " .. count["errors"]
   end
   if count["warnings"] ~= 0 then
-    warnings = "  " .. count["warnings"]
+    warnings = "   " .. count["warnings"]
   end
   if count["hints"] ~= 0 then
     hints = "  " .. count["hints"]

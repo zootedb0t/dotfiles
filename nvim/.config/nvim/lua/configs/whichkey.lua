@@ -43,6 +43,7 @@ function M.config()
         f = { vim.lsp.buf.format, "Format current buffer", silent = true },
         n = { "<cmd>enew<cr>", "Create new buffer" },
         r = { "<cmd>SourceFile<cr>", "Source current buffer" },
+        s = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Fuzzy find current buffer" },
       },
       l = {
         name = "+LSP",

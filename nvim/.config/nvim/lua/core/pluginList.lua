@@ -37,10 +37,10 @@ if packer_ok then
 
     --LSP loading indicator
     use({
-      "j-hui/fidget.nvim",
-      config = function()
-        require("fidget").setup()
-      end,
+     "j-hui/fidget.nvim",
+     config = function()
+       require("fidget").setup()
+     end,
     })
 
     --		use({
@@ -67,19 +67,20 @@ if packer_ok then
       requires = { "hrsh7th/cmp-path", "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", "saadparwaiz1/cmp_luasnip" },
     })
 
+    -- Git integration
     use({
-      "lewis6991/gitsigns.nvim",
-      config = function()
-        require("gitsigns").setup()
-      end,
+     "lewis6991/gitsigns.nvim",
+     config = function()
+       require("gitsigns").setup()
+     end,
     })
 
     -- Handy auto-pairs
     use({
-      "windwp/nvim-autopairs",
-      config = function()
-        require("configs.others").pair()
-      end,
+    "windwp/nvim-autopairs",
+     config = function()
+       require("configs.others").pair()
+     end,
     })
 
     -- Treesitter for better syntax highlight
@@ -99,14 +100,13 @@ if packer_ok then
     })
 
     use({
-
       "windwp/nvim-ts-autotag",
     })
 
     -- Telescope for funzzy finding
     use({
       "nvim-telescope/telescope.nvim",
-      -- event = "VimEnter",
+      event = "VimEnter",
       config = function()
         require("configs.telescope")
       end,
@@ -150,15 +150,15 @@ if packer_ok then
     -- use({ "catppuccin/nvim", as = "catppuccin" })
 
     use({
-      "NvChad/nvim-colorizer.lua",
-      cmd = "ColorizerToggle",
-      config = function()
-        require("colorizer").setup({
-          user_default_options = {
-            names = false,
-          },
-        })
-      end,
+     "NvChad/nvim-colorizer.lua",
+     cmd = "ColorizerToggle",
+     config = function()
+       require("colorizer").setup({
+         user_default_options = {
+           names = false,
+        },
+       })
+     end,
     })
 
     -- For Comments
@@ -213,30 +213,30 @@ if packer_ok then
     })
 
     -- Live Server
-    use({
-      "ray-x/web-tools.nvim",
-      opt = true,
-      config = function()
-        require("configs.others").web_tools()
-      end,
-    })
+    --use({
+    --  "ray-x/web-tools.nvim",
+    --  opt = true,
+    --  config = function()
+    --    require("configs.others").web_tools()
+    --  end,
+    --})
 
     -- For markdown
     use({
-      "toppair/peek.nvim",
-      run = "deno task --quiet build:fast",
-      ft = "markdown",
-      config = function()
-        require("configs.others").peek()
-      end,
+     "toppair/peek.nvim",
+     run = "deno task --quiet build:fast",
+     ft = "markdown",
+     config = function()
+       require("configs.others").peek()
+     end,
     })
 
     -- Better tabs
     use({
-      "nanozuki/tabby.nvim",
-      config = function()
-        require("configs.tabby").config()
-      end,
+     "nanozuki/tabby.nvim",
+    config = function()
+       require("configs.tabby").config()
+     end,
     })
 
     -- Modules
