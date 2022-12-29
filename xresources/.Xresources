@@ -1,19 +1,23 @@
+Xcursor.theme: Qogir
+Xcursor.size: 30
 Xft.hinting: 1
+Xft.autohint: 0
 Xft.hintstyle: hintslight
 Xft.antialias: 1
 Xft.rgba: rgb 
 
-! ===   st colors ===
+! === st ===
 
 ! st.font: VictorMono NF:style:Regular:size=10
-st.font: Monofur Nerd Font:style:Regular:size=12
+st.font: Monofur Nerd Font:style:Book:pixelsize=26
 
 ! window padding
-st.borderpx: 14
+st.borderpx: 20
+st.alpha: 0.96
 
-! === st Rose pine colors ===
-! st.foreground: #CDD6F4
-! st.background: #1E1E2E
+! === catppuccin pine colors ===
+! st.foreground: #1E1E2E
+! st.background: #CDD6F4
 
 ! st.color0: #45475A
 ! st.color8: #585B70
@@ -40,8 +44,8 @@ st.borderpx: 14
 ! st.color15: #A6ADC8
 
 ! ===   st Rose pine colors ===
-st.background: #191724 
-st.foreground: #e0def4
+st.background: #e0def4
+st.foreground: #191724
 st.cursorColor: white
 
 ! overlay + muted
@@ -75,28 +79,6 @@ st.color14: #ebbcba
 ! text
 st.color7: #e0def4
 st.color15: #e0def4
-
-! === dmenu foreground colors ===
-dmenu.norm.fg.color: #CDD6F4
-dmenu.sel.fg.color: #1E1E2E
-dmenu.out.fg.color: #BAC2DE
-dmenu.border.fg.color: #000000
-dmenu.prompt.fg.color: #1E1E2E
-dmenu.adjacent.fg.color: #1E1E2E
-dmenu.selhl.fg.color: #BAC2DE
-dmenu.normhl.fg.color: #222222
-dmenu.hp.fg.color: #BAC2DE
-
-! ===   dmenu background colors ===
-dmenu.norm.bg.color: #1E1E2E
-dmenu.sel.bg.color: #F38BA8
-dmenu.out.bg.color: #F9E2AF
-dmenu.border.bg.color: #F38BA8
-dmenu.prompt.bg.color: #BAC2DE
-dmenu.adjacent.bg.color: #F38BA8
-dmenu.selhl.bg.color: #F9E2AF
-dmenu.normhl.bg.color: #F9E2AF
-dmenu.hp.bg.color: #A6E3A1
 
 ! === dwm pywal colors ===
 #include "/home/stoney/.cache/wal/colors.Xresources"

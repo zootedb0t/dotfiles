@@ -1,5 +1,5 @@
 configuration {
-    font: "JetBrainsMono Nerd Font 14";
+    font: "JoyPixels 12, JetBrains Mono 14 ";
     modes: "drun,window";
     combi-modes: [window,drun];
     show-icons: true;
