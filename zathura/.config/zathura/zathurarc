@@ -25,5 +25,6 @@ set recolor-keephue "true"
 set font "Monofur Nerd Font 16"
 
 # Set colorscheme
-include catppuccin/catppuccin-mocha
+include rosepine/rosepine-moon
+# include catppuccin/catppuccin-mocha
 # include dracula/dracula
