@@ -6,7 +6,7 @@ logout="    Logout"
 shutdown="    Shutdown"
 reboot="    Reboot"
 sleep="    Sleep"
-nolock="       Turnoff DPMS"
+nolock="    Turnoff DPMS"
 
 uptime="$(uptime -p | sed -e 's/up //g')"
 user="$(whoami)"
