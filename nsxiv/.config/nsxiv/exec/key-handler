@@ -4,10 +4,7 @@ while read -r file
 do
     case "$1" in
         "w")
-            # wal -i "$file" && xrdb -merge ~/.Xresources
-            # feh --bg-fill "${file}";
-            # walchange "$file"
-            custom_wal.py "$file"
+            set_wallpaper.sh "$file"
             ;;
         "r")
             convert -rotate 90 "$file" "$file"
