@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
+# Dependencies jq, yt-dlp, rofi
+
 audio=" Play Audio"
 video=" Play Video"
 download=" Download Video"
 
-icon_audio="$HOME/.config/dunst/icons/mp3.svg"
-icon_video="$HOME/.config/dunst/icons/video.svg"
-icon_complete="$HOME/.config/dunst/icons/complete.svg"
+# icon_audio="$HOME/.config/dunst/icons/mp3.svg"
+# icon_video="$HOME/.config/dunst/icons/video.svg"
+# icon_complete="$HOME/.config/dunst/icons/complete.svg"
 url=$(xclip -o)
 
 selected_option=$(echo "$audio
@@ -20,14 +22,15 @@ $download" | rofi -dmenu \
 title="$(yt-dlp --skip-download --print-json --no-warnings "$url"|jq .title)"
 
 if [[ "$selected_option" = "$audio" ]]; then
-    notify-send -i "$icon_audio" -t 3000 "Playing Audio" "$title";
+    # notify-send -i "$icon_audio" -t 3000 "Playing Audio" "$title";
+    notify-send -t 3000 "Playing Audio" "$title";
     st -e mpv --no-video "$url" >/dev/null 2>&1;
 elif [[ "$selected_option" = "$video" ]]; then
-    notify-send -i "$icon_video" -t 3000 "Playing Video" "$title";
+    notify-send -t 3000 "Playing Video" "$title";
     mpv --ytdl-format=bestvideo+bestaudio/best "$url" >/dev/null 2>&1;
 elif [[ "$selected_option" = "$download" ]]; then
-    notify-send -i "$icon_video" -t 3000 "Downloading Video" "$title";
-    st -e yt-dlp -f 'bv[ext=mp4]+ba' "$url" && notify-send -i "$icon_complete" -t 3000 "Download Completed" >/dev/null 2>&1;
+    notify-send -t 3000 "Downloading Video" "$title";
+    st -e yt-dlp -f 'bv[ext=mp4]+ba' "$url" && notify-send -t 3000 "Download Completed" >/dev/null 2>&1;
 else
   printf "No choice"
 fi

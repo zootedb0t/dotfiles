@@ -8,12 +8,12 @@ Xft.rgba: rgb
 
 ! === st ===
 
-! st.font: VictorMono NF:style:Regular:size=10
-st.font: Monofur Nerd Font:style:Book:pixelsize=26
+! st.font: Monofur Nerd Font:style:Book:pixelsize=24
+st.font: JetBrainsMono Nerd Font:style:Regular:size=10
 
 ! window padding
 st.borderpx: 20
-st.alpha: 0.96
+st.alpha: 0.85
 
 ! === catppuccin pine colors ===
 ! st.foreground: #1E1E2E
