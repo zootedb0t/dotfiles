@@ -22,6 +22,10 @@ mod4 + w
 mod4 + shift +Return
   st
 
+# Randomly set wallpaper
+mod4 + @F3
+  sh $HOME/.local/bin/set_wallpaper.sh
+
 # Reload sxhkd
 mod1 + shift + q
   pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
