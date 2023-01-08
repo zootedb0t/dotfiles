@@ -23,7 +23,7 @@ mod4 + shift +Return
   st
 
 # Randomly set wallpaper
-mod4 + @F3
+@F3
   sh $HOME/.local/bin/set_wallpaper.sh
 
 # Reload sxhkd
