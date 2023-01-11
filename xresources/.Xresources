@@ -10,7 +10,7 @@ Xft.rgba: rgb
 
 ! st.font: Monofur Nerd Font:style:Book:pixelsize=24
 ! st.font: JetBrainsMono Nerd Font:style:Regular:size=10
-st.font: Iosevka Nerd Font:style:Regular:size=10
+st.font: Iosevka Nerd Font:style:Regular:pixelsize=20:antialias=true:autohint=true
 
 ! window padding
 st.borderpx: 20
