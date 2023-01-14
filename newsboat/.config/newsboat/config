@@ -1,11 +1,15 @@
-auto-reload no
+# vim: ft=config
 
+auto-reload yes
 save-path       "~/Documents/"
-
 articlelist-format  "%4i %f %D   %?T?|%-30T|  ?%t"
 display-article-progress yes
 datetime-format "%F %R"
 refresh-on-startup yes
+show-read-feeds no
+cleanup-on-quit yes
+text-width 50
+
 bind-key j down
 bind-key k up
 bind-key j next articlelist
@@ -23,12 +27,14 @@ bind-key n next-unread
 bind-key N prev-unread
 bind-key D pb-download
 bind-key U show-urls
+bind-key u toggle-show-read-feeds
 bind-key x pb-delete
 
 macro v set browser "setsid -f mpv --x11-name=newsboat --geometry=50% %u > /dev/null 2>&1" ; open-in-browser-and-mark-read ; set browser "$BROWSER %u" 
 macro a set browser "setsid -f mpv --x11-name=newsboat %u --no-video > /dev/null 2>&1" ; open-in-browser-and-mark-read ; set browser "$BROWSER %u" 
-macro y set browser "yt-dlp %u" ; open-in-browser ; set browser "$BROWSER %u"
+macro d set browser "yt-dlp %u" ; open-in-browser ; set browser "$BROWSER %u"
 macro r set browser "readable -o /tmp/x.html -s ~/.config/newsboat/styles.css %u && surf /tmp/x.html >/dev/null 2>&1"; open-in-browser-and-mark-read ; set browser "$BROWSER %u"
+macro R set browser "firefox --new-tab about:reader?url=%u" ; open-in-browser ; set browser "`echo $BROWSER`"
 browser "~/.local/bin/newsboat-browser.sh"
 
 # col # item              # fg      # bg
@@ -36,12 +42,11 @@ color background          color7   default        # the most bottom bar
 color listnormal          color7   default        # unfocused and without N
 color listnormal_unread   color7   default        # unfocused and with N
 color listfocus           yellow   color8         # focused and without N
-color listfocus_unread    yellow   default  bold  # focused but with N
+color listfocus_unread    yellow   default  bold underline  # focused but with N
 color info                color0   color1 reverse # bottom and top info bars
 color article             color7   default        # content of an article
 
 # highlights
-
 highlight all "---.*---" yellow
 highlight feedlist ".*(0/0))" black
 highlight article "(^Feed:.*|^Title:.*|^Author:.*)" cyan default bold
@@ -54,5 +59,3 @@ highlight article "\\[embedded flash: [0-9][0-9]*\\]" green default bold
 highlight article ":.*\\(link\\)$" cyan default
 highlight article ":.*\\(image\\)$" blue default
 highlight article ":.*\\(embedded flash\\)$" magenta default
-
-# vim: ft=config
