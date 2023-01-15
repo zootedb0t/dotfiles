@@ -1,14 +1,14 @@
 # vim: ft=config
 
 auto-reload yes
-save-path       "~/Documents/"
-articlelist-format  "%4i %f %D   %?T?|%-30T|  ?%t"
+save-path "~/Documents/"
+datetime-format "%b %e %a %H:%M"
+feedlist-format "%n %d %t"
+articlelist-format "%n %D %t"
 display-article-progress yes
-datetime-format "%F %R"
 refresh-on-startup yes
 show-read-feeds no
 cleanup-on-quit yes
-text-width 50
 
 bind-key j down
 bind-key k up

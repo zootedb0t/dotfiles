@@ -83,3 +83,6 @@ mod4 + {@F10,@F11,@F12}
 # Manage power profile
 mod4 + ctrl + p
   sh /home/stoney/.local/bin/powerprofile.sh
+
+mod4 + @Escape
+  sh /home/stoney/.local/bin/process.sh
