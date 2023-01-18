@@ -2,7 +2,7 @@
 
 auto-reload yes
 save-path "~/Documents/"
-datetime-format "%b %e %a %H:%M"
+datetime-format "%e %b %Y %H:%M"
 feedlist-format "%n %d %t"
 articlelist-format "%n %D %t"
 display-article-progress yes
@@ -30,20 +30,20 @@ bind-key U show-urls
 bind-key u toggle-show-read-feeds
 bind-key x pb-delete
 
-macro v set browser "setsid -f mpv --x11-name=newsboat --geometry=50% %u > /dev/null 2>&1" ; open-in-browser-and-mark-read ; set browser "$BROWSER %u" 
-macro a set browser "setsid -f mpv --x11-name=newsboat %u --no-video > /dev/null 2>&1" ; open-in-browser-and-mark-read ; set browser "$BROWSER %u" 
-macro d set browser "yt-dlp %u" ; open-in-browser ; set browser "$BROWSER %u"
-macro r set browser "readable -o /tmp/x.html -s ~/.config/newsboat/styles.css %u && surf /tmp/x.html >/dev/null 2>&1"; open-in-browser-and-mark-read ; set browser "$BROWSER %u"
-macro R set browser "firefox --new-tab about:reader?url=%u" ; open-in-browser ; set browser "`echo $BROWSER`"
-browser "~/.local/bin/newsboat-browser.sh"
+macro v set browser "setsid -f mpv --x11-name=newsboat --geometry=50% %u > /dev/null 2>&1" ; open-in-browser
+macro a set browser "setsid -f mpv --x11-name=newsboat %u --no-video > /dev/null 2>&1" ; open-in-browser
+macro d set browser "yt-dlp %u" ; open-in-browser
+macro r set browser "readable -o /tmp/x.html -s ~/.config/newsboat/styles.css %u && surf /tmp/x.html >/dev/null 2>&1"; open-in-browser-and-mark-read
+macro R set browser "firefox --new-tab about:reader?url=%u" ; open-in-browser
+macro o set browser "chromium --incognito --app=%u > /dev/null 2>&1"; open-in-browser
 
 # col # item              # fg      # bg
 color background          color7   default        # the most bottom bar
 color listnormal          color7   default        # unfocused and without N
 color listnormal_unread   color7   default        # unfocused and with N
-color listfocus           yellow   color8         # focused and without N
-color listfocus_unread    yellow   default  bold underline  # focused but with N
-color info                color0   color1 reverse # bottom and top info bars
+color listfocus           color2   default        # focused and without N
+color listfocus_unread    color2   black  bold    # focused but with N
+color info                color0   color4 reverse # bottom and top info bars
 color article             color7   default        # content of an article
 
 # highlights

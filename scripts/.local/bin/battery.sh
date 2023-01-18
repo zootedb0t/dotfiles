@@ -9,5 +9,5 @@ battery_notify() {
 }
 
 while true; do
-	sleep 600 && battery_notify
+	battery_notify && sleep 600
 done
