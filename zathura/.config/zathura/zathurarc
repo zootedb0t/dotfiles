@@ -1,3 +1,5 @@
+# vim: ft=config
+
 set sandbox none
 set window-title-basename "true"
 set selection-clipboard clipboard
@@ -16,14 +18,9 @@ set adjust-open "best-fit"
 set scroll-page-aware "true"
 set scroll-full-overlap 0.01
 set scroll-step 100
-
 set recolor true
-set recolor-reverse-video "true"
-set recolor-keephue "true"
 
-set font "Monofur Nerd Font 16"
+set font "BlexMono Nerd Font 16"
 
-# Set colorscheme
-include rosepine/rosepine-moon
-# include catppuccin/catppuccin-mocha
-# include dracula/dracula
+# Pywal colors import
+include color
