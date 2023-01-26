@@ -19,8 +19,8 @@ mod4 + w
   # chromium
 
 # Launch terminal
-mod4 + shift +Return
-  st
+# mod4 + shift +Return
+#   st
 
 # Randomly set wallpaper
 @F3
@@ -43,8 +43,8 @@ ctrl + alt + l
   # slock
 
 # dmenu run launcher
-mod4 + p
-  dmenu_run 
+# mod4 + p
+#   dmenu_run 
 
 # mod4 + Tab
 #   rofi -show window

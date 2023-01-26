@@ -3,7 +3,7 @@
 wal_dir=/home/stoney/Pictures/wallpapers
 
 if [ -z "$1" ]; then
-	wall="$(find "$wal_dir" -type f -name "*.jpg" -o -name "*.png" | shuf -n1)"
+	wall="$(fd . "$wal_dir" -e jpg -e jpeg -e png --type f | shuf -n 1)"
 else
 	wall="$1"
 fi
@@ -15,3 +15,6 @@ wal -i ~/.local/share/bg.jpg
 if pgrep -x "dwm" >/dev/null; then
 	xdotool key super+F5
 fi
+
+# Generate zathura colorscheme
+"$HOME"/.local/bin/pywalzathura &
