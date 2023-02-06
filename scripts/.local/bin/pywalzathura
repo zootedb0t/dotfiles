@@ -4,6 +4,7 @@
 
 colors() {
 	cat <<CONF
+# Generated from pywal
 set completion-bg "$background"
 set completion-fg "$foreground"
 set completion-group-bg "$background"

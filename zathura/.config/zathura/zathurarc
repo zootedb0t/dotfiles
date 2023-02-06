@@ -20,7 +20,7 @@ set scroll-full-overlap 0.01
 set scroll-step 100
 set recolor true
 
-set font "BlexMono Nerd Font 16"
+set font "BlexMono Nerd Font 12"
 
 # Pywal colors import
 include color
