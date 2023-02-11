@@ -15,12 +15,14 @@ fi
 shotnow=" Take Screenshot"
 shotarea=" Take area screenshot"
 shotwin=" Take current screenshot"
+shot5="󰄉 Take screenshot in 5 sec"
 
 # Choose option from dmenu
 selected_option=$(
 	echo "$shotnow
 $shotarea
 $shotwin
+$shot5
 " | dmenu -i -p "Choose one"
 )
 
@@ -43,7 +45,8 @@ countdown() {
 
 # take shots
 shotnow() {
-	cd "${dir}" && sleep 1; maim -u -f png "$file"
+	cd "${dir}" && sleep 1
+	maim -u -f png "$file"
 	notify_user
 	# TODO clipboard not working
 	# xclip -selection clipboard -t image/png -i "$file"
@@ -59,12 +62,20 @@ shotarea() {
 	notify_user
 }
 
+shot5() {
+	countdown '5'
+	sleep 1 && cd "${dir}" && maim -u -f png "$file"
+	notify_user
+}
+
 if [ "$selected_option" == "$shotnow" ]; then
 	shotnow
 elif [ "$selected_option" == "$shotarea" ]; then
 	shotarea
 elif [ "$selected_option" == "$shotwin" ]; then
 	shotwin
+elif [ "$selected_option" == "$shot5" ]; then
+	shot5
 else
 	echo "No Match"
 fi

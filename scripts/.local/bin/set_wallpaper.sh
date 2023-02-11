@@ -18,3 +18,4 @@ fi
 
 # Generate zathura colorscheme
 "$HOME"/.local/bin/pywalzathura &
+"$HOME"/.local/bin/dunst_color.sh &
