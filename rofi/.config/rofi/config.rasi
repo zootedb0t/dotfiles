@@ -11,4 +11,7 @@ configuration {
 }
 
 @import "~/.cache/wal/colors-rofi-dark.rasi"
-/* @import "~/.config/rofi/colors/catppuccin.rasi" */
+
+element-icon {
+    size: 20px;
+}
