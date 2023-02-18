@@ -1,5 +1,5 @@
-Xcursor.theme: Qogir
-Xcursor.size: 25
+Xcursor.theme: Adwaita
+Xcursor.size: 22
 Xft.hinting: 1
 Xft.autohint: 0
 Xft.hintstyle: hintslight
@@ -8,14 +8,14 @@ Xft.rgba: rgb
 
 ! === st ===
 
-! st.font: Monofur Nerd Font:style:Book:pixelsize=24
-! st.font: JetBrainsMono Nerd Font:style:SemiBold:size=10
-st.font: FantasqueSansMono Nerd Font:style:Regular:size=10
-! st.font: VictorMono Nerd Font:Semistyle:Bold:size=9
+! st.font: BlexMono Nerd Font:style:Regular:size=9
+! st.font: JetBrainsMono Nerd Font:style:SemiBold:size=8
+! st.font: FantasqueSansMono Nerd Font:style:Regular:size=10
+st.font: CaskaydiaCove Nerd Font:style:Regular:size=8
 
 ! st window padding
 st.borderpx: 20
-st.alpha: 0.9
+st.alpha: 0.85
 
 ! === catppuccin colors ===
 ! st.background: #1E1E2E
@@ -45,46 +45,8 @@ st.alpha: 0.9
 ! st.color7: #BAC2DE
 ! st.color15: #A6ADC8
 
-! ===   st Rose pine colors ===
-st.foreground: #e0def4
-st.background: #191724
-st.cursorColor: white
-
-! overlay + muted
-st.color0: #191724
-st.color8: #6e6a86
-
-! ! love
-st.color1: #eb6f92
-st.color9: #eb6f92
-
-! foam
-st.color10: #9ccfd8
-st.color2: #9ccfd8
-
-! gold
-st.color3: #f6c177
-st.color11: #f6c177
-
-! pine
-st.color4: #31748f
-st.color12: #31748f
-
-! iris
-st.color5: #c4a7e7
-st.color13: #c4a7e7
-
-! rose
-st.color6: #ebbcba
-st.color14: #ebbcba
-
-! text
-st.color7: #e0def4
-st.color15: #e0def4
-
-! === dwm pywal colors ===
+! === st, dmenu and dwm pywal colors ===
 #include "/home/stoney/.cache/wal/colors.Xresources"
-
 
 ! === dmenu ===
 dmenu.font: VictorMono Nerd Font:style:SemiBold:size=10
