@@ -12,10 +12,10 @@ if [[ ! -d "$dir" ]]; then
 fi
 
 # Options for screenshots
-shotnow=" Take Screenshot"
-shotarea=" Take area screenshot"
-shotwin=" Take current screenshot"
-shot5="󰄉 Take screenshot in 5 sec"
+shotnow=" Screenshot"
+shotarea=" Area screenshot"
+shotwin=" Current window screenshot"
+shot5="󰄉 Screenshot in 5 sec"
 
 # Choose option from dmenu
 selected_option=$(

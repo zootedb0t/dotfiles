@@ -16,6 +16,6 @@ if pgrep -x "dwm" >/dev/null; then
 	xdotool key super+F5
 fi
 
-# Generate zathura colorscheme
+# Generate zathura and dunst colorscheme 
 "$HOME"/.local/bin/pywalzathura &
 "$HOME"/.local/bin/dunst_color.sh &
