@@ -65,11 +65,11 @@ XClock*minuteColor: rgba:{color15.xrgba}
 XClock*secondColor: rgba:{color15.xrgba}
 
 ! Xmenu Colors
-xmenu.borderWidth: 1
-xmenu.separatorWidth: 2
-xmenu.height: 25
-xmenu.width: 130
-xmenu.gap: 3
+xmenu.borderWidth: 2
+xmenu.separatorWidth: 15
+xmenu.height: 30
+xmenu.width: 200
+xmenu.gap: 0
 xmenu.maxItems: 0
 xmenu.selbackground: {color14}
 xmenu.selforeground: {color0}
