@@ -3,7 +3,7 @@ configuration {
     modes: "drun,window";
     combi-modes: [window,drun];
     show-icons: true;
-    icon-theme: "Papirus";
+    icon-theme: "Pop";
     display-drun: "Apps";
     /* drun-display-format: "{name}"; */
     disable-history: false;
@@ -11,7 +11,3 @@ configuration {
 }
 
 @import "~/.cache/wal/colors-rofi-dark.rasi"
-
-element-icon {
-    size: 20px;
-}

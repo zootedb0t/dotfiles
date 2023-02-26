@@ -1,4 +1,4 @@
-Xcursor.theme: Adwaita
+Xcursor.theme: Pop
 Xcursor.size: 22
 Xft.hinting: 1
 Xft.autohint: 0
@@ -10,12 +10,11 @@ Xft.rgba: rgb
 
 ! st.font: BlexMono Nerd Font:style:Regular:size=9
 ! st.font: JetBrainsMono Nerd Font:style:SemiBold:size=8
-! st.font: FantasqueSansMono Nerd Font:style:Regular:size=10
-st.font: CaskaydiaCove Nerd Font:style:Regular:size=8
+! st.font: CaskaydiaCove Nerd Font:style:Regular:size=9
 
 ! st window padding
 st.borderpx: 20
-st.alpha: 0.85
+st.alpha: 0.9
 
 ! === catppuccin colors ===
 ! st.background: #1E1E2E
@@ -45,8 +44,6 @@ st.alpha: 0.85
 ! st.color7: #BAC2DE
 ! st.color15: #A6ADC8
 
-! === st, dmenu and dwm pywal colors ===
+! === st, dmenu, xmenu and dwm pywal colors ===
 #include "/home/stoney/.cache/wal/colors.Xresources"
-
-! === dmenu ===
-dmenu.font: VictorMono Nerd Font:style:SemiBold:size=10
+*.font: IosevkaTerm Nerd Font:style:Regular:size=10
