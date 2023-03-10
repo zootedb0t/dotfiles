@@ -4,8 +4,8 @@
 # Use tabs. If expandtab is set true, disable it in vim. Space between line gives separator.
 
 cat <<EOF | xmenu | sh &
-󰆧 Launch Dmenu 	dmenu_run
  Launch Terminal	st
+󰆧 Launch Dmenu 	dmenu_run
 
 󱐋 Applications
 	󰖟  Browser
@@ -15,9 +15,8 @@ cat <<EOF | xmenu | sh &
 		 Files	thunar
 		 Pdf Reader 	zathura
 		 Proton Vpn 	protonvpn
-	󰇰 Thunderbird 	thunderbird
-
- RSS Feed 	st -e newsboat
+		 RSS Feed 	st -e newsboat
+		󰇰 Thunderbird 	thunderbird
 
  Config
 	󰆧 System

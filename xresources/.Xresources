@@ -1,7 +1,7 @@
 Xcursor.theme: Pop
-Xcursor.size: 22
+Xcursor.size: 24
 Xft.hinting: 1
-Xft.autohint: 0
+Xft.autohint: 1
 Xft.hintstyle: hintslight
 Xft.antialias: 1
 Xft.rgba: rgb 
@@ -14,7 +14,7 @@ Xft.rgba: rgb
 
 ! st window padding
 st.borderpx: 20
-st.alpha: 0.9
+st.alpha: 0.85
 
 ! === catppuccin colors ===
 ! st.background: #1E1E2E
@@ -46,4 +46,4 @@ st.alpha: 0.9
 
 ! === st, dmenu, xmenu and dwm pywal colors ===
 #include "/home/stoney/.cache/wal/colors.Xresources"
-*.font: IosevkaTerm Nerd Font:style:Regular:size=10
+*.font: IosevkaTerm Nerd Font:style:Regular:pixelsize=18:antialias=true:autohint=true

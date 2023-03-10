@@ -19,10 +19,10 @@ function send_notification {
 		icon_name="$DIR/icons/volume-10.svg"
 	else
 		if [ "$volume" -lt "30" ]; then
-			icon_name="$DIR/icons/volume-30.svg"
+			icon_name="$DIR/icons/volume-10.svg"
 		else
 			if [ "$volume" -lt "70" ]; then
-				icon_name="$DIR/icons/volume-70.svg"
+				icon_name="$DIR/icons/volume-30.svg"
 			else
 				icon_name="$DIR/icons/volume-70.svg"
 			fi

@@ -199,7 +199,7 @@
     icon_theme = Numix
 
     # You can also set multiple icon themes, with the leftmost one being used first.
-    icon_theme = "Numix, Adwaita, breeze"
+    icon_theme = "Numix, Adwaita"
 
     # Align icons left/right/top/off
     icon_position = left
