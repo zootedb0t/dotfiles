@@ -16,15 +16,15 @@ function send_notification {
 	volume=$(get_volume)
 	# bar=$(seq -s "─" 0 $((volume / 5)) | sed 's/[0-9]//g')
 	if [ "$volume" -lt "10" ]; then
-		icon_name="$DIR/icons/volume-10.svg"
+		icon_name="$DIR/icons/volume-10.png"
 	else
 		if [ "$volume" -lt "30" ]; then
-			icon_name="$DIR/icons/volume-10.svg"
+			icon_name="$DIR/icons/volume-10.png"
 		else
 			if [ "$volume" -lt "70" ]; then
-				icon_name="$DIR/icons/volume-30.svg"
+				icon_name="$DIR/icons/volume-30.png"
 			else
-				icon_name="$DIR/icons/volume-70.svg"
+				icon_name="$DIR/icons/volume-70.png"
 			fi
 		fi
 	fi
@@ -55,7 +55,7 @@ mute)
 	wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 	is_mute="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk -F' ' '{print $3}' | awk -F'[][]' '{print $2}')"
 	if [ "$is_mute" == "MUTED" ]; then
-		icon_name="$DIR/icons/mute.svg"
+		icon_name="$DIR/icons/mute.png"
 		dunstify "Mute" -i "$icon_name" -r 5555 -u normal -h int:value:0
 	else
 		send_notification
