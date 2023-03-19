@@ -13,10 +13,15 @@ cat <<EOF | xmenu | sh &
 		 Chromium 	chromium
 	  Utilities
 		 Files	thunar
+		 Alacritty 	alacritty
 		 Pdf Reader 	zathura
-		 Proton Vpn 	protonvpn
+		 Proton Vpn 	st -e protonvpn-cli -c
 		 RSS Feed 	st -e newsboat
 		󰇰 Thunderbird 	thunderbird
+	 Code
+		 Neovim 	st -e nvim
+		 Code OSS 	code
+		 Fleet 	fleet
 
  Config
 	󰆧 System
@@ -24,7 +29,7 @@ cat <<EOF | xmenu | sh &
 		 Edit dwm config 	st -e nvim ~/.local/src/suckless/dwm/config.def.h
 		 Edit picom config 	st -e nvim ~/.config/picom/picom.conf
 		 Edit st config 	st -e nvim ~/.local/src/suckless/orcst/config.def.h
-		 Edit menu 	st -e nvim ~/.local/bin/menu.sh
+		 Edit xmenu 	st -e nvim ~/.local/bin/menu.sh
 		 Xresources 	st -e nvim $HOME/.Xresources
 	󰲋 Application
 		 Newsboat 	st -e nvim ~/.config/newsboat/config
@@ -38,7 +43,7 @@ cat <<EOF | xmenu | sh &
  Misc 
 	Colors Script
 		Cbonsai 	st -e cbonsai
-	Cava 	st -e cava
+	Cava 	alacritty -e cava
 
  Monitor
 	󱜙 Btop 	st -e btop
