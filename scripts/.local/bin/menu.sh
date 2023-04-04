@@ -48,8 +48,8 @@ cat <<EOF | xmenu | sh &
  Monitor
 	󱜙 Btop 	st -e btop
 	 Update System 	st -e sudo pacman -Syu
-
-⏻ Power off 	systemctl poweroff
- Reboot 	systemctl reboot
-󰍂 Log out 	loginctl terminate-user "$(whoami)"
+󰚥 Power Options
+	⏻ Power off 	systemctl poweroff
+	 Reboot 	systemctl reboot
+	󰍂 Log out 	loginctl terminate-user "$(whoami)"
 EOF
