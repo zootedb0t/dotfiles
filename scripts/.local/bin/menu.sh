@@ -22,6 +22,8 @@ cat <<EOF | xmenu | sh &
 		 Neovim 	st -e nvim
 		 Code OSS 	code
 		 Fleet 	fleet
+	 Music
+		 Spotify 	spotify-launcher 
 
  Config
 	󰆧 System
