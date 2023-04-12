@@ -1,0 +1,7 @@
+#!/bin/sh
+
+## use sxiv to select a wallpaper
+## usage: m to mark image, then q to apply
+## the *last* selection will used if multiple files are chosen
+
+nsxiv -oqrt "$HOME"/Pictures | sed -n '$p' | xargs set_wallpaper.sh
