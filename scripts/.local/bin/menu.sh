@@ -3,53 +3,45 @@
 # Dependency xmenu, xclickroot. Shows a menu on right-click.
 # Use tabs. If expandtab is set true, disable it in vim. Space between line gives separator.
 
-cat <<EOF | xmenu | sh &
- Launch Terminal	st
-󰆧 Launch Dmenu 	dmenu_run
-
-󱐋 Applications
+xmenu <<EOF | sh &
+󰲋 Applications
 	󰖟  Browser
-		 Firefox 	firefox-nightly
-		 Chromium 	chromium
+		IMG:$HOME/.config/xmenu/icons/firefox.svg							firefox 					firefox-nightly
+		IMG:$HOME/.config/xmenu/icons/chrome.svg							Chrome 						chromium
 	  Utilities
-		 Files	thunar
-		 Alacritty 	alacritty
-		 Pdf Reader 	zathura
-		 Proton Vpn 	st -e protonvpn-cli -c
-		 RSS Feed 	st -e newsboat
-		󰇰 Thunderbird 	thunderbird
+		IMG:$HOME/.config/xmenu/icons/file.svg							Files 	thunar
+		IMG:$HOME/.config/xmenu/icons/st.png							Terminal 	st
+		IMG:$HOME/.config/xmenu/icons/network.svg							Network Manager 	st -e nmtui
+		IMG:$HOME/.config/xmenu/icons/Alacritty.svg						Alacritty 				alacritty
+		IMG:$HOME/.config/xmenu/icons/zathura.svg							PDF Reader 				zathura
+		IMG:$HOME/.config/xmenu/icons/protonvpn.svg						Proton VPN 				connectvpn.sh
+		IMG:$HOME/.config/xmenu/icons/rss.svg				Newsboat 					st -e newsboat
+		IMG:$HOME/.config/xmenu/icons/thunderbird.png					Thunderbird 			thunderbird
 	 Code
-		 Neovim 	st -e nvim
-		 Code OSS 	code
-		 Fleet 	fleet
+		IMG:$HOME/.config/xmenu/icons/nvim.png							Neovim 						st -e nvim
+		IMG:$HOME/.config/xmenu/icons/vs-code.svg							VS Code 					code
+		IMG:$HOME/.config/xmenu/icons/Fleet.png							Fleet 						fleet
 	 Music
-		 Spotify 	spotify-launcher 
+		IMG:$HOME/.config/xmenu/icons/spotify.svg							Spotify 					spotify-launcher
 
  Config
-	󰆧 System
-		 Volume control 	pavucontrol
-		 Edit dwm config 	st -e nvim ~/.local/src/suckless/dwm/config.def.h
-		 Edit picom config 	st -e nvim ~/.config/picom/picom.conf
-		 Edit st config 	st -e nvim ~/.local/src/suckless/orcst/config.def.h
-		 Edit xmenu 	st -e nvim ~/.local/bin/menu.sh
-		 Xresources 	st -e nvim $HOME/.Xresources
-	󰲋 Application
-		 Newsboat 	st -e nvim ~/.config/newsboat/config
-		 Nvim 	st -e nvim ~/.config/nvim/init.lua
-		󰎟 Dunst 	st -e nvim ~/.cache/wal/dunstrc
+	 Volume control 	pavucontrol
+	 Edit dwm config 	st -e nvim ~/.local/src/suckless/dwm/config.def.h
+	 Edit picom config 	st -e nvim ~/.config/picom/picom.conf
+	 Edit st config 	st -e nvim ~/.local/src/suckless/orcst/config.def.h
+	 Edit xmenu 	st -e nvim ~/.local/bin/menu.sh
+	 Xresources 	st -e nvim $HOME/.Xresources
 
  Theming
 	󰉦 Lxappearance 	lxappearance
-	 Wallpapers 	st -e nsxiv ~/Pictures/wallpapers/
+	 Wallpapers 	wallpick
 
  Misc 
-	Colors Script
-		Cbonsai 	st -e cbonsai
 	Cava 	alacritty -e cava
 
  Monitor
-	󱜙 Btop 	st -e btop
-	 Update System 	st -e sudo pacman -Syu
+	IMG:$HOME/.config/xmenu/icons/btop.svg						btop				st -e btop
+	IMG:$HOME/.config/xmenu/icons/update.svg					Update System 			st -e sudo pacman -Syu	
 󰚥 Power Options
 	⏻ Power off 	systemctl poweroff
 	 Reboot 	systemctl reboot

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-wal_dir=/home/stoney/Pictures/wallpapers
+wal_dir=/home/stoney/Pictures/walls/
 
 if [ -z "$1" ]; then
 	wall="$(fd . "$wal_dir" -e jpg -e jpeg -e png --type f | shuf -n 1)"
