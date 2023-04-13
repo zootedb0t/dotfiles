@@ -9,10 +9,6 @@
 
 #----------WM Independent keys--------# 
 
-# Show keybindings
-mod4 + @F1
-  sh $HOME/.local/bin/cheatsheet
-
 # Launch browser
 mod4 + w
   firefox-nightly
@@ -42,15 +38,8 @@ ctrl + alt + l
   sh $HOME/.local/bin/blur.sh
   # slock
 
-# dmenu run launcher
-# mod4 + p
-#   dmenu_run 
-
-# mod4 + Tab
-#   rofi -show window
-
 # rofi app launcher
-mod4 + r
+mod4 + p
   rofi -show
 
 # Open yt video with mpv
