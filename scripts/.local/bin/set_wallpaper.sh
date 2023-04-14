@@ -9,13 +9,15 @@ else
 fi
 
 convert "$wall" ~/.local/share/bg.jpg
-xwallpaper --zoom ~/.local/share/bg.jpg
 wal -c
-wal -i ~/.local/share/bg.jpg
+wal -nqsi ~/.local/share/bg.jpg
+
 if pgrep -x "dwm" >/dev/null; then
 	xdotool key super+F5
 fi
 
-# Generate zathura and dunst colorscheme 
+# Generate zathura and dunst colorscheme
 "$HOME"/.local/bin/pywalzathura &
 "$HOME"/.local/bin/dunst_color.sh &
+
+xwallpaper --zoom ~/.local/share/bg.jpg && dunstify -i ~/.local/share/bg.jpg "Wallpaper Changed"

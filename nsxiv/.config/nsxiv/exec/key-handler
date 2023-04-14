@@ -12,7 +12,7 @@ while read -r file; do
 		convert -rotate -90 "$file" "$file"
 		;;
 	"d")
-		[ "$(printf "No\\nYes" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "Deleted" "$file"
+		[ "$(printf "Yes\\nNo" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "Deleted" "$file"
 		;;
 	"y") # Clipboard, doesnt seem to work with xsel
 		printf '%s' "$(basename "$file")" | xclip -selection clipboard &&
