@@ -196,10 +196,7 @@
     enable_recursive_icon_lookup = true
 
     # Set icon theme (only used for recursive icon lookup)
-    icon_theme = Numix
-
-    # You can also set multiple icon themes, with the leftmost one being used first.
-    icon_theme = "Numix, Adwaita"
+    icon_theme = Adwaita 
 
     # Align icons left/right/top/off
     icon_position = left
@@ -213,7 +210,7 @@
     max_icon_size = 96
 
     # Paths to default icons (only neccesary when not using recursive icon lookup)
-    icon_path = /usr/share/icons/Numix/16/status/:/usr/share/icons/Numix/16/devices/
+    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Adwaita/16x16/legacy/
 
     ### History ###
 
