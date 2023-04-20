@@ -39,7 +39,7 @@ ctrl + alt + l
   # slock
 
 # rofi app launcher
-mod4 + p
+mod4 + r
   rofi -show
 
 # Open yt video with mpv
