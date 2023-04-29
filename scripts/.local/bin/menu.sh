@@ -37,11 +37,12 @@ xmenu <<EOF | sh &
 	 Wallpapers 	wallpick
 
  Misc 
-	Cava 	alacritty -e cava
+	󰗃 Watch Youtube 	ytw
+	󰎁 Watch Movie 	movie.sh
 
  Monitor
 	IMG:$HOME/.config/xmenu/icons/btop.svg						btop				st -e btop
-	IMG:$HOME/.config/xmenu/icons/update.svg					Update System 			st -e sudo pacman -Syu	
+	IMG:$HOME/.config/xmenu/icons/update.svg					Update System 			update.sh
 󰚥 Power Options
 	⏻ Power off 	systemctl poweroff
 	 Reboot 	systemctl reboot

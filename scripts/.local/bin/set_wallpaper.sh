@@ -20,8 +20,9 @@ if pgrep -x "st" >/dev/null; then
 	pidof st | xargs kill -s USR1
 fi
 
-# Generate zathura and dunst colorscheme
+# Generate zathura, dunst and rofi colorscheme
 "$HOME"/.local/bin/pywalzathura &
 "$HOME"/.local/bin/dunst_color.sh &
+"$HOME"/.local/bin/pywalrofi &
 
 xwallpaper --zoom ~/.local/share/bg.jpg && dunstify -i ~/.local/share/bg.jpg "Wallpaper Changed"
