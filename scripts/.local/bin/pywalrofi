@@ -1,0 +1,23 @@
+#!/bin/sh
+
+. $HOME/.cache/wal/colors.sh
+
+colors() {
+	cat <<CONF
+/*Pywal generated colorscheme*/
+* {
+  background:  $background;
+  background-alt: $color9;
+  foreground: $foreground;
+  border: $color5;
+  selected: $color14;
+  active: $color14;
+}
+CONF
+}
+
+gen_color() {
+	colors >~/.config/rofi/colors/pywal.rasi
+}
+
+gen_color

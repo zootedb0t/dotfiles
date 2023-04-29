@@ -5,7 +5,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import "~/.config/rofi/colors/catppuccin.rasi"
+@import "~/.config/rofi/colors/pywal.rasi"
 
 
 /*****----- Main Window -----*****/
@@ -63,7 +63,7 @@ textbox-prompt-colon {
     str:                         " ";
     padding:                     10px 14px;
     border-radius:               10px;
-    background-color:            @urgent;
+    background-color:            @active;
     text-color:                  @background;
 }
 prompt {

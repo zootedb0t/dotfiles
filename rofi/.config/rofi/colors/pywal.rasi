@@ -1,0 +1,9 @@
+/*Pywal generated colorscheme*/
+* {
+  background:  #0f0d0d;
+  background-alt: #694A28;
+  foreground: #b5b7b7;
+  border: #9F714A;
+  selected: #CB974D;
+  active: #CB974D;
+}
