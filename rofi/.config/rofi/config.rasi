@@ -1,33 +1,33 @@
 @theme "pywal"
 
 configuration {
-    font: "JetBrainsMono Nerd Font: 14";
-    show-icons: true;
-    icon-theme: "Numix";
-    location: 0;
-    modi: "drun,run,window";
-    display-drun: " Applications";
-    display-run: " Run";
-    display-window: "﩯 Window";
-    drun-display-format: "{icon} {name}";
-    disable-history: false;
-    sidebar-mode: true;
+  font: "JetBrainsMono Nerd Font: 14";
+  show-icons: true;
+  icon-theme: "Numix";
+  location: 0;
+  modi: "drun,run,window";
+  display-drun: " Applications";
+  display-run: " Run";
+  display-window: "﩯 Window";
+  drun-display-format: "{icon} {name}";
+  disable-history: false;
+  sidebar-mode: true;
 }
 
 element-text, element-icon , mode-switcher {
-    background-color: inherit;
-    text-color:       inherit;
+  background-color: inherit;
+  text-color:       inherit;
 }
 
 /*****----- Main Window -----*****/
 window {
-  /* properties for window widget */
-  width: 800;
-  height: 450px;
-  border: 2px;
-  border-radius: 8px;
-  border-color: @border;
-  background-color: @background;
+/* properties for window widget */
+width: 800;
+height: 450px;
+border: 2px;
+border-radius: 8px;
+border-color: @border;
+background-color: @background;
 }
 
 /*****----- Main Box -----*****/
