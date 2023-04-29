@@ -1,4 +1,4 @@
-@theme "~/.config/rofi/colors/pywal.rasi"
+@theme "pywal"
 
 configuration {
     font: "JetBrainsMono Nerd Font: 14";
@@ -21,101 +21,101 @@ element-text, element-icon , mode-switcher {
 
 /*****----- Main Window -----*****/
 window {
-    /* properties for window widget */
-    width: 800;
-    height: 450px;
-    border: 2px;
-    border-radius: 8px;
-    border-color: @border;
-    background-color: @background;
+  /* properties for window widget */
+  width: 800;
+  height: 450px;
+  border: 2px;
+  border-radius: 8px;
+  border-color: @border;
+  background-color: @background;
 }
 
 /*****----- Main Box -----*****/
 mainbox {
-    background-color:            @background;
+  background-color: @background;
 }
 
 /*****----- Inputbar -----*****/
 inputbar {
-    children: [prompt,entry];
-    enabled:                     true;
-    border-radius: 5px;
-    padding: 2px;
-    background-color:            @background;
-    children:   [ prompt,entry ];
+  children: [prompt,entry];
+  enabled: true;
+  border-radius: 5px;
+  padding: 6px;
+  background-color: @background;
+  children: [ prompt,entry ];
 }
 
 prompt {
-    enabled:                     true;
-    padding:                     6px;
-    background-color:            @active;
-    text-color:                  @background;
-    border-radius: 5px;
+  enabled: true;
+  padding: 6px;
+  background-color: @active;
+  text-color: @background;
+  border-radius: 5px;
 }
 
 entry {
-    text-color: @foreground;
-    background-color: @background-alt;
-    border-radius: 5px;
-    padding: 6px;
+  text-color: @foreground;
+  background-color: @background;
+  padding: 6px;
 }
 
 /*****----- Message -----*****/
 message {
-    margin:                      2px;
-    padding:                     2px;
-    border-radius:               5px;
-    background-color:            @background-alt;
+  margin:                      2px;
+  padding:                     2px;
+  border-radius:               5px;
+  background-color:            @background-alt;
 }
 
 textbox {
-    padding: 6px;
-    margin: 10px 0px 0px 10px;
-    text-color: @active;
-    background-color: @background-alt;
+  padding: 6px;
+  margin: 10px 0px 0px 10px;
+  text-color: @active;
+  background-color: @background-alt;
 }
 
 /*****----- Listview -----*****/
 listview {
-    columns: 1;
-    lines: 6;
-    border: 0px 0px 0px;
-    padding: 6px 0px 0px;
-    border-radius: 5px;
-    border-color: @selected;
-    background-color: @background;
-    text-color: @foreground;
+  columns: 1;
+  lines: 6;
+  border: 0px 0px 0px;
+  padding: 6px;
+  border-radius: 5px;
+  border-color: @selected;
+  background-color: @background;
+  text-color: @foreground;
 }
 
 /*****----- Elements -----*****/
 element {
-    enabled: true;
-    padding: 6px;
-    background-color: @background;
-    text-color: @foreground;
+  enabled: true;
+  padding: 6px;
+  background-color: @background;
+  text-color: @foreground;
 }
 
 element-text {
-    background-color: transparent;
-    text-color: inherit;
-    cursor: inherit;
+  background-color: transparent;
+  padding: 6px;
+  text-color: inherit;
+  cursor: inherit;
 }
 
 element selected {
-    background-color: var(selected);
-    text-color: var(background);
+  background-color: var(selected);
+  text-color: var(background);
 }
 
 element-icon {
-    size: 32px;
+  size: 36px;
 }
 
 button {
-    padding: 10px;
-    background-color: @background;
-    text-color: @foreground;
-    vertical-align: 0.5; 
-    horizontal-align: 0.5;
+  padding: 10px;
+  background-color: @background;
+  text-color: @foreground;
+  vertical-align: 0.5; 
+  horizontal-align: 0.5;
 }
 
 button selected {
@@ -124,7 +124,7 @@ button selected {
 }
 
 mode-switcher {
-    spacing: 0;
+  spacing: 0;
 }
 
 /* vim:ft=css
