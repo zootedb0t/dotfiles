@@ -44,7 +44,7 @@ mod4 + r
 
 # Open yt video with mpv
 mod4 + @F2
-  sh $HOME/.local/bin/ytw
+  sh $HOME/.local/bin/menu.sh
 
 # Show power-menu
 mod4 + q
