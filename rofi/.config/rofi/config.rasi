@@ -1,14 +1,14 @@
 @theme "pywal"
 
 configuration {
-  font: "JetBrainsMono Nerd Font: 14";
+  font: "JetBrainsMono Nerd Font 14";
   show-icons: true;
   icon-theme: "Numix";
   location: 0;
   modi: "drun,run,window";
-  display-drun: " Applications";
+  display-drun: "󰀻 Applications";
   display-run: " Run";
-  display-window: "﩯 Window";
+  display-window: " Window";
   drun-display-format: "{icon} {name}";
   disable-history: false;
   sidebar-mode: true;
