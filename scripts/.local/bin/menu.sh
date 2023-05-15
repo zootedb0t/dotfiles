@@ -6,7 +6,7 @@
 xmenu <<EOF | sh &
 󰲋 Applications
 	󰖟  Browser
-		IMG:$HOME/.config/xmenu/icons/firefox.svg							firefox 					firefox-nightly
+		IMG:$HOME/.config/xmenu/icons/firefox.svg							Firefox 					firefox-nightly
 		IMG:$HOME/.config/xmenu/icons/chrome.svg							Chrome 						chromium
 	  Utilities
 		IMG:$HOME/.config/xmenu/icons/file.svg							Files 	thunar
