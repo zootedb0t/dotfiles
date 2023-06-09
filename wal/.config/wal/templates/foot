@@ -2,7 +2,8 @@
 # Generated from pywal
 
 [cursor]
-color={foreground.strip} {background.strip}
+# color={foreground.strip} {background.strip}
+color={background.strip} {foreground.strip}
 
 [colors]
 foreground = {foreground.strip}
