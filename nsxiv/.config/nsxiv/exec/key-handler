@@ -3,7 +3,11 @@
 while read -r file; do
 	case "$1" in
 	"w")
-		set_wallpaper.sh "$file"
+		if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+			"$HOME/.config/hypr/scripts/wallpaper.sh" "$file"
+		else
+			set_wallpaper.sh "$file"
+		fi
 		;;
 	"r")
 		convert -rotate 90 "$file" "$file"
@@ -12,9 +16,13 @@ while read -r file; do
 		convert -rotate -90 "$file" "$file"
 		;;
 	"d")
-		[ "$(printf "Yes\\nNo" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "Deleted" "$file"
+		if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+			[ "$(printf "Yes\\nNo" | fuzzel -d -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "Deleted" "$file"
+		else
+			[ "$(printf "Yes\\nNo" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "Deleted" "$file"
+		fi
 		;;
-	"y") # Clipboard, doesnt seem to work with xsel
+	"y") # Clipboard, doesn't seem to work with xsel
 		printf '%s' "$(basename "$file")" | xclip -selection clipboard &&
 			notify-send -t 500 "Clipboard📋" "<b><i>'$file'</i></b> copied" ;;
 	"i")

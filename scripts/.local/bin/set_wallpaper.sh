@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/sh
 
 wal_dir=/home/stoney/Pictures/walls/
 
@@ -9,8 +9,7 @@ else
 fi
 
 convert "$wall" ~/.local/share/bg.jpg
-wal -c
-wal -nqsi ~/.local/share/bg.jpg
+wal -nqsic ~/.local/share/bg.jpg
 
 if pgrep -x "dwm" >/dev/null; then
 	xdotool key super+F5
