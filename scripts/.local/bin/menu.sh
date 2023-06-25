@@ -12,7 +12,6 @@ xmenu <<EOF | sh &
 		IMG:$HOME/.config/xmenu/icons/file.svg							Files 	thunar
 		IMG:$HOME/.config/xmenu/icons/st.png							Terminal 	st
 		IMG:$HOME/.config/xmenu/icons/network.svg							Network Manager 	st -e nmtui
-		IMG:$HOME/.config/xmenu/icons/Alacritty.svg						Alacritty 				alacritty
 		IMG:$HOME/.config/xmenu/icons/zathura.svg							PDF Reader 				zathura
 		IMG:$HOME/.config/xmenu/icons/protonvpn.svg						Proton VPN 				connectvpn.sh
 		IMG:$HOME/.config/xmenu/icons/rss.svg				Newsboat 					st -e newsboat

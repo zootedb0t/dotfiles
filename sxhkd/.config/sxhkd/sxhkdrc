@@ -19,8 +19,9 @@ mod4 + w
 #   st
 
 # Randomly set wallpaper
-mod4 + @F3
-  sh $HOME/.local/bin/set_wallpaper.sh
+mod1 + @F2
+  # sh $HOME/.local/bin/set_wallpaper.sh
+  sh $HOME/.local/bin/ytw
 
 # Reload sxhkd
 mod1 + shift + q
@@ -42,8 +43,8 @@ ctrl + alt + l
 mod4 + r
   rofi -show
 
-# Open yt video with mpv
-mod4 + @F2
+# Open xmenu
+mod1 + @F3
   sh $HOME/.local/bin/menu.sh
 
 # Show power-menu

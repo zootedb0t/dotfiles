@@ -1,4 +1,4 @@
-#!/usr/sh
+#!/bin/sh
 
 wal_dir=/home/stoney/Pictures/walls/
 
@@ -9,7 +9,8 @@ else
 fi
 
 convert "$wall" ~/.local/share/bg.jpg
-wal -nqsic ~/.local/share/bg.jpg
+wal -c
+wal -nqsi "$wall"
 
 if pgrep -x "dwm" >/dev/null; then
 	xdotool key super+F5
@@ -24,4 +25,4 @@ fi
 "$HOME"/.local/bin/dunst_color.sh &
 "$HOME"/.local/bin/pywalrofi &
 
-xwallpaper --zoom ~/.local/share/bg.jpg && dunstify -i ~/.local/share/bg.jpg "Wallpaper Changed"
+xwallpaper --zoom "$wall" && dunstify -i "$wall" "Wallpaper Changed"

@@ -21,8 +21,10 @@ $download" | rofi -dmenu \
 
 if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
 	url=$(wl-paste)
+	term=foot
 else
 	url=$(xclip -o)
+	term=st
 fi
 
 # This slows down the script
@@ -30,13 +32,13 @@ fi
 
 if [[ "$selected_option" = "$audio" ]]; then
 	# notify-send -i "$icon_audio" -t 3000 "Playing Audio" "$title"
-	st -e mpv --no-video "$url" 2>&1
+	$term -e mpv --no-video "$url" 2>&1
 elif [[ "$selected_option" = "$video" ]]; then
 	# notify-send -i "$icon_video" -t 3000 "Playing Video" "$title"
 	mpv --ytdl-format=bestvideo+bestaudio/best "$url" 2>&1
 elif [[ "$selected_option" = "$download" ]]; then
 	# notify-send -i "$icon_download" -t 3000 "Downloading Video" "$title"
-	st -e yt-dlp -f 'bv[ext=mp4]+ba' "$url" && notify-send -i "$icon_complete" -t 3000 "Download Completed" 2>&1
+	$term -e yt-dlp -f 'bv[ext=mp4]+ba' "$url" && notify-send -i "$icon_complete" -t 3000 "Download Completed" 2>&1
 else
 	printf "No choice"
 fi
