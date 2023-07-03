@@ -1,0 +1,1 @@
+/home/stoney/.config/asdf/completions/asdf.fish
