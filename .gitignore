@@ -1,4 +1,3 @@
-nvim/.config/nvim/plugin/*
 **/__pycache__/
 glances
 urls

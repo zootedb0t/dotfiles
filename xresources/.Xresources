@@ -1,20 +1,22 @@
-Xcursor.theme: Pop
+Xcursor.theme: Breeze_Obsidian
 Xcursor.size: 24
 Xft.hinting: 1
 Xft.autohint: 1
 Xft.hintstyle: hintslight
-Xft.antialias: 1
+sft.antialias: 1
 Xft.rgba: rgb 
+Xft.dpi: 108
 
 ! === st ===
-
-! st.font: BlexMono Nerd Font:style:Regular:size=9
-! st.font: JetBrainsMono Nerd Font:style:SemiBold:size=8
-! st.font: CaskaydiaCove Nerd Font:style:Regular:size=9
-
-! st window padding
-st.borderpx: 20
-st.alpha: 0.85
+st.font: IosevkaTerm Nerd Font:pixelsize=20:antialias=true:autohint=true
+st.borderpx: 10
+st.cursorstyle: 0
+st.blinktimeout: 800
+st.bellvolume: 0
+st.cwscale: 1.0
+st.chscale: 1.0
+st.termname: st-256color
+st.alpha: 0.90
 
 ! === catppuccin colors ===
 ! st.background: #1E1E2E
@@ -29,7 +31,7 @@ st.alpha: 0.85
 ! st.color2: #A6E3A1
 ! st.color10: #A6E3A1
 
-! st.color3:#F9E2AF
+! st.color3: #F9E2AF
 ! st.color11: #F9E2AF
 
 ! st.color4: #89B4FA
@@ -44,6 +46,41 @@ st.alpha: 0.85
 ! st.color7: #BAC2DE
 ! st.color15: #A6ADC8
 
+! === Citruszest ===
+st.background: #121212
+st.foreground: #BFBFBF
+
+st.color0: #121212
+st.color8: #808080
+
+st.color1: #FF1A75
+st.color9: #FF1A75
+
+st.color2: #00CC7A
+st.color10: #00CC7A
+
+st.color3: #FF6600
+st.color11: #FF6600
+
+st.color4: #33FFFF
+st.color12: #33FFFF
+
+st.color5: #CC00FF
+st.color13: #CC00FF
+
+st.color6: #1AFFA3 
+st.color14: #1AFFA3
+
+st.color7: #D0D0D0
+st.color15: #0D0D0D
+
 ! === st, dmenu, xmenu and dwm pywal colors ===
 #include "/home/stoney/.cache/wal/colors.Xresources"
-*.font: IosevkaTerm Nerd Font:style:Regular:pixelsize=18:antialias=true:autohint=true
+*.font: Terminus:pixelsize=18:antialias=true:autohint=true
+
+! My fav fonts
+! IntelOne Mono
+! JetBrainsMono Nerd Font
+! Liga SFMono Nerd Font
+! IosevkaTerm Nerd Font
+! Terminus

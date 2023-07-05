@@ -17,9 +17,9 @@ while read -r file; do
 		;;
 	"d")
 		if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-			[ "$(printf "Yes\\nNo" | fuzzel -d -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "Deleted" "$file"
+			[ "$(printf "Yes\\nNo" | fuzzel -d -i -p "Really delete $file?")" = "Yes" ] && rm "$file"
 		else
-			[ "$(printf "Yes\\nNo" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "Deleted" "$file"
+			[ "$(printf "Yes\\nNo" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file"
 		fi
 		;;
 	"y") # Clipboard, doesn't seem to work with xsel
