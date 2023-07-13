@@ -5,10 +5,10 @@ Xft.autohint: 1
 Xft.hintstyle: hintslight
 sft.antialias: 1
 Xft.rgba: rgb 
-Xft.dpi: 108
+Xft.dpi: 120
 
 ! === st ===
-st.font: IosevkaTerm Nerd Font:pixelsize=20:antialias=true:autohint=true
+st.font: ComicShannsMono Nerd Font:pixelsize=20:antialias=true:autohint=true
 st.borderpx: 10
 st.cursorstyle: 0
 st.blinktimeout: 800
@@ -53,26 +53,26 @@ st.foreground: #BFBFBF
 st.color0: #121212
 st.color8: #808080
 
-st.color1: #FF1A75
+st.color1: #FF5454
 st.color9: #FF1A75
 
 st.color2: #00CC7A
-st.color10: #00CC7A
+st.color10: #1AFFA3
 
-st.color3: #FF6600
-st.color11: #FF6600
+st.color3: #FFD400
+st.color11: #FFFF00
 
-st.color4: #33FFFF
-st.color12: #33FFFF
+st.color4: #FF7B00
+st.color12: #FF9633
 
-st.color5: #CC00FF
-st.color13: #CC00FF
+st.color5: #00C2FF
+st.color13: #33CFFF
 
-st.color6: #1AFFA3 
-st.color14: #1AFFA3
+st.color6: #00E0D4
+st.color14: #00FFF2
 
-st.color7: #D0D0D0
-st.color15: #0D0D0D
+st.color7: #BFBFBF
+st.color15: #F9F9F9
 
 ! === st, dmenu, xmenu and dwm pywal colors ===
 #include "/home/stoney/.cache/wal/colors.Xresources"
@@ -82,5 +82,5 @@ st.color15: #0D0D0D
 ! IntelOne Mono
 ! JetBrainsMono Nerd Font
 ! Liga SFMono Nerd Font
-! IosevkaTerm Nerd Font
 ! Terminus
+! ComicShannsMono Nerd Font
