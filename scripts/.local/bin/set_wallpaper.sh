@@ -25,4 +25,4 @@ fi
 "$HOME"/.local/bin/dunst_color.sh &
 "$HOME"/.local/bin/pywalrofi &
 
-xwallpaper --zoom "$wall" && dunstify -i "$wall" "Wallpaper Changed"
+xwallpaper --center "$wall" && dunstify -i "$wall" "Wallpaper Changed"

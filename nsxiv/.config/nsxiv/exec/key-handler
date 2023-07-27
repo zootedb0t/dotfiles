@@ -17,7 +17,7 @@ while read -r file; do
 		;;
 	"d")
 		if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-			[ "$(printf "Yes\\nNo" | fuzzel -d -i -p "Really delete $file?")" = "Yes" ] && rm "$file"
+			[ "$(printf "Yes\\nNo" | wofi -d -i -p "Really delete $file?")" = "Yes" ] && rm "$file"
 		else
 			[ "$(printf "Yes\\nNo" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file"
 		fi

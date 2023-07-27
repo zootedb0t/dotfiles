@@ -5,6 +5,24 @@
 audio=" Play Audio"
 video=" Play Video"
 download=" Download Video"
+session="$XDG_SESSION_TYPE"
+
+if [[ $session == "wayland" ]]; then
+	term=foot
+else
+	term=st
+fi
+
+# -z return true if $1(length of 1st argumnent) is zero
+if [[ -z "$1" ]]; then
+	if [[ $session == "wayland" ]]; then
+		url=$(wl-paste)
+	else
+		url=$(xclip -o)
+	fi
+else
+	url="$1"
+fi
 
 # icon_audio="$HOME/.config/dunst/icons/audio.svg"
 # icon_video="$HOME/.config/dunst/icons/video.svg"
@@ -18,14 +36,6 @@ $download" | rofi -dmenu \
 		-p "What do you want to do?" \
 		-theme "$HOME/.config/rofi/yt.rasi"
 )
-
-if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
-	url=$(wl-paste)
-	term=foot
-else
-	url=$(xclip -o)
-	term=st
-fi
 
 # This slows down the script
 # title="$(yt-dlp --skip-download --print-json --no-warnings "$url" | jq .title)"

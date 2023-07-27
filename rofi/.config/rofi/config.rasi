@@ -22,10 +22,10 @@ element-text, element-icon , mode-switcher {
 /*****----- Main Window -----*****/
 window {
 /* properties for window widget */
-width: 800;
+width: 600;
 height: 450px;
 border: 2px;
-border-radius: 8px;
+border-radius: 4px;
 border-color: @border;
 background-color: @background;
 }
