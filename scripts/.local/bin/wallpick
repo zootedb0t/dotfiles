@@ -4,4 +4,4 @@
 ## usage: m to mark image, then q to apply
 ## the *last* selection will used if multiple files are chosen
 
-nsxiv -oqrt "$HOME"/Pictures | sed -n '$p' | xargs set_wallpaper.sh
+nsxiv -oqrt "$HOME"/Pictures/walls | sed -n '$p' | xargs set_wallpaper.sh
