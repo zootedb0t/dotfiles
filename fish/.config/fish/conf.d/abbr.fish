@@ -7,7 +7,7 @@ abbr -a gds   "git diff --staged"
 abbr -a gr    "git restore"
 abbr -a gpush "git push"
 
-abbr -a ls "eza --colour=always --icons"
-abbr -a ll "eza --colour=always -al --icons"
+abbr -a ls "eza --icons always"
+abbr -a ll "eza -al --icons always"
 
 abbr -a syu "sudo pacman -Syu"

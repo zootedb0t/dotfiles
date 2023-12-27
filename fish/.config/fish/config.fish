@@ -10,6 +10,8 @@ end
 # Fish Default Keybindings(emacs)
 fish_default_key_bindings
 
+# set fish_greeting
+
 function fish_title
     echo $TERM
 end
@@ -38,8 +40,11 @@ fish_add_path $HOME/.local/bin --append
 fish_add_path $DENO_INSTALL/bin
 fish_add_path $HOME/.local/share/JetBrains/Toolbox/scripts
 fish_add_path $BUN_INSTALL/bin
+fish_add_path $HOME/.local/zig
 
 # Node Version Manager
 source $HOME/.config/asdf/asdf.fish
 
 starship init fish | source
+
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/stoney/.ghcup/bin $PATH # ghcup-env
