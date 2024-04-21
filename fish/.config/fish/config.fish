@@ -28,11 +28,13 @@ set -gx ASDF_CONFIG_FILE $XDG_CONFIG_HOME/asdf/asdfrc
 set -gx ASDF_DATA_DIR $XDG_DATA_HOME/asdf
 set -gx CUDA_CACHE_PATH $XDG_CACHE_HOME/nv
 set -gx CARGO_HOME $XDG_DATA_HOME/cargo
+set -gx EDITOR nvim
 
 # bun
 # set --export BUN_INSTALL "$HOME/.bun"
 # set --export PATH $BUN_INSTALL/bin $PATH
-set -gx BUN_INSTALL $HOME/.bun
+# set -gx BUN_INSTALL $HOME/.bun
+set -gx BUN_INSTALL $XDG_DATA_HOME/bun
 
 
 # Add path variable

@@ -34,4 +34,4 @@ SETUVAR fish_pager_color_description:yellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/stoney/\x2elocal/zig\x1e/home/stoney/\x2elocal/zig\x2dlinux\x2dx86_64\x2d0\x2e12\x2e0\x2ddev\x2e1297\x2ba9e66ed73\x1e/home/stoney/\x2elocal\x1e/home/stoney/\x2ebun/bin\x1e/home/stoney/\x2elocal/share/JetBrains/Toolbox/scripts\x1e/home/stoney/\x2edeno/bin\x1e/home/stoney/\x2elocal/bin
+SETUVAR fish_user_paths:/home/stoney/\x2elocal/share/bun/bin\x1e/home/stoney/\x2elocal/zig\x1e/home/stoney/\x2elocal/zig\x2dlinux\x2dx86_64\x2d0\x2e12\x2e0\x2ddev\x2e1297\x2ba9e66ed73\x1e/home/stoney/\x2elocal\x1e/home/stoney/\x2ebun/bin\x1e/home/stoney/\x2elocal/share/JetBrains/Toolbox/scripts\x1e/home/stoney/\x2edeno/bin\x1e/home/stoney/\x2elocal/bin
