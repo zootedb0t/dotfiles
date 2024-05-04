@@ -1,0 +1,20 @@
+# config_directory/config.toml
+[config]
+reload_apps = true
+set_wallpaper = true
+wallpaper_tool = 'Swww'
+prefix = '@'
+swww_options = [
+    "--transition-type",
+    "center",
+]
+
+[config.reload_apps_list]
+waybar = true
+kitty = false
+gtk_theme = false
+dunst = true
+
+[templates] # Another way
+waybar = { input_path = '~/.config/matugen/template/waybar.css', output_path = '~/.config/hypr/waybar/themes/matugen.css' }
+zathura = { input_path = '~/.config/matugen/template/zathura', output_path = '~/.config/zathura/color' }

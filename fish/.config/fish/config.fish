@@ -43,6 +43,7 @@ fish_add_path $DENO_INSTALL/bin
 fish_add_path $HOME/.local/share/JetBrains/Toolbox/scripts
 fish_add_path $BUN_INSTALL/bin
 fish_add_path $HOME/.local/zig
+fish_add_path $HOME/.local/share/cargo/bin
 
 # Node Version Manager
 source $HOME/.config/asdf/asdf.fish
