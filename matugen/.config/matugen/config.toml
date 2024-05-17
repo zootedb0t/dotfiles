@@ -13,8 +13,10 @@ swww_options = [
 waybar = true
 kitty = false
 gtk_theme = false
-dunst = true
+dunst = false
 
-[templates] # Another way
-waybar = { input_path = '~/.config/matugen/template/waybar.css', output_path = '~/.config/hypr/waybar/themes/matugen.css' }
-zathura = { input_path = '~/.config/matugen/template/zathura', output_path = '~/.config/zathura/color' }
+[templates]
+waybar = { input_path = '~/.config/matugen/template/material_theme.css', output_path = '~/.config/hypr/waybar/themes/material_theme.css' }
+# zathura = { input_path = '~/.config/matugen/template/zathura', output_path = '~/.config/zathura/color' }
+wofi = { input_path = '~/.config/matugen/template/material_theme.css', output_path = '~/.config/hypr/wofi/themes/material_theme.css' }
+hyprland = { input_path = '~/.config/matugen/template/material_theme.conf', output_path = '~/.config/hypr/themes/material_theme.conf' }

@@ -46,8 +46,9 @@ fish_add_path $HOME/.local/zig
 fish_add_path $HOME/.local/share/cargo/bin
 
 # Node Version Manager
-source $HOME/.config/asdf/asdf.fish
+source /opt/asdf-vm/asdf.fish
+source $HOME/.local/share/cargo/env.fish
 
 starship init fish | source
 
-set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/stoney/.ghcup/bin $PATH # ghcup-env
+# set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/stoney/.ghcup/bin $PATH # ghcup-env
