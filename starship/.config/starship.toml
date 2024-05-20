@@ -84,6 +84,9 @@ symbol = " "
 [nodejs]
 symbol = " "
 
+[lua]
+symbol = "󰢱 "
+
 [os.symbols]
 Alpaquita = " "
 Alpine = " "
