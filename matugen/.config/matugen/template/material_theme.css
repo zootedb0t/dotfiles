@@ -1,3 +1,5 @@
-<* for name, value in colors *>
-@define-color {{name}} {{value.default.hex}};
-<* endfor *>
+@define-color background {{colors.background.default.hex}};
+@define-color foreground {{colors.on_background.default.hex}};
+@define-color color0 {{colors.primary.default.hex}};
+@define-color color1 {{colors.tertiary_fixed.default.hex}};
+@define-color color2 {{colors.error_container.default.hex}};

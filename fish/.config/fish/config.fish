@@ -28,6 +28,7 @@ set -gx ASDF_CONFIG_FILE $XDG_CONFIG_HOME/asdf/asdfrc
 set -gx ASDF_DATA_DIR $XDG_DATA_HOME/asdf
 set -gx CUDA_CACHE_PATH $XDG_CACHE_HOME/nv
 set -gx CARGO_HOME $XDG_DATA_HOME/cargo
+set -gx RUSTUP_HOME $XDG_DATA_HOME/rustup
 set -gx EDITOR nvim
 
 # bun
