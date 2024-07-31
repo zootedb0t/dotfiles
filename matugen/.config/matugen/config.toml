@@ -1,4 +1,3 @@
-# config_directory/config.toml
 [config]
 reload_apps = true
 set_wallpaper = true
@@ -16,7 +15,12 @@ gtk_theme = false
 dunst = false
 
 [templates]
+alacritty = { input_path = '~/.config/matugen/template/material_alacritty.toml', output_path = '~/.config/alacritty/themes/material_alacritty.toml' }
 waybar = { input_path = '~/.config/matugen/template/material_theme.css', output_path = '~/.config/hypr/waybar/themes/material_theme.css' }
 # zathura = { input_path = '~/.config/matugen/template/zathura', output_path = '~/.config/zathura/color' }
 wofi = { input_path = '~/.config/matugen/template/material_theme.css', output_path = '~/.config/hypr/wofi/themes/material_theme.css' }
 hyprland = { input_path = '~/.config/matugen/template/material_theme.conf', output_path = '~/.config/hypr/themes/material_theme.conf' }
+gtk3 = { input_path = '~/.config/matugen/template/gtk-colors.css', output_path = '~/.config/gtk-3.0/colors.css' }
+gtk4 = { input_path = '~/.config/matugen/template/gtk-colors.css', output_path = '~/.config/gtk-4.0/colors.css' }
+starship = { input_path = '~/.config/matugen/template/startship-colors.toml', output_path = '~/.config/starship.toml' }
+swayimg = { input_path = '~/.config/matugen/template/swayimg_config', output_path = '~/.config/swayimg/config' }
