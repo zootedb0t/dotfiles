@@ -1,8 +1,0 @@
-@define-color background {{colors.primary.default.hex}};
-@define-color foreground {{colors.on_primary.default.hex | set_lightness: -10.0}};
-@define-color color0 {{colors.inverse_primary.default.hex}};
-@define-color color1 {{colors.secondary.default.hex}};
-@define-color color2 {{colors.error.default.hex}};
-@define-color color3 {{colors.on_error.default.hex}};
-@define-color color4 {{colors.primary_container.default.hex}};
-@define-color color5 {{colors.on_primary_container.default.hex}};
