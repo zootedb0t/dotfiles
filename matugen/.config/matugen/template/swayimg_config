@@ -14,6 +14,8 @@ sigusr1 = reload
 sigusr2 = next_file
 # Application ID and window class name
 app_id = swayimg
+# Use window decoration (yes/no)
+decoration = yes
 
 ################################################################################
 # Viewer mode configuration
@@ -28,7 +30,7 @@ scale = optimal
 # Fix position of the image on the window surface (yes/no)
 fixed = yes
 # Anti-aliasing (yes/no)
-antialiasing = no
+antialiasing = mks13
 # Run slideshow at startup (yes/no)
 slideshow = no
 # Slideshow image display time (seconds)
@@ -45,7 +47,7 @@ preload = 1
 # Max size of the thumbnail (pixels)
 size = 300
 # Use anti-aliasing for thumbnails (yes/no)
-antialiasing = no
+antialiasing = mks13
 # Background color of the window (RGBA)
 window = {{colors.inverse_primary.default.hex}} 
 # Background color of the tile (RGBA)
@@ -56,6 +58,8 @@ select = {{colors.on_primary_container.default.hex}}
 border = #000000ff
 # Shadow color of the selected tile (RGBA)
 shadow = #000000ff
+# Max number of thumbnails in memory cache, 0 for unlimited
+cache = 100
 
 ################################################################################
 # Image list configuration

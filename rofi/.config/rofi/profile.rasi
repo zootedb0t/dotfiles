@@ -1,5 +1,6 @@
 /*****----- Global Properties -----*****/
-@import "pywal"
+/* @import "pywal" */
+@theme "material_colors"
 
 /*****----- Configuration -----*****/
 configuration {
@@ -155,4 +156,4 @@ element selected.normal {
   text-color:                  var(background);
 }
 
-/* vim:ft=css
+/* vim:ft=rasi

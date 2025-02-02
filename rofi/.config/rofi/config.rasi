@@ -1,4 +1,5 @@
-@theme "pywal"
+/* @theme "pywal" */
+@theme "material_colors"
 
 configuration {
   font: "JetBrainsMono Nerd Font 14";
@@ -102,8 +103,8 @@ element-text {
 }
 
 element selected {
-  background-color: var(selected);
-  text-color: var(background);
+  background-color: @background-alt;
+  text-color: @background;
 }
 
 element-icon {
@@ -127,4 +128,4 @@ mode-switcher {
   spacing: 0;
 }
 
-/* vim:ft=css
+/* vim:ft=rasi
