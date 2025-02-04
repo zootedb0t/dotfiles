@@ -23,7 +23,7 @@ element-text, element-icon , mode-switcher {
 /*****----- Main Window -----*****/
 window {
 /* properties for window widget */
-width: 600;
+width: 800;
 height: 450px;
 border: 2px;
 border-radius: 4px;

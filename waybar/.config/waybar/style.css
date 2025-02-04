@@ -1,13 +1,13 @@
 @import "themes/material_colors.css";
 
 * {
-	font-family:Iosevka Nerd Font Propo;
+  font-family: Iosevka Nerd Font Propo;
   border-radius: 0px;
   font-size: 18px;
 }
 
 window#waybar {
-  background: alpha(@background, 0.5);
+  background: alpha(@background, 0.8);
   border: none;
 }
 
@@ -45,13 +45,12 @@ tooltip label {
 #memory,
 #temperature,
 #network,
-/*#wireplumber,*/
+/* #wireplumber, */
 #pulseaudio,
 #tray,
 #mode,
 #backlight,
-#custom-update,
-#window,
+/* #custom-update, */
 #submap {
   color: @primary;
   padding: 0.3em;

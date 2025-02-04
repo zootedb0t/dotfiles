@@ -68,11 +68,11 @@
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-bluetooth": "{icon} {volume}% ",
-    "format-muted": " Mute",
+    "format-muted": " Mute",
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
       "phone": "",
       "portable": "",
       "car": "",
@@ -88,6 +88,8 @@
     "format": "{icon} {percent}%",
     "format-icons": ["󰃚", "󰃛", "󰃜", "󰃟", "󰃝", "󰃠"],
     "reverse-scrolling": true,
+    "on-scroll-up": "~/.config/hypr/scripts/brightness.sh up",
+    "on-scroll-down": "~/.config/hypr/scripts/brightness.sh down",
     "tooltip-format": "Brightness: {percent}%",
   },
 
