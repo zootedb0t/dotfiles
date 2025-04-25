@@ -1,24 +1,23 @@
 @import "themes/material_colors.css";
 
 * {
-  font-family: Iosevka Nerd Font Propo;
+  font-family: Maple Mono, Monaspace Krypton Var;
   border-radius: 0px;
   font-size: 18px;
 }
 
 window#waybar {
-  background: alpha(@background, 0.8);
+  background: @surface-alpha;
   border: none;
 }
 
 #workspaces button {
   color: @secondary;
-  box-shadow: inset 0 -3px transparent;
 }
 
 #workspaces button.visible {
-  color: @primary;
-  box-shadow: inset 0 -3px @primary;
+  color: @background;
+  background: @primary;
 }
 
 button:hover {
@@ -26,17 +25,19 @@ button:hover {
 }
 
 #workspaces button.urgent {
-  background-color: @error;
-  color: @on_background;
+  color: @background;
+  background-color: alpha(@error, 0.9);
 }
 
 tooltip {
   background: alpha(@background, 0.9);
-  border: 1px solid @inverse_primary;
+  /* border: 1px solid @inverse_primary; */
+  border: 1px solid @secondary;
 }
 
 tooltip label {
-  color: @on_background;
+  /* color: @on_background; */
+  color: @foreground;
   font-size: 14px;
 }
 
@@ -51,6 +52,7 @@ tooltip label {
 #mode,
 #backlight,
 /* #custom-update, */
+#window,
 #submap {
   color: @primary;
   padding: 0.3em;
@@ -59,7 +61,7 @@ tooltip label {
 @keyframes blink {
   to {
     background-color: @background;
-    color: @on_background;
+    color: @foreground;
   }
 }
 
