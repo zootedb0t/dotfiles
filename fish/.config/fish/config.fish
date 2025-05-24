@@ -1,5 +1,5 @@
-if uwsm check may-start; and uwsm select
-    exec systemd-cat -t uwsm_start -- uwsm start default
+if uwsm check may-start && uwsm select
+    exec uwsm start default
 end
 
 if status is-interactive
@@ -30,6 +30,7 @@ set -gx NODE_REPL_HISTORY $XDG_DATA_HOME/node_repl_history
 set -gx GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
 set -gx ASDF_CONFIG_FILE $XDG_CONFIG_HOME/asdf/asdfrc
 set -gx ASDF_DATA_DIR $XDG_DATA_HOME/asdf
+set -gx PATH $ASDF_DATA_DIR/shims $PATH
 set -gx CUDA_CACHE_PATH $XDG_CACHE_HOME/nv
 set -gx CARGO_HOME $XDG_DATA_HOME/cargo
 set -gx RUSTUP_HOME $XDG_DATA_HOME/rustup
@@ -50,8 +51,6 @@ fish_add_path $BUN_INSTALL/bin
 fish_add_path $HOME/.local/zig
 fish_add_path $HOME/.local/share/cargo/bin
 
-# Node Version Manager
-source /opt/asdf-vm/asdf.fish
 source $HOME/.local/share/cargo/env.fish
 
 starship init fish | source
