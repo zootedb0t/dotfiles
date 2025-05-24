@@ -1,9 +1,11 @@
 @import "themes/material_colors.css";
 
 * {
-  font-family: Maple Mono, Monaspace Krypton Var;
-  border-radius: 0px;
+  font-family:
+    Maple Mono,
+    Monaspace Krypton Var;
   font-size: 18px;
+  border-radius: 0px;
 }
 
 window#waybar {
@@ -13,6 +15,7 @@ window#waybar {
 
 #workspaces button {
   color: @secondary;
+  padding: 0 5px;
 }
 
 #workspaces button.visible {
@@ -31,12 +34,12 @@ button:hover {
 
 tooltip {
   background: alpha(@background, 0.9);
-  /* border: 1px solid @inverse_primary; */
+  border: 1px solid @inverse_primary;
+
   border: 1px solid @secondary;
 }
 
 tooltip label {
-  /* color: @on_background; */
   color: @foreground;
   font-size: 14px;
 }
@@ -46,16 +49,14 @@ tooltip label {
 #memory,
 #temperature,
 #network,
-/* #wireplumber, */
 #pulseaudio,
 #tray,
 #mode,
 #backlight,
-/* #custom-update, */
 #window,
 #submap {
   color: @primary;
-  padding: 0.3em;
+  padding: 0 5px;
 }
 
 @keyframes blink {
@@ -73,4 +74,8 @@ tooltip label {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+#pulseaudio.muted {
+	color: @error-dim;
 }
