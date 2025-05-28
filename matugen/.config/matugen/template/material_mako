@@ -29,9 +29,9 @@ max-visible=5
 layer=overlay
 anchor=top-right
 
-background-color={{colors.primary_container.default.hex}}
-text-color={{colors.primary.default.hex}}
-border-color={{colors.primary_container.default.hex}}
+background-color={{colors.primary.default.hex}}
+text-color={{colors.on_primary.default.hex}}
+border-color={{colors.primary.default.hex}}
 progress-color=over #89b4fa
 
 [urgency=low]

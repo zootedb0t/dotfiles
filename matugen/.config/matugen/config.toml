@@ -3,15 +3,17 @@ command = "swww"
 arguments = ["img", "--transition-type", "center"]
 
 [templates]
-alacritty = { input_path = '~/.config/matugen/template/material_alacritty.toml', output_path = '~/.config/alacritty/themes/material_alacritty.toml' }
-ghostty = { input_path = '~/.config/matugen/template/material_ghostty', output_path = '~/.config/ghostty/themes/material_theme' }
-waybar = { input_path = '~/.config/matugen/template/material_colors.css', output_path = '~/.config/waybar/themes/material_colors.css', post_hook = 'systemctl restart --user waybar.service' }
+alacritty = { input_path = '~/.config/matugen/template/material_alacritty.toml', output_path = '~/.config/alacritty/themes/colors.toml' }
+ghostty = { input_path = '~/.config/matugen/template/material_ghostty', output_path = '~/.config/ghostty/themes/colors' }
+waybar = { input_path = '~/.config/matugen/template/material_colors.css', output_path = '~/.config/waybar/themes/colors.css', post_hook = 'systemctl restart --user waybar.service' }
 # zathura = { input_path = '~/.config/matugen/template/zathura', output_path = '~/.config/zathura/color' }
-hyprland = { input_path = '~/.config/matugen/template/material_theme.conf', output_path = '~/.config/hypr/themes/material_theme.conf' }
+hyprland = { input_path = '~/.config/matugen/template/material_hypr.conf', output_path = '~/.config/hypr/themes/colors.conf' }
 gtk3 = { input_path = '~/.config/matugen/template/gtk-colors.css', output_path = '~/.config/gtk-3.0/colors.css' }
 gtk4 = { input_path = '~/.config/matugen/template/gtk-colors.css', output_path = '~/.config/gtk-4.0/colors.css' }
 # swayimg = { input_path = '~/.config/matugen/template/swayimg_config', output_path = '~/.config/swayimg/config' }
 starship = { input_path = '~/.config/matugen/template/startship-colors.toml', output_path = '~/.config/starship.toml' }
 mako = { input_path = '~/.config/matugen/template/material_mako', output_path = '~/.config/mako/config', post_hook = 'makoctl reload' }
-rofi = { input_path = '~/.config/matugen/template/material_rofi.rasi', output_path = '~/.config/rofi/themes/material_colors.rasi' }
-foot = { input_path = '~/.config/matugen/template/material_foot.ini', output_path = '~/.config/foot/material_theme' }
+rofi = { input_path = '~/.config/matugen/template/material_rofi.rasi', output_path = '~/.config/rofi/themes/colors.rasi' }
+foot = { input_path = '~/.config/matugen/template/material_foot.ini', output_path = '~/.config/foot/colors' }
+cava = { input_path = '~/.config/matugen/template/material_cava', output_path = '~/.config/cava/config', post_hook = 'pkill -USR2 cava' }
+yazi = { input_path = '~/.config/matugen/template/material_yazi.toml', output_path = '~/.config/yazi/theme.toml' }
