@@ -16,4 +16,15 @@ mako = { input_path = '~/.config/matugen/template/material_mako', output_path = 
 rofi = { input_path = '~/.config/matugen/template/material_rofi.rasi', output_path = '~/.config/rofi/themes/colors.rasi' }
 foot = { input_path = '~/.config/matugen/template/material_foot.ini', output_path = '~/.config/foot/colors' }
 cava = { input_path = '~/.config/matugen/template/material_cava', output_path = '~/.config/cava/config', post_hook = 'pkill -USR2 cava' }
+# cava = { input_path = '~/.config/matugen/template/material_cava', output_path = '~/.config/cava/config', post_hook = 'pgrep -f cava && pkill -USR2 cava' }
 yazi = { input_path = '~/.config/matugen/template/material_yazi.toml', output_path = '~/.config/yazi/theme.toml' }
+mpv = { input_path = '~/.config/matugen/template/material_mpv.conf', output_path = '~/.config/mpv/mpv.conf' }
+btop = { input_path = '~/.config/matugen/template/material_btop.theme', output_path = '~/.config/btop/themes/matugen.theme' }
+
+[config.custom_colors]
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+orange = "#fab387"
+purple = "#cba6f7"
