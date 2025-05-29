@@ -1,4 +1,4 @@
-@import "themes/material_colors.css";
+@import "themes/colors.css";
 
 * {
   font-family:
@@ -15,7 +15,7 @@ window#waybar {
 
 #workspaces button {
   color: @secondary;
-  padding: 0 5px;
+  padding: 0 0.3rem;
 }
 
 #workspaces button.visible {
@@ -54,9 +54,11 @@ tooltip label {
 #mode,
 #backlight,
 #window,
+#mpris,
+#cpu,
 #submap {
   color: @primary;
-  padding: 0 5px;
+  padding: 0 0.3rem;
 }
 
 @keyframes blink {
@@ -77,5 +79,9 @@ tooltip label {
 }
 
 #pulseaudio.muted {
-	color: @error-dim;
+  color: @error-dim;
+}
+
+#network.disconnected {
+  color: @error-dim;
 }

@@ -1,6 +1,5 @@
 /*****----- Global Properties -----*****/
-/* @import "pywal" */
-@theme "material_colors"
+@theme "colors"
 
 /*****----- Configuration -----*****/
 configuration {

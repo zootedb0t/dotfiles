@@ -1,8 +1,7 @@
-/* @theme "pywal" */
-@theme "material_colors"
+@theme "colors"
 
 configuration {
-  font: "JetBrainsMono Nerd Font 14";
+  font: "Maple Mono 14";
   show-icons: true;
   icon-theme: "Numix";
   location: 0;
