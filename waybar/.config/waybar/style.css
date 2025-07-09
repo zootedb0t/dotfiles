@@ -1,49 +1,47 @@
 @import "themes/colors.css";
 
 * {
-  font-family:
-    Maple Mono,
-    Monaspace Krypton Var;
-  font-size: 18px;
-  border-radius: 0px;
+  font-family: JetBrainsMono Nerd Font Propo;
+  font-size: 16px;
+  border-radius: 8px;
 }
 
 window#waybar {
-  background: @surface-alpha;
-  border: none;
+  background: alpha(@surface_container, 0.5);
+  border-radius: 8px;
+}
+
+/* Workspaces */
+#workspaces {
+  background: transparent;
+  border-radius: 8px;
 }
 
 #workspaces button {
-  color: @secondary;
-  padding: 0 0.3rem;
+  color: @on_surface_variant;
+  border-radius: 8px;
+  background: transparent;
+  margin: 0.1rem;
 }
 
 #workspaces button.visible {
-  color: @background;
-  background: @primary;
-}
-
-button:hover {
-  background: inherit;
+  color: @on_primary_container;
+  background: @primary_container;
 }
 
 #workspaces button.urgent {
-  color: @background;
-  background-color: alpha(@error, 0.9);
+  color: @on_error;
+  background: @error;
+  animation: pulse 1s infinite;
 }
 
-tooltip {
-  background: alpha(@background, 0.9);
-  border: 1px solid @inverse_primary;
-
-  border: 1px solid @secondary;
+@keyframes pulse {
+  to {
+    opacity: 0.7;
+  }
 }
 
-tooltip label {
-  color: @foreground;
-  font-size: 14px;
-}
-
+/* Main modules styling */
 #clock,
 #battery,
 #memory,
@@ -56,32 +54,176 @@ tooltip label {
 #window,
 #mpris,
 #cpu,
+#bluetooth,
+#custom-power,
 #submap {
-  color: @primary;
-  padding: 0 0.3rem;
+  color: @on_surface_variant;
+  background: transparent;
+  font-weight: 500;
+  margin: 0.2rem;
 }
 
 @keyframes blink {
   to {
-    background-color: @background;
-    color: @foreground;
+    opacity: 0.6;
   }
 }
 
-#battery.critical:not(.charging) {
-  background-color: @error;
-  color: @primary;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+/* Battery states */
+#battery {
+  color: @on_surface_variant;
+  background: transparent;
 }
 
-#pulseaudio.muted {
-  color: @error-dim;
+#battery.warning {
+  color: @yellow;
+}
+
+#battery.critical:not(.charging) {
+  color: @error;
+  animation: blink 1s infinite;
+}
+
+#battery.charging {
+  color: @green_value;
+
+}
+
+/* Network states */
+#network {
+  color: @on_surface_variant;
+  background: transparent;
 }
 
 #network.disconnected {
-  color: @error-dim;
+  color: @error;
+}
+
+#network.ethernet {
+  color: @green;
+}
+
+/* Audio states */
+#pulseaudio {
+  color: @on_surface_variant;
+  background: transparent;
+}
+
+#pulseaudio.muted {
+  color: @error;
+}
+
+/* Bluetooth */
+#bluetooth {
+  color: @on_surface_variant;
+  background: transparent;
+}
+
+#bluetooth.off {
+  color: @outline;
+}
+
+/* System monitoring */
+#cpu {
+  color: @on_surface_variant;
+  background: transparent;
+}
+
+#memory {
+  color: @on_surface_variant;
+  background: transparent;
+}
+
+#temperature {
+  color: @on_surface_variant;
+  background: transparent;
+}
+
+#temperature.critical {
+  color: @error;
+  animation: pulse 1s infinite;
+}
+
+/* Backlight */
+#backlight {
+  color: @on_surface_variant;
+  background: transparent;
+}
+
+/* Window title */
+#window {
+  color: @on_surface_variant;
+  background: transparent;
+  font-style: italic;
+}
+
+/* MPRIS */
+#mpris {
+  color: @on_secondary_container;
+  background: alpha(@secondary_container, 0.8);
+}
+
+/* Custom power button */
+#custom-power {
+  color: @on_error;
+  background: @error;
+  font-weight: 600;
+}
+
+#custom-power:hover {
+  background: alpha(@error, 0.8);
+}
+
+/* Tray */
+#tray {
+  background: alpha(@surface_container_highest, 0.8);
+  padding: 0.3rem;
+}
+
+#tray > .passive {
+  opacity: 0.6;
+}
+
+#tray > .needs-attention {
+  color: @error;
+  animation: pulse 1s infinite;
+}
+
+/* Tooltips */
+tooltip {
+  background: alpha(@surface_container_highest, 0.95);
+  border: 1px solid alpha(@outline, 0.3);
+  border-radius: 8px;
+}
+
+tooltip label {
+  color: @on_surface;
+  font-size: 14px;
+  padding: 0.5rem;
+}
+
+/* Hover effects */
+#clock:hover,
+#battery:hover,
+#memory:hover,
+#temperature:hover,
+#network:hover,
+#pulseaudio:hover,
+#cpu:hover,
+#bluetooth:hover,
+#workspaces button:hover,
+#backlight:hover {
+  opacity: 0.8;
+}
+
+/* Mode indicator */
+#mode {
+  color: @on_tertiary;
+  background: @tertiary;
+  font-weight: 600;
+}
+
+#submap {
+  color: @green_source;
+  font-weight: 600;
 }
