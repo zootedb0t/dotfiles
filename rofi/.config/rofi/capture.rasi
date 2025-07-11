@@ -18,7 +18,7 @@ window {
     border-color: @outline-variant;
     border-radius: 16px;
     padding: 16px;
-    width: 600px;
+    width: 400px;
 }
 
 /* Main container */
@@ -38,6 +38,14 @@ inputbar {
     children: [ "prompt", "entry" ];
 }
 
+entry {
+    background-color: transparent;
+    text-color: @on-surface;
+    placeholder-color: @on-surface-variant;
+    border: none;
+    padding: 8px;
+}
+
 prompt {
     background-color: @primary-container;
     text-color: @on-primary-container;
@@ -49,7 +57,7 @@ prompt {
 listview {
     background-color: transparent;
     columns: 1;
-    lines: 3;
+    lines: 2;
     spacing: 4px;
     scrollbar: false;
     border: none;
@@ -74,23 +82,16 @@ element selected.normal {
     text-color: @on-primary-container;
 }
 
+element-text selected {
+    background-color: @primary-container;
+    text-color: @on-primary-container;
+    padding: 12px;
+}
+
 element-icon {
     background-color: transparent;
     size: 24px;
     vertical-align: 0.5;
-}
-
-button {
-    background-color: transparent;
-    text-color: @on-surface-variant;
-    border-radius: 12px;
-    padding: 8px 16px;
-    font: "Inter Medium 11";
-}
-
-button selected {
-    background-color: @primary-container;
-    text-color: @on-primary-container;
 }
 
 /* Scrollbar */
