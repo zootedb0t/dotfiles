@@ -1,12 +1,11 @@
 {
+  "layer": "top",
   "position": "top",
-  "margin-top": 4,
-  "margin-right": 4,
+  "margin-top": 8,
+  "margin-right": 8,
+  "margin-left": 8,
   "margin-bottom": 0,
-  "margin-left": 4,
-  "spacing": 0,
-  "exclusive": true,
-  "passthrough": false,
+  "spacing": 10,
   "modules-left": ["hyprland/workspaces", "hyprland/submap", "hyprland/window"],
   "modules-center": ["clock"],
   "modules-right": [
@@ -28,8 +27,8 @@
     "format": "{icon}",
     "format-icons": {
       "active": "󰮯",
+      // "default": "󰊠",
       "urgent": "󰚌"
-      // "default": "󰊠"
     }
   },
 
@@ -39,7 +38,7 @@
 
   "hyprland/window": {
     "icon": true,
-    "icon-size": 18,
+    "icon-size": 24,
     "max-length": 40,
     "tooltip": false
   },
@@ -94,7 +93,7 @@
     },
     "reverse-scrolling": true,
     "on-click": "~/.config/hypr/scripts/volume.sh mute",
-    "on-click-right": "pavucontrol",
+    "on-click-right": "foot --title=Wiremix -e wiremix",
     "tooltip-format": "Volume: {volume}%"
   },
 
@@ -146,7 +145,7 @@
       "warning": 30,
       "critical": 15
     },
-    "format-plugged": " {capacity}%",
+    "format-plugged": "{icon} {capacity}%",
     "format-charging": "{icon} {capacity}%",
     "format-full": "{icon} {capacity}%",
     "format-discharging": "{icon} {capacity}%",
@@ -154,21 +153,23 @@
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
     "format-icons": {
       "discharging": ["󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
-      "charging": ["󰚥"],
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "plugged": [""],
       "full": ["󰂄"]
     }
   },
 
   "network": {
-    "interval": 2,
-    "tooltip-format-wifi": "{essid} ({frequency} GHz)\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon} {ifname}",
+    "format-ethernet": "󰀂 {ifname}",
+    "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "foot -e nmtui",
-    "format-wifi": "↓ {bandwidthDownBits} - ↑ {bandwidthUpBits}",
-    "format-ethernet": "{bandwidthDownBits} ↓ - {bandwidthUpBits} ↑",
-    "format-disconnected": " Disconnected"
-    // "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+    "interval": 3,
+    "nospacing": 1,
+    "on-click": "foot --title=Nmtui -e nmtui"
   },
 
   // "mpris": {
@@ -191,13 +192,13 @@
     "format-no-controller": "",
     "format-connected-battery": " {status}({device_battery_percentage}%)",
     "tooltip-format-connected": "{device_alias} {device_battery_percentage}%",
-    "on-click": "foot -e bluetoothctl"
+    "on-click": "foot --title=Bluetoothctl -e bluetoothctl"
   }
 
   // "tray": {
   //   "spacing": 10
   // }
-  //
+
   // "custom/update": {
   //   "exec": "checkupdates | wc -l",
   //   "format": "󰏔 {}",

@@ -3,23 +3,21 @@
 * {
   font-family: JetBrainsMono Nerd Font Propo;
   font-size: 16px;
-  border-radius: 8px;
+  border-radius: 6px;
+  margin: 0px;
 }
 
 window#waybar {
   background: alpha(@surface_container, 0.5);
-  border-radius: 8px;
 }
 
 /* Workspaces */
 #workspaces {
   background: transparent;
-  border-radius: 8px;
 }
 
 #workspaces button {
   color: @on_surface_variant;
-  border-radius: 8px;
   background: transparent;
   margin: 0.1rem;
 }
@@ -60,7 +58,6 @@ window#waybar {
   color: @on_surface_variant;
   background: transparent;
   font-weight: 500;
-  margin: 0.2rem;
 }
 
 @keyframes blink {
@@ -86,7 +83,6 @@ window#waybar {
 
 #battery.charging {
   color: @green_value;
-
 }
 
 /* Network states */
@@ -95,12 +91,13 @@ window#waybar {
   background: transparent;
 }
 
-#network.disconnected {
-  color: @error;
+#cava {
+  color: @on_surface_variant;
+  background: transparent;
 }
 
-#network.ethernet {
-  color: @green;
+#network.disconnected {
+  color: @error;
 }
 
 /* Audio states */
@@ -193,13 +190,11 @@ window#waybar {
 tooltip {
   background: alpha(@surface_container_highest, 0.95);
   border: 1px solid alpha(@outline, 0.3);
-  border-radius: 8px;
 }
 
 tooltip label {
   color: @on_surface;
   font-size: 14px;
-  padding: 0.5rem;
 }
 
 /* Hover effects */
