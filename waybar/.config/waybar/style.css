@@ -2,9 +2,12 @@
 
 * {
   font-family: JetBrainsMono Nerd Font Propo;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 6px;
   margin: 0px;
+  border: none;
+  min-height: 0;
+  padding: 1px;
 }
 
 window#waybar {
@@ -17,9 +20,11 @@ window#waybar {
 }
 
 #workspaces button {
+	all: initial;
   color: @on_surface_variant;
   background: transparent;
-  margin: 0.1rem;
+  border-radius: 6px;
+  padding: 0 6px;
 }
 
 #workspaces button.visible {
@@ -30,7 +35,7 @@ window#waybar {
 #workspaces button.urgent {
   color: @on_error;
   background: @error;
-  animation: pulse 1s infinite;
+  /* animation: pulse 1s infinite; */
 }
 
 @keyframes pulse {
@@ -78,7 +83,7 @@ window#waybar {
 
 #battery.critical:not(.charging) {
   color: @error;
-  animation: blink 1s infinite;
+  /* animation: blink 1s infinite; */
 }
 
 #battery.charging {
@@ -138,7 +143,7 @@ window#waybar {
 
 #temperature.critical {
   color: @error;
-  animation: pulse 1s infinite;
+  /* animation: pulse 1s infinite; */
 }
 
 /* Backlight */
@@ -183,7 +188,7 @@ window#waybar {
 
 #tray > .needs-attention {
   color: @error;
-  animation: pulse 1s infinite;
+  /* animation: pulse 1s infinite; */
 }
 
 /* Tooltips */

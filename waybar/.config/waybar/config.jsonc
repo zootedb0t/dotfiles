@@ -1,12 +1,13 @@
 {
-  "layer": "top",
   "position": "top",
   "margin-top": 8,
   "margin-right": 8,
   "margin-left": 8,
   "margin-bottom": 0,
   "spacing": 10,
-  "modules-left": ["hyprland/workspaces", "hyprland/submap", "hyprland/window"],
+  "exclusive": true,
+  "passthrough": false,
+  "modules-left": ["hyprland/workspaces", "hyprland/submap"],
   "modules-center": ["clock"],
   "modules-right": [
     "network",
@@ -17,16 +18,15 @@
     "memory",
     "temperature",
     "battery",
-    // "clock",
     "bluetooth",
     // "custom/power",
     "tray"
   ],
 
   "hyprland/workspaces": {
-    "format": "{icon}",
+    "format": "{name}",
     "format-icons": {
-      "active": "󰮯",
+      // "active": "󰮯",
       // "default": "󰊠",
       "urgent": "󰚌"
     }
@@ -36,15 +36,15 @@
     "format": "  {}"
   },
 
-  "hyprland/window": {
-    "icon": true,
-    "icon-size": 24,
-    "max-length": 40,
-    "tooltip": false
-  },
+  // "hyprland/window": {
+  //   "icon": true,
+  //   "icon-size": 18,
+  //   "max-length": 40,
+  //   "tooltip": false
+  // },
 
   "clock": {
-    "format": " {:%I:%M %p}",
+    "format": "{:%A %H:%M}",
     // "format-alt": " {:%I:%M %p 󰃭 %d/%m/%y}",
     "tooltip-format": "<tt><big>{calendar}</big></tt>",
     "calendar": {
@@ -136,39 +136,41 @@
     "hwmon-path": "/sys/class/thermal/thermal_zone0/subsystem/thermal_zone9/temp",
     "critical-threshold": 80,
     "format": " {temperatureC}°C",
-    "tooltip-format": "CPU Temperatue: {temperatureC}°C"
+    "tooltip": false
   },
 
   "battery": {
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 15
-    },
-    "format-plugged": "{icon} {capacity}%",
-    "format-charging": "{icon} {capacity}%",
-    "format-full": "{icon} {capacity}%",
-    "format-discharging": "{icon} {capacity}%",
-    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
-    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    // "full-at": 96,
+    "format": "{icon} {capacity}%",
     "format-icons": {
-      "discharging": ["󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
-      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
-      "plugged": [""],
-      "full": ["󰂄"]
+      "charging": "",
+      "plugged": "",
+      "full": "",
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "events": {
+      "on-discharging-warning": "notify-send -u normal 'Low Battery'",
+      "on-discharging-critical": "notify-send -u critical 'Very Low Battery'"
+      // "on-charging-100": "notify-send -u normal 'Battery is full'"
     }
   },
 
   "network": {
+    "format": "{icon} {signalStrength}%",
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "format": "{icon} {ifname}",
-    "format-ethernet": "󰀂 {ifname}",
+    "format-ethernet": "󰀂",
     "format-disconnected": "󰖪",
     "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
-    "nospacing": 1,
     "on-click": "foot --title=Nmtui -e nmtui"
   },
 
@@ -190,8 +192,8 @@
     "format-on": " {status}",
     "format-off": "󰂲 {status}",
     "format-no-controller": "",
-    "format-connected-battery": " {status}({device_battery_percentage}%)",
-    "tooltip-format-connected": "{device_alias} {device_battery_percentage}%",
+    "format-connected-battery": " {device_battery_percentage}%",
+    "tooltip-format-connected": "{device_alias} ({device_battery_percentage}%)",
     "on-click": "foot --title=Bluetoothctl -e bluetoothctl"
   }
 
