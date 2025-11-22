@@ -2,21 +2,6 @@
 * Css Colors
 * Generated with Matugen
 */
-@define-color foreground {{colors.on_background.default.hex}};
-@define-color surface-alpha {{colors.surface.default.rgba | set_alpha: 0.5}};
-@define-color background {{colors.background.default.hex}};
-@define-color cursor {{colors.on_background.default.hex}};
-@define-color primary {{colors.primary.default.hex}};
-@define-color on-primary {{colors.on_primary.default.hex}};
-@define-color secondary {{colors.secondary.default.hex}};
-@define-color on-secondary {{colors.on_secondary.default.hex}};
-@define-color tertiary {{colors.tertiary.default.hex}};
-@define-color on-tertiary {{colors.on_tertiary.default.hex}};
-@define-color surface {{colors.surface.default.hex}};
-@define-color surface-bright {{colors.surface_bright.default.hex}};
-@define-color error {{colors.red_value.default.hex}};
-@define-color error-dim {{colors.error.default.hex | set_lightness: -10.0}};
-@define-color on-error {{colors.on_error.default.hex}};
-@define-color error-container {{colors.error_container.default.hex}};
-@define-color outline {{colors.outline.default.hex}};
-@define-color shadow {{colors.shadow.default.hex}};
+<* for name, value in colors *>
+    @define-color {{name}} {{value.default.hex}};
+<* endfor *>
