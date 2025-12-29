@@ -1,4 +1,10 @@
-@theme "colors"
+@theme "material"
+
+configuration {
+		modi: "drun,run";
+		matching: "fuzzy";
+    disable-history: false;
+}
 
 * {
     /* Layout and spacing */

@@ -1,5 +1,5 @@
 /*****----- Global Properties -----*****/
-@theme "colors"
+@theme "material"
 
 /*****----- Configuration -----*****/
 configuration {

@@ -1,13 +1,12 @@
 @import "themes/colors.css";
 
 * {
-  font-family: JetBrainsMono Nerd Font Propo;
-  font-size: 18px;
-  border-radius: 6px;
-  margin: 0px;
-  border: none;
+  font-family: VictorMono Nerd Font Propo;
   min-height: 0;
-  padding: 1px;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  border: none;
 }
 
 window#waybar {
@@ -20,10 +19,9 @@ window#waybar {
 }
 
 #workspaces button {
-	all: initial;
+  all: initial;
   color: @on_surface_variant;
   background: transparent;
-  border-radius: 6px;
   padding: 0 6px;
 }
 
@@ -63,6 +61,7 @@ window#waybar {
   color: @on_surface_variant;
   background: transparent;
   font-weight: 500;
+  padding: 0 6px;
 }
 
 @keyframes blink {

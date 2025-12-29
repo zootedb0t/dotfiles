@@ -1,5 +1,5 @@
 /*****----- Global Properties -----*****/
-@theme "colors"
+@theme "material"
 
 /*****----- Configuration -----*****/
 configuration {
@@ -35,7 +35,7 @@ mainbox {
   spacing:                     10px;
   margin:                      0px;
   padding:                     20px;
-  border:                      0px solid;
+  border:                      none;
   border-radius:               0px;
   border-color:                @selected;
   background-color:            transparent;

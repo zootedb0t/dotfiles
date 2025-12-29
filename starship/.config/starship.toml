@@ -7,42 +7,24 @@ $character'''
 palette = 'colors'
 
 [palettes.colors]
-color1 = '#a3c9fe'
-color2 = '#00315b'
-color3 = '#c3c6cf'
-color4 = '#1d2024'
-color5 = '#00315b'
-color6 = '#111418'
-color7 = '#111418'
-color8 = '#a3c9fe'
-color9 = '#d8bde3'
-color10 = '#93000a'
+color1 = '#b7c7e7'
+color2 = '#21314a'
+color3 = '#c5c6ce'
+color4 = '#1f1f21'
+color5 = '#21314a'
+color6 = '#131315'
+color7 = '#131315'
+color8 = '#b7c7e7'
+color9 = '#dfbcdb'
 
 # Prompt symbols 
 [character]
-success_symbol = "[ ](green bold)"
-error_symbol = "[ ](color10 bold)"
-vicmd_symbol = "[](green bold)"
-
-# [directory]
-# format = "[](fg:color1 bg:color4)[󰉋](bg:color1 fg:color2)[ ](fg:color1 bg:color4)[$path ](fg:color3 bg:color4)[ ](fg:color4)"
+success_symbol = "[ ](color9 bold)"
+error_symbol = "[ ](@{error})"
+vicmd_symbol = "[](#f9e2af)"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
-
-# [git_branch]
-# format = "[](fg:color8 bg:color4)[ ](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5) $branch](fg:color3 bg:color4)[](fg:color4) "
-
-# [time]
-# format = "[](fg:color8 bg:color4)[ ](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5) $time](fg:color3 bg:color4)[](fg:color4) "
-# disabled = false
-# time_format = "%R" # Hour:Minute Format
-
-# [python]
-# format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
-# symbol = '🐍'
-# pyenv_version_name = true
-# pyenv_prefix = 'venv'

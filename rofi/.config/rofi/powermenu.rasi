@@ -1,4 +1,4 @@
-@theme "colors"
+@theme "material"
 
 * {
     /* Layout and spacing */
@@ -57,7 +57,7 @@ prompt {
 listview {
     background-color: transparent;
     columns: 1;
-    lines: 5;
+    lines: 6;
     spacing: 4px;
     scrollbar: false;
     border: none;

@@ -4,10 +4,6 @@
 [general]
 # Mode at startup (viewer/gallery)
 mode = viewer
-# Window position (parent or absolute coordinates, e.g. 100,200)
-position = parent
-# Window size (fullscreen/parent/image, or absolute size, e.g. 800,600)
-size = parent
 # Action performed by SIGUSR1 signal (same format as for key bindings)
 sigusr1 = reload
 # Action performed by SIGUSR2 signal (same format as for key bindings)
@@ -15,7 +11,7 @@ sigusr2 = next_file
 # Application ID and window class name
 app_id = swayimg
 # Use window decoration (yes/no)
-decoration = yes
+decoration = no
 
 ################################################################################
 # Viewer mode configuration
@@ -27,22 +23,34 @@ window = #00000000
 transparency = grid
 # Default image scale (optimal/fit/width/height/fill/real)
 scale = optimal
-# Keep absolute zoom across images (yes/no)
-keep_zoom = no
 # Initial image position
 position = center
-# Fix position of the image on the window surface (yes/no)
-fixed = yes
 # Anti-aliasing (yes/no)
 antialiasing = mks13
-# Run slideshow at startup (yes/no)
-slideshow = no
-# Slideshow image display time (seconds)
-slideshow_time = 3
 # Number of previously viewed images to store in cache
 history = 1
 # Number of preloaded images (read ahead)
 preload = 1
+# Loop image list: jump to first image when end of list is reached (yes/no)
+loop = no
+
+
+################################################################################
+# Slideshow mode configuration
+################################################################################
+[slideshow]
+# Slideshow image display time (seconds)
+time = 3
+# Window background color (auto/extend/mirror/RGBA)
+window = auto
+# Background for transparent images (grid/RGBA)
+transparency = #000000ff
+# Default image scale (optimal/width/height/fit/fill/real)
+scale = fit
+# Initial image position on the window (center/top/bottom/free/...)
+position = center
+# Anti-aliasing mode (none/box/bilinear/bicubic/mks13)
+antialiasing = mks13
 
 ################################################################################
 # Gallery mode configuration
@@ -66,6 +74,10 @@ border = #000000ff
 shadow = #000000ff
 # Max number of thumbnails in memory cache, 0 for unlimited
 cache = 100
+# Load not only visible but also adjacent thumbnails
+preload = no
+# Enable/disable storing thumbnails in persistent storage (yes/no)
+pstore = no
 
 ################################################################################
 # Image list configuration
@@ -73,12 +85,14 @@ cache = 100
 [list]
 # Default order (none/alpha/random)
 order = alpha
-# Looping list of images (yes/no)
-loop = yes
+# Reverse order (yes/no)
+reverse = no
 # Read directories recursively (yes/no)
 recursive = no
-# Open all files in the start directory (yes/no)
-all = yes
+# Add files from the same directory as the first file (yes/no)
+all = no
+# Enable file system monitoring for adding new images to the list (yes/no)
+fsmon = yes
 
 ################################################################################
 # Font configuration
@@ -127,13 +141,13 @@ Home = first_file
 End = last_file
 Prior = prev_file
 Next = next_file
-Space = next_file
+n = next_file
+p = prev_file
 Shift+d = prev_dir
 d = next_dir
 Shift+o = prev_frame
 o = next_frame
 c = skip_file
-Shift+s = slideshow
 s = animation
 f = fullscreen
 Return = mode
@@ -160,7 +174,8 @@ i = info
 Shift+Delete = exec rm "%"; skip_file
 Escape = exit
 q = exit
-Ctrl+Shift+w = exec $HOME/.config/hypr/scripts/wallpaper.sh %
+Ctrl+Shift+w = exec $HOME/.config/hypr/scripts/theme.sh %
+
 # Mouse related
 ScrollLeft = step_right 5
 ScrollRight = step_left 5
@@ -172,6 +187,28 @@ Shift+ScrollUp = prev_file
 Shift+ScrollDown = next_file
 Alt+ScrollUp = prev_frame
 Alt+ScrollDown = next_frame
+MouseLeft = drag
+MouseSide = prev_file
+MouseExtra = next_file
+
+################################################################################
+# Slideshow mode key binding configuration: key = action [parameters]
+################################################################################
+[keys.slideshow]
+F1 = help
+Home = first_file
+End = last_file
+Prior = prev_file
+Next = next_file
+Shift+r = rand_file
+Shift+d = prev_dir
+d = next_dir
+Space = pause
+i = info
+f = fullscreen
+Return = mode
+Escape = exit
+q = exit
 
 ################################################################################
 # Gallery mode key binding configuration: key = action [parameters]
@@ -193,11 +230,14 @@ i = info
 Shift+Delete = exec rm "%"; skip_file
 Escape = exit
 q = exit
-Ctrl+Shift+w = exec $HOME/.config/hypr/scripts/wallpaper.sh %
+
 # Mouse related
 ScrollLeft = step_right
 ScrollRight = step_left
 ScrollUp = step_up
 ScrollDown = step_down
+Ctrl+ScrollUp = thumb +20
+Ctrl+ScrollDown = thumb -20
+MouseLeft = mode viewer
 
 # vim: filetype=dosini
