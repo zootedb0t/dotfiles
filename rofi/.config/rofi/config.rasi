@@ -8,7 +8,7 @@ configuration {
 
 * {
     /* Layout and spacing */
-    font: "Maple Mono 14";
+    font: "VictorMono Nerd Font Propo bold 14";
     border-radius: 12px;
     spacing: 8px;
     margin: 0;
@@ -53,8 +53,8 @@ entry {
 }
 
 prompt {
-    background-color: @primary-container;
-    text-color: @on-primary-container;
+    background-color: @primary;
+    text-color: @on-primary;
     border-radius: 12px;
     padding: 6px 12px;
 }
@@ -84,13 +84,13 @@ element {
 }
 
 element selected.normal {
-    background-color: @primary-container;
-    text-color: @on-primary-container;
+    background-color: @primary;
+    text-color: @on-primary;
 }
 
 element-text selected {
-    background-color: @primary-container;
-    text-color: @on-primary-container;
+    background-color: @primary;
+    text-color: @on-primary;
     padding: 12px;
 }
 
@@ -119,8 +119,8 @@ button {
 }
 
 button selected {
-    background-color: @primary-container;
-    text-color: @on-primary-container;
+    background-color: @primary;
+    text-color: @on-primary;
 }
 
 /* Scrollbar */

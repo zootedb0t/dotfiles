@@ -6,11 +6,12 @@
   margin: 0;
   padding: 0;
   font-size: 18px;
+  font-weight: bold;
   border: none;
 }
 
 window#waybar {
-  background: alpha(@surface_container, 0.5);
+  background: alpha(@background, 0.5);
 }
 
 /* Workspaces */
@@ -20,20 +21,19 @@ window#waybar {
 
 #workspaces button {
   all: initial;
-  color: @on_surface_variant;
+  color: @primary;
   background: transparent;
   padding: 0 6px;
 }
 
 #workspaces button.visible {
-  color: @on_primary_container;
-  background: @primary_container;
+  color: @on_primary;
+  background: @primary;
 }
 
 #workspaces button.urgent {
   color: @on_error;
   background: @error;
-  /* animation: pulse 1s infinite; */
 }
 
 @keyframes pulse {
@@ -58,7 +58,7 @@ window#waybar {
 #bluetooth,
 #custom-power,
 #submap {
-  color: @on_surface_variant;
+  color: @primary;
   background: transparent;
   font-weight: 500;
   padding: 0 6px;
@@ -72,7 +72,7 @@ window#waybar {
 
 /* Battery states */
 #battery {
-  color: @on_surface_variant;
+  color: @primary;
   background: transparent;
 }
 
@@ -82,7 +82,6 @@ window#waybar {
 
 #battery.critical:not(.charging) {
   color: @error;
-  /* animation: blink 1s infinite; */
 }
 
 #battery.charging {
@@ -91,14 +90,13 @@ window#waybar {
 
 /* Network states */
 #network {
-  color: @on_surface_variant;
-  background: transparent;
+  color: @primary;
 }
 
-#cava {
-  color: @on_surface_variant;
-  background: transparent;
-}
+/* #cava { */
+/*   color: @on_surface_variant; */
+/*   background: transparent; */
+/* } */
 
 #network.disconnected {
   color: @error;
@@ -106,8 +104,7 @@ window#waybar {
 
 /* Audio states */
 #pulseaudio {
-  color: @on_surface_variant;
-  background: transparent;
+  color: @primary;
 }
 
 #pulseaudio.muted {
@@ -116,8 +113,7 @@ window#waybar {
 
 /* Bluetooth */
 #bluetooth {
-  color: @on_surface_variant;
-  background: transparent;
+  color: @primary;
 }
 
 #bluetooth.off {
@@ -126,18 +122,15 @@ window#waybar {
 
 /* System monitoring */
 #cpu {
-  color: @on_surface_variant;
-  background: transparent;
+  color: @primary;
 }
 
 #memory {
-  color: @on_surface_variant;
-  background: transparent;
+  color: @primary;
 }
 
 #temperature {
-  color: @on_surface_variant;
-  background: transparent;
+  color: @primary;
 }
 
 #temperature.critical {
@@ -147,37 +140,36 @@ window#waybar {
 
 /* Backlight */
 #backlight {
-  color: @on_surface_variant;
-  background: transparent;
+  color: @primary;
 }
 
 /* Window title */
-#window {
-  color: @on_surface_variant;
-  background: transparent;
-  font-style: italic;
-}
+/* #window { */
+/*   color: @on_surface_variant; */
+/*   background: transparent; */
+/*   font-style: italic; */
+/* } */
 
 /* MPRIS */
-#mpris {
-  color: @on_secondary_container;
-  background: alpha(@secondary_container, 0.8);
-}
+/* #mpris { */
+/*   color: @on_secondary_container; */
+/*   background: alpha(@secondary_container, 0.8); */
+/* } */
 
 /* Custom power button */
-#custom-power {
-  color: @on_error;
-  background: @error;
-  font-weight: 600;
-}
+/* #custom-power { */
+/*   color: @on_error; */
+/*   background: @error; */
+/*   font-weight: 600; */
+/* } */
 
-#custom-power:hover {
-  background: alpha(@error, 0.8);
-}
+/* #custom-power:hover { */
+/*   background: alpha(@error, 0.8); */
+/* } */
 
 /* Tray */
 #tray {
-  background: alpha(@surface_container_highest, 0.8);
+  /* background: alpha(@surface_container_highest, 0.8); */
   padding: 0.3rem;
 }
 
@@ -187,7 +179,6 @@ window#waybar {
 
 #tray > .needs-attention {
   color: @error;
-  /* animation: pulse 1s infinite; */
 }
 
 /* Tooltips */
