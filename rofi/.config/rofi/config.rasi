@@ -2,17 +2,15 @@
 
 configuration {
 		modi: "drun,run";
-		matching: "fuzzy";
-    disable-history: false;
 }
 
 * {
     /* Layout and spacing */
     font: "VictorMono Nerd Font Propo bold 14";
-    border-radius: 12px;
     spacing: 8px;
     margin: 0;
     padding: 0;
+    border: none;
     background-color: transparent;
     text-color: @on-surface;
 }
@@ -20,27 +18,18 @@ configuration {
 /* Main window */
 window {
     background-color: @surface-container;
-    border: 1px;
-    border-color: @outline-variant;
-    border-radius: 16px;
     padding: 16px;
     width: 600px;
 }
 
 /* Main container */
 mainbox {
-    spacing: 12px;
     children: [ "inputbar", "listview", "mode-switcher" ];
 }
 
 /* Input bar */
 inputbar {
     background-color: @surface-container-high;
-    border: 1px;
-    border-color: @outline-variant;
-    border-radius: 12px;
-    padding: 8px 16px;
-    spacing: 8px;
     children: [ "prompt", "entry" ];
 }
 
@@ -48,27 +37,20 @@ entry {
     background-color: transparent;
     text-color: @on-surface;
     placeholder-color: @on-surface-variant;
-    border: none;
     padding: 8px;
 }
 
 prompt {
     background-color: @primary;
     text-color: @on-primary;
-    border-radius: 12px;
     padding: 6px 12px;
 }
 
 /* List of results */
 listview {
     background-color: transparent;
-    columns: 1;
     lines: 8;
-    spacing: 4px;
     scrollbar: false;
-    border: none;
-    cycle: true;
-    dynamic: true;
     layout: vertical;
 }
 
@@ -76,9 +58,7 @@ listview {
 element {
     background-color: transparent;
     text-color: @on-surface;
-    border-radius: 8px;
     padding: 8px;
-    spacing: 8px;
     orientation: horizontal;
     children: [ element-icon, element-text ];
 }
@@ -91,31 +71,17 @@ element selected.normal {
 element-text selected {
     background-color: @primary;
     text-color: @on-primary;
-    padding: 12px;
 }
 
 element-icon {
     background-color: transparent;
     size: 24px;
-    vertical-align: 0.5;
-}
-
-/* Mode switcher */
-mode-switcher {
-    background-color: @surface-container-low;
-    border: 1px;
-    border-color: @outline-variant;
-    border-radius: 16px;
-    padding: 4px;
-    spacing: 4px;
 }
 
 button {
     background-color: transparent;
-    text-color: @on-surface-variant;
-    border-radius: 12px;
-    padding: 8px 16px;
-    font: "Inter Medium 11";
+    padding: 8px;
+    font: "VictorMono Nerd Font Propo bold Italic 14";
 }
 
 button selected {
@@ -123,42 +89,9 @@ button selected {
     text-color: @on-primary;
 }
 
-/* Scrollbar */
-scrollbar {
-    background-color: @surface-container-high;
-    border-radius: 6px;
-    margin: 0px;
-    padding: 0px;
-    width: 6px;
-}
-
-handle {
-    background-color: @outline;
-    border-radius: 6px;
-    min-height: 20px;
-}
-
-/* Message box */
-message {
-    background-color: @surface-container-high;
-    border: 1px;
-    border-color: @outline-variant;
-    border-radius: 12px;
-    padding: 12px;
-    margin: 0px;
-}
-
-textbox {
-    background-color: transparent;
-    text-color: @on-surface;
-}
-
 /* Error styling */
 error-message {
     background-color: @error-container;
     text-color: @on-error-container;
-    border: 1px;
-    border-color: @error;
-    border-radius: 12px;
     padding: 12px;
 }

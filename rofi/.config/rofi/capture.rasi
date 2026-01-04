@@ -1,12 +1,11 @@
-@theme "colors"
+@theme "material"
 
 * {
     /* Layout and spacing */
     font: "VictorMono Nerd Font Propo bold 14";
-    border-radius: 12px;
-    spacing: 8px;
     margin: 0;
     padding: 0;
+    border: none;
     background-color: transparent;
     text-color: @on-surface;
 }
@@ -14,43 +13,12 @@
 /* Main window */
 window {
     background-color: @surface-container;
-    border: 1px;
-    border-color: @outline-variant;
-    border-radius: 16px;
-    padding: 16px;
     width: 400px;
 }
 
 /* Main container */
 mainbox {
-    spacing: 12px;
-    children: [ "inputbar", "listview" ];
-}
-
-/* Input bar */
-inputbar {
-    background-color: @surface-container-high;
-    border: 1px;
-    border-color: @outline-variant;
-    border-radius: 28px;
-    padding: 8px 16px;
-    spacing: 8px;
-    children: [ "prompt", "entry" ];
-}
-
-entry {
-    background-color: transparent;
-    text-color: @on-surface;
-    placeholder-color: @on-surface-variant;
-    border: none;
-    padding: 8px;
-}
-
-prompt {
-    background-color: @primary;
-    text-color: @on-primary;
-    border-radius: 16px;
-    padding: 6px 12px;
+    children: [ "listview" ];
 }
 
 /* List of results */
@@ -58,19 +26,13 @@ listview {
     background-color: transparent;
     columns: 1;
     lines: 2;
-    spacing: 4px;
     scrollbar: false;
-    border: none;
-    cycle: true;
-    dynamic: true;
-    layout: vertical;
 }
 
 /* Individual list items */
 element {
     background-color: transparent;
     text-color: @on-surface;
-    border-radius: 8px;
     padding: 12px;
     spacing: 8px;
     orientation: horizontal;
@@ -85,53 +47,6 @@ element selected.normal {
 element-text selected {
     background-color: @primary;
     text-color: @on-primary;
-    padding: 12px;
-}
-
-element-icon {
-    background-color: transparent;
-    size: 24px;
-    vertical-align: 0.5;
-}
-
-/* Scrollbar */
-scrollbar {
-    background-color: @surface-container-high;
-    border-radius: 6px;
-    margin: 0px;
-    padding: 0px;
-    width: 6px;
-}
-
-handle {
-    background-color: @outline;
-    border-radius: 6px;
-    min-height: 20px;
-}
-
-/* Message box */
-message {
-    background-color: @surface-container-high;
-    border: 1px;
-    border-color: @outline-variant;
-    border-radius: 12px;
-    padding: 12px;
-    margin: 0px;
-}
-
-textbox {
-    background-color: transparent;
-    text-color: @on-surface;
-}
-
-/* Error styling */
-error-message {
-    background-color: @error-container;
-    text-color: @on-error-container;
-    border: 1px;
-    border-color: @error;
-    border-radius: 12px;
-    padding: 12px;
 }
 
 /* vim:ft=rasi

@@ -2,11 +2,11 @@
 
 * {
     /* Layout and spacing */
-    font: "Maple Mono 14";
-    border-radius: 12px;
+    font: "VictorMono Nerd Font Propo bold 14";
     spacing: 8px;
     margin: 0;
     padding: 0;
+    border: none;
     background-color: transparent;
     text-color: @on-surface;
 }
@@ -14,9 +14,6 @@
 /* Main window */
 window {
     background-color: @surface-container;
-    border: 1px;
-    border-color: @outline-variant;
-    border-radius: 16px;
     padding: 16px;
     width: 600px;
 }
@@ -30,9 +27,6 @@ mainbox {
 /* Input bar */
 inputbar {
     background-color: @surface-container-high;
-    border: 1px;
-    border-color: @outline-variant;
-    border-radius: 28px;
     padding: 8px 16px;
     spacing: 8px;
     children: [ "prompt", "entry" ];
@@ -41,7 +35,6 @@ inputbar {
 prompt {
     background-color: @primary;
     text-color: @on-primary;
-    border-radius: 16px;
     padding: 6px 12px;
 }
 
@@ -52,9 +45,6 @@ listview {
     lines: 3;
     spacing: 4px;
     scrollbar: false;
-    border: none;
-    cycle: true;
-    dynamic: true;
     layout: vertical;
 }
 
@@ -62,7 +52,6 @@ listview {
 element {
     background-color: transparent;
     text-color: @on-primary;
-    border-radius: 8px;
     padding: 12px;
     spacing: 8px;
     orientation: horizontal;
@@ -83,9 +72,8 @@ element-icon {
 button {
     background-color: transparent;
     text-color: @on-surface-variant;
-    border-radius: 12px;
     padding: 8px 16px;
-    font: "Inter Medium 11";
+    font: "VictorMono Nerd Font Propo bold 14";
 }
 
 button selected {
@@ -93,44 +81,9 @@ button selected {
     text-color: @on-primary;
 }
 
-/* Scrollbar */
-scrollbar {
-    background-color: @surface-container-high;
-    border-radius: 6px;
-    margin: 0px;
-    padding: 0px;
-    width: 6px;
-}
-
 handle {
     background-color: @outline;
-    border-radius: 6px;
     min-height: 20px;
-}
-
-/* Message box */
-message {
-    background-color: @surface-container-high;
-    border: 1px;
-    border-color: @outline-variant;
-    border-radius: 12px;
-    padding: 12px;
-    margin: 0px;
-}
-
-textbox {
-    background-color: transparent;
-    text-color: @on-surface;
-}
-
-/* Error styling */
-error-message {
-    background-color: @error-container;
-    text-color: @on-error-container;
-    border: 1px;
-    border-color: @error;
-    border-radius: 12px;
-    padding: 12px;
 }
 
 /* vim:ft=rasi
