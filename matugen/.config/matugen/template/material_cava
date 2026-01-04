@@ -211,17 +211,12 @@
 ; waveform = 0
 
 [color]
-gradient = 6
-
-gradient_color_1 = '{{colors.surface_tint.default.hex}}'
+background = 'default'
+gradient = 1
+# horizontal_gradient = 1
+gradient_color_1 = '{{colors.primary_container.default.hex}}'
 gradient_color_2 = '{{colors.primary.default.hex}}'
-gradient_color_3 = '{{colors.secondary_fixed_dim.default.hex}}'
-gradient_color_4 = '{{colors.secondary_fixed.default.hex}}'
-gradient_color_5 = '{{colors.tertiary_fixed.default.hex}}'
-gradient_color_6 = '{{colors.tertiary_fixed_dim.default.hex}}'
-gradient_color_7 = '{{colors.tertiary.default.hex}}'
-gradient_color_8 = '{{colors.tertiary_container.default.hex}}'
-
+gradient_color_3 = '{{colors.on_primary_container.default.hex}}'
 
 [smoothing]
 

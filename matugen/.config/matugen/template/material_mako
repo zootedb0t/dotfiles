@@ -1,16 +1,14 @@
 # Generated with Matugen
 
-background-color={{colors.surface.default.hex}}
-text-color={{colors.secondary.default.hex}}
+background-color={{colors.primary.default.hex}}
+text-color={{colors.on_primary.default.hex}}
 border-color={{colors.secondary_container.default.hex}}
-progress-color=over {{colors.on_secondary.default.hex}}
+progress-color=over {{colors.tertiary.default.hex}}
 
 [urgency=low]
-# border-color={{colors.primary_container.default.hex}}
 default-timeout=2000
 
 [urgency=normal]
-# border-color={{colors.primary_container.default.hex}}
 default-timeout=5000
 
 [urgency=high]
