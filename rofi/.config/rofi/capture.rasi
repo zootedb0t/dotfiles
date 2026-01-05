@@ -33,8 +33,7 @@ listview {
 element {
     background-color: transparent;
     text-color: @on-surface;
-    padding: 12px;
-    spacing: 8px;
+    padding: 8px;
     orientation: horizontal;
     children: [ element-icon, element-text ];
 }
