@@ -1,10 +1,9 @@
 @import "themes/colors.css";
 
 * {
+  all: unset;
   font-family: VictorMono Nerd Font Propo;
-  min-height: 0;
-  margin: 0;
-  padding: 0;
+  background: transparent;
   font-size: 18px;
   font-weight: bold;
   border: none;
@@ -15,14 +14,8 @@ window#waybar {
 }
 
 /* Workspaces */
-#workspaces {
-  background: transparent;
-}
-
 #workspaces button {
-  all: initial;
   color: @primary;
-  background: transparent;
   padding: 0 6px;
 }
 
@@ -36,46 +29,52 @@ window#waybar {
   background: @error;
 }
 
-@keyframes pulse {
-  to {
-    opacity: 0.7;
-  }
-}
-
 /* Main modules styling */
+#mode,
 #clock,
-#battery,
-#memory,
-#temperature,
 #network,
 #pulseaudio,
-#tray,
-#mode,
 #backlight,
-#window,
-#mpris,
-#cpu,
+#memory,
+#temperature,
+#battery,
 #bluetooth,
-#custom-power,
-#submap {
+#tray {
   color: @primary;
-  background: transparent;
-  font-weight: 500;
   padding: 0 6px;
 }
 
-@keyframes blink {
-  to {
-    opacity: 0.6;
-  }
+/* Submap indicator */
+#submap {
+  color: @green_source;
+}
+
+/* Mode indicator */
+#mode {
+  color: @on_tertiary;
+}
+
+/* Network states */
+#network.disconnected {
+  color: @error;
+}
+
+/* Audio states */
+#pulseaudio.muted {
+  color: @error;
+}
+
+/* Memory state critical */
+#memory.c {
+  color: @error;
+}
+
+/* System temperature monitoring */
+#temperature.critical {
+  color: @error;
 }
 
 /* Battery states */
-#battery {
-  color: @primary;
-  background: transparent;
-}
-
 #battery.warning {
   color: @yellow;
 }
@@ -88,91 +87,12 @@ window#waybar {
   color: @green_value;
 }
 
-/* Network states */
-#network {
-  color: @primary;
-}
-
-/* #cava { */
-/*   color: @on_surface_variant; */
-/*   background: transparent; */
-/* } */
-
-#network.disconnected {
-  color: @error;
-}
-
-/* Audio states */
-#pulseaudio {
-  color: @primary;
-}
-
-#pulseaudio.muted {
-  color: @error;
-}
-
 /* Bluetooth */
-#bluetooth {
-  color: @primary;
-}
-
 #bluetooth.off {
   color: @outline;
 }
 
-/* System monitoring */
-#cpu {
-  color: @primary;
-}
-
-#memory {
-  color: @primary;
-}
-
-#temperature {
-  color: @primary;
-}
-
-#temperature.critical {
-  color: @error;
-  /* animation: pulse 1s infinite; */
-}
-
-/* Backlight */
-#backlight {
-  color: @primary;
-}
-
-/* Window title */
-/* #window { */
-/*   color: @on_surface_variant; */
-/*   background: transparent; */
-/*   font-style: italic; */
-/* } */
-
-/* MPRIS */
-/* #mpris { */
-/*   color: @on_secondary_container; */
-/*   background: alpha(@secondary_container, 0.8); */
-/* } */
-
-/* Custom power button */
-/* #custom-power { */
-/*   color: @on_error; */
-/*   background: @error; */
-/*   font-weight: 600; */
-/* } */
-
-/* #custom-power:hover { */
-/*   background: alpha(@error, 0.8); */
-/* } */
-
 /* Tray */
-#tray {
-  /* background: alpha(@surface_container_highest, 0.8); */
-  padding: 0.3rem;
-}
-
 #tray > .passive {
   opacity: 0.6;
 }
@@ -204,16 +124,5 @@ tooltip label {
 #workspaces button:hover,
 #backlight:hover {
   opacity: 0.8;
-}
-
-/* Mode indicator */
-#mode {
-  color: @on_tertiary;
-  background: @tertiary;
-  font-weight: 600;
-}
-
-#submap {
-  color: @green_source;
-  font-weight: 600;
+  transition: opacity 0.2s ease-in-out;
 }
