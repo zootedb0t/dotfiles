@@ -1,37 +1,21 @@
 @theme "material"
 
-* {
-    /* Layout and spacing */
-    font: "VictorMono Nerd Font Propo bold 14";
-    /* spacing: 8px; */
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    text-color: @on-surface;
-}
-
 /* Main window */
 window {
+    font: "VictorMono Nerd Font Propo bold 14";
     background-color: @surface-container;
     width: 600px;
 }
 
 /* Main container */
 mainbox {
-    children: [ "listview" ];
+		background-color: transparent;
+    children: ["prompt", "listview" ];
 }
 
-/* Input bar */
-inputbar {
-    background-color: @surface-container-high;
-    padding: 8px;
-    children: [ "entry" ];
-}
-
+/* Prompt */
 prompt {
     background-color: @primary;
-    text-color: @on-primary;
     padding: 8px;
 }
 
@@ -41,7 +25,10 @@ listview {
     columns: 1;
     lines: 3;
     scrollbar: false;
-    layout: vertical;
+}
+
+textbox {
+    background-color: transparent;
 }
 
 /* Individual list items */
@@ -52,13 +39,22 @@ element {
     orientation: horizontal;
 }
 
-element selected.normal {
+element-text {
+    background-color: transparent;
+    text-color: @on-surface;
+}
+
+element-icon {
+    background-color: transparent;
+}
+
+element selected {
     background-color: @primary;
     text-color: @on-primary;
 }
 
 element-text selected {
-    background-color: @primary;
+    background-color: transparent;
     text-color: @on-primary;
 }
 

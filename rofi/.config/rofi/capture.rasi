@@ -1,24 +1,21 @@
 @theme "material"
 
-* {
-    /* Layout and spacing */
-    font: "VictorMono Nerd Font Propo bold 14";
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    text-color: @on-surface;
-}
-
 /* Main window */
 window {
+		font: "VictorMono Nerd Font Propo bold 14";
     background-color: @surface-container;
-    width: 400px;
+  	width: 400px;
 }
 
 /* Main container */
 mainbox {
-    children: [ "listview" ];
+		background-color: transparent;
+    children: ["prompt", "listview" ];
+}
+
+prompt {
+    background-color: @primary;
+    padding: 2px;
 }
 
 /* List of results */
@@ -29,22 +26,35 @@ listview {
     scrollbar: false;
 }
 
+textbox {
+    background-color: transparent;
+}
+
 /* Individual list items */
 element {
     background-color: transparent;
-    text-color: @on-surface;
+    text-color: @on-primary;
     padding: 8px;
     orientation: horizontal;
-    children: [ element-icon, element-text ];
+    children: [ "element-text" ];
 }
 
-element selected.normal {
+element-text {
+    background-color: transparent;
+    text-color: @on-surface;
+}
+
+element-icon {
+    background-color: transparent;
+}
+
+element selected {
     background-color: @primary;
     text-color: @on-primary;
 }
 
 element-text selected {
-    background-color: @primary;
+    background-color: transparent;
     text-color: @on-primary;
 }
 

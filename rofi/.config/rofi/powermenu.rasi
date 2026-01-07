@@ -1,26 +1,16 @@
 @theme "material"
 
-* {
-    /* Layout and spacing */
-    font: "VictorMono Nerd Font Propo bold 14";
-    spacing: 8px;
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    text-color: @on-surface;
-}
-
 /* Main window */
 window {
+    font: "VictorMono Nerd Font Propo bold 14";
     background-color: @surface-container;
+		width: 800px;
     padding: 8px;
-    width: 800px;
 }
 
 /* Main container */
 mainbox {
-    /* spacing: 12px; */
+		background-color: transparent;
     children: [ "inputbar", "listview" ];
 }
 
@@ -48,26 +38,30 @@ listview {
     background-color: transparent;
     lines: 6;
     scrollbar: false;
-    border: none;
+    /* border: none; */
     layout: vertical;
 }
 
 /* Individual list items */
 element {
     background-color: transparent;
-    text-color: @on-surface;
     padding: 8px;
     orientation: horizontal;
     children: [ element-icon, element-text ];
 }
 
-element selected.normal {
+element selected {
     background-color: @primary;
     text-color: @on-primary;
 }
 
+element-text {
+    background-color: transparent;
+    text-color: @on-surface;
+}
+
 element-text selected {
-    background-color: @primary;
+    background-color: transparent;
     text-color: @on-primary;
 }
 

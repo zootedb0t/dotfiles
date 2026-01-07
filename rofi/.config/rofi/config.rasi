@@ -4,19 +4,9 @@ configuration {
 		modi: "drun,run";
 }
 
-* {
-    /* Layout and spacing */
-    font: "VictorMono Nerd Font Propo bold 14";
-    spacing: 8px;
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    text-color: @on-surface;
-}
-
 /* Main window */
 window {
+    font: "VictorMono Nerd Font Propo bold 14";
     background-color: @surface-container;
     padding: 8px;
     width: 600px;
@@ -24,6 +14,7 @@ window {
 
 /* Main container */
 mainbox {
+		background-color: transparent;
     children: [ "inputbar", "listview", "mode-switcher" ];
 }
 
@@ -51,25 +42,28 @@ listview {
     background-color: transparent;
     lines: 8;
     scrollbar: false;
-    layout: vertical;
 }
 
 /* Individual list items */
 element {
     background-color: transparent;
-    text-color: @on-surface;
     padding: 8px;
     orientation: horizontal;
     children: [ element-icon, element-text ];
 }
 
-element selected.normal {
+element selected {
     background-color: @primary;
     text-color: @on-primary;
 }
 
+element-text {
+    background-color: transparent;
+    text-color: @on-surface;
+}
+
 element-text selected {
-    background-color: @primary;
+    background-color: transparent;
     text-color: @on-primary;
 }
 
@@ -78,8 +72,13 @@ element-icon {
     size: 24px;
 }
 
+mode-switcher {
+    background-color: transparent;
+}
+
 button {
     background-color: transparent;
+    text-color: @on-surface;
     padding: 8px;
     font: "VictorMono Nerd Font Propo bold Italic 14";
 }
