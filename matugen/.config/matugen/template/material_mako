@@ -3,7 +3,7 @@
 background-color={{colors.primary.default.hex}}
 text-color={{colors.on_primary.default.hex}}
 border-color={{colors.secondary_container.default.hex}}
-progress-color=over {{colors.tertiary.default.hex}}
+progress-color=over {{colors.primary.default.hex}}
 
 [urgency=low]
 default-timeout=2000

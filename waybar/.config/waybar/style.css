@@ -1,7 +1,11 @@
 @import "themes/colors.css";
 
 * {
-  all: unset;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 0px;
+  min-height: 24px;
+  min-width: 24px;
   font-family: VictorMono Nerd Font Propo;
   background: transparent;
   font-size: 18px;
@@ -13,10 +17,24 @@ window#waybar {
   background: alpha(@background, 0.5);
 }
 
-/* Workspaces */
+/* For river tags */
+#tags button {
+  color: @primary;
+}
+
+#tags button.focused {
+  color: @on_primary;
+  background: @primary;
+}
+
+/* Niri and Hyprland Workspaces */
 #workspaces button {
   color: @primary;
-  padding: 0 6px;
+}
+
+#workspaces button.active {
+  color: @on_primary;
+  background: @primary;
 }
 
 #workspaces button.visible {
@@ -29,8 +47,12 @@ window#waybar {
   background: @error;
 }
 
+#window {
+	color: @primary;
+  padding: 0 6px;
+}
+
 /* Main modules styling */
-#mode,
 #clock,
 #network,
 #pulseaudio,
@@ -46,12 +68,8 @@ window#waybar {
 
 /* Submap indicator */
 #submap {
-  color: @green_source;
-}
-
-/* Mode indicator */
-#mode {
-  color: @on_tertiary;
+  color: @tertiary;
+  padding: 0 6px;
 }
 
 /* Network states */

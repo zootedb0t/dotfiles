@@ -1,11 +1,12 @@
 [config.wallpaper]
-command = "swww"
-arguments = ["img", "--transition-type", "random"]
+set = true
+command = "awww img {{ image }}"
 
 [templates]
-alacritty = { input_path = '~/.config/matugen/template/material_alacritty.toml', output_path = '~/.config/alacritty/themes/colors.toml' }
+# alacritty = { input_path = '~/.config/matugen/template/material_alacritty.toml', output_path = '~/.config/alacritty/themes/colors.toml' }
 # ghostty = { input_path = '~/.config/matugen/template/material_ghostty', output_path = '~/.config/ghostty/themes/colors' }
-waybar = { input_path = '~/.config/matugen/template/material_colors.css', output_path = '~/.config/waybar/themes/colors.css', post_hook = 'systemctl restart --user waybar.service' }
+# waybar = { input_path = '~/.config/matugen/template/material_colors.css', output_path = '~/.config/waybar/themes/colors.css', post_hook = '~/.config/hypr/scripts/bar.sh' }
+waybar = { input_path = '~/.config/matugen/template/material_colors.css', output_path = '~/.config/waybar/themes/colors.css' }
 zathura = { input_path = '~/.config/matugen/template/material_zathura', output_path = '~/.config/zathura/color' }
 hyprland = { input_path = '~/.config/matugen/template/material_hypr.conf', output_path = '~/.config/hypr/themes/colors.conf' }
 gtk3 = { input_path = '~/.config/matugen/template/gtk-colors.css', output_path = '~/.config/gtk-3.0/colors.css' }
@@ -21,6 +22,7 @@ cava = { input_path = '~/.config/matugen/template/material_cava', output_path = 
 mpv = { input_path = '~/.config/matugen/template/material_mpv.conf', output_path = '~/.config/mpv/mpv.conf' }
 btop = { input_path = '~/.config/matugen/template/material_btop.theme', output_path = '~/.config/btop/themes/matugen.theme' }
 tmux = { input_path = '~/.config/matugen/template/material_tmux.conf', output_path = '~/.config/tmux/colors.conf' }
+niri = { input_path = '~/.config/matugen/template/material_niri.kdl', output_path = '~/.config/niri/colors.kdl', post_hook = 'niri msg action load-config-file' }
 
 [config.custom_colors]
 red = "#f38ba8"

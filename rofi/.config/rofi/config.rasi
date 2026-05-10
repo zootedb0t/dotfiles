@@ -15,7 +15,7 @@ window {
 /* Main container */
 mainbox {
 		background-color: transparent;
-    children: [ "inputbar", "listview", "mode-switcher" ];
+    children: [ "inputbar", "listview" ];
 }
 
 /* Input bar */
@@ -26,12 +26,14 @@ inputbar {
 
 entry {
     background-color: transparent;
+    placeholder: "Search";
     text-color: @on-surface;
     placeholder-color: @on-surface-variant;
     padding: 8px;
 }
 
 prompt {
+		enabled: false;
     background-color: @primary;
     text-color: @on-primary;
     padding: 8px;

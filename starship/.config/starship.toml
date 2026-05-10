@@ -7,15 +7,15 @@ $character'''
 palette = 'colors'
 
 [palettes.colors]
-color1 = '#dac3a2'
-color2 = '#3c2e17'
-color3 = '#cfc5b9'
-color4 = '#211f1d'
-color5 = '#3c2e17'
-color6 = '#151311'
-color7 = '#151311'
-color8 = '#ffedd5'
-color9 = '#ecf2d2'
+color1 = '#9ad4a2'
+color2 = '#003917'
+color3 = '#c1c9be'
+color4 = '#1c211c'
+color5 = '#003917'
+color6 = '#101510'
+color7 = '#101510'
+color8 = '#9ad4a2'
+color9 = '#a2ced8'
 
 # Prompt symbols 
 [character]
