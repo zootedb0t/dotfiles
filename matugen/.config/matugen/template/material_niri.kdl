@@ -18,6 +18,11 @@ layout {
     insert-hint {
         color "{{colors.primary.default.hex}}80"
     }
+
+		focus-ring {
+    		active-color   "{{colors.primary.default.hex}}"
+    		inactive-color "{{colors.outline.default.hex}}"
+		}
 }
 
 overview {
