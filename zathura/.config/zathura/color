@@ -1,30 +1,30 @@
 " Matugen Colors
-set default-bg              "rgba(67, 34, 84, 1)"
-set default-fg              "#e2b7f4"
+set default-bg              "rgba(255, 255, 255, 1)"
+set default-fg              "#546500"
 
-set statusbar-bg            "#432254"
-set statusbar-fg            "#e2b7f4"
+set statusbar-bg            "#ffffff"
+set statusbar-fg            "#546500"
 
-set inputbar-bg             "#432254"
-set inputbar-fg             "#e2b7f4"
+set inputbar-bg             "#ffffff"
+set inputbar-fg             "#546500"
 
-set notification-error-bg   "#690005"
-set notification-error-fg   "#ffb4ab"
+set notification-error-bg   "#ffffff"
+set notification-error-fg   "#ba1a1a"
 
-set notification-warning-bg "#f6d9ff"
-set notification-warning-fg "#93000a"
+set notification-warning-bg "#cbf200"
+set notification-warning-fg "#ffdad6"
 
-set highlight-color         "#f6d9ff"
-set highlight-active-color  "#e2b7f4"
+set highlight-color         "#cbf200"
+set highlight-active-color  "#b2d400"
 
-set completion-highlight-fg "#432254"
-set completion-highlight-bg #e2b7f4""
+set completion-highlight-fg "#ffffff"
+set completion-highlight-bg #546500""
 
-set completion-bg           "#432254"
-set completion-fg           "#e2b7f4"
+set completion-bg           "#ffffff"
+set completion-fg           "#546500"
 
-set notification-bg         "#432254"
-set notification-fg         "#e2b7f4"
+set notification-bg         "#ffffff"
+set notification-fg         "#546500"
 
-set recolor-lightcolor      "rgba(67, 34, 84, 1)"
-set recolor-darkcolor       "#e2b7f4"
+set recolor-lightcolor      "rgba(255, 255, 255, 1)"
+set recolor-defaultcolor    "#b2d400"

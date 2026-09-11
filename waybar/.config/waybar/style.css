@@ -6,28 +6,17 @@
   border-radius: 0px;
   min-height: 24px;
   min-width: 24px;
-  font-family: VictorMono Nerd Font Propo;
+  font-family: Maple Mono NF CN;
   background: transparent;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 16px;
   border: none;
 }
 
 window#waybar {
-  background: alpha(@background, 0.5);
+  background: alpha(@background, 0.25);
 }
 
-/* For river tags */
-#tags button {
-  color: @primary;
-}
-
-#tags button.focused {
-  color: @on_primary;
-  background: @primary;
-}
-
-/* Niri and Hyprland Workspaces */
+/* Niri Workspaces */
 #workspaces button {
   color: @primary;
 }
@@ -35,21 +24,6 @@ window#waybar {
 #workspaces button.active {
   color: @on_primary;
   background: @primary;
-}
-
-#workspaces button.visible {
-  color: @on_primary;
-  background: @primary;
-}
-
-#workspaces button.urgent {
-  color: @on_error;
-  background: @error;
-}
-
-#window {
-	color: @primary;
-  padding: 0 6px;
 }
 
 /* Main modules styling */
@@ -63,13 +37,7 @@ window#waybar {
 #bluetooth,
 #tray {
   color: @primary;
-  padding: 0 6px;
-}
-
-/* Submap indicator */
-#submap {
-  color: @tertiary;
-  padding: 0 6px;
+  padding: 0 4px;
 }
 
 /* Network states */
@@ -79,11 +47,6 @@ window#waybar {
 
 /* Audio states */
 #pulseaudio.muted {
-  color: @error;
-}
-
-/* Memory state critical */
-#memory.c {
   color: @error;
 }
 
