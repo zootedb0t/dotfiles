@@ -1,9 +1,8 @@
 # Generated with Matugen
 
-background-color={{colors.primary.default.hex}}
-text-color={{colors.on_primary.default.hex}}
-border-color={{colors.secondary_container.default.hex}}
-progress-color=over {{colors.primary.default.hex}}
+background-color={{colors.background.default.hex}}40
+text-color={{colors.primary.default.hex}}
+border-color={{colors.secondary_container.default.hex}}40
 
 [urgency=low]
 default-timeout=2000

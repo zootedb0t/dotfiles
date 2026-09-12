@@ -84,7 +84,7 @@ window#waybar {
 
 /* Tooltips */
 tooltip {
-  background: alpha(@surface_container_highest, 0.95);
+  background: alpha(@surface_container_highest, 0.25);
   border: 1px solid alpha(@outline, 0.3);
 }
 
