@@ -1,0 +1,21 @@
+# GLOBAL
+include=~/.config/mako/theme
+max-history=10
+margin=0
+outer-margin=10,8,0,0
+padding=8
+
+# STYLE OPTIONS
+font=VictorMono Nerd Font Propo
+# layer=overlay
+
+[mode=do-not-disturb]
+invisible=1
+on-notify=none
+
+[mode=silent]
+on-notify=none
+
+# BINDING OPTIONS
+on-button-right=dismiss-all
+on-touch=dismiss
